@@ -173,6 +173,281 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/14/knows/python/pyenv%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/14/knows/python/pyenv%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">pyenv 使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-14 09:28:27 / 修改时间：09:35:22" itemprop="dateCreated datePublished" datetime="2025-05-14T09:28:27+08:00">2025-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="pyenv-使用"><a href="#pyenv-使用" class="headerlink" title="pyenv 使用"></a>pyenv 使用</h3><p>要使用 pyenv 创建一个名为 ai 的新虚拟环境，您可以按照以下步骤操作：</p>
+<ol>
+<li>确保已安装 pyenv 和 pyenv-virtualenv<br>首先，确保您已经在系统中安装了 pyenv 和 pyenv-virtualenv。如果还没有安装，可以参考以下步骤进行安装：<br>安装 pyenv</li>
+</ol>
+<h4 id="使用-Homebrew-安装（适用于-macOS）"><a href="#使用-Homebrew-安装（适用于-macOS）" class="headerlink" title="使用 Homebrew 安装（适用于 macOS）"></a>使用 Homebrew 安装（适用于 macOS）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pyenv</span><br></pre></td></tr></table></figure>
+
+<h4 id="或者使用官方安装脚本"><a href="#或者使用官方安装脚本" class="headerlink" title="或者使用官方安装脚本"></a>或者使用官方安装脚本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://pyenv.run | bash</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，根据提示将以下内容添加到您的 shell 配置文件（如 .bashrc, .zshrc）中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$HOME</span>/.pyenv/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv init --path)</span>&quot;</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv virtualenv-init -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="然后，重新加载配置文件："><a href="#然后，重新加载配置文件：" class="headerlink" title="然后，重新加载配置文件："></a>然后，重新加载配置文件：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc  <span class="comment"># 或者 source ~/.zshrc</span></span><br></pre></td></tr></table></figure>
+
+<p>安装 pyenv-virtualenv<br>如果您使用的是 pyenv 官方安装脚本，pyenv-virtualenv 通常已经包含在内。如果没有，可以通过以下方式安装：</p>
+<h4 id="使用-Homebrew-安装（适用于-macOS）-1"><a href="#使用-Homebrew-安装（适用于-macOS）-1" class="headerlink" title="使用 Homebrew 安装（适用于 macOS）"></a>使用 Homebrew 安装（适用于 macOS）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pyenv-virtualenv</span><br></pre></td></tr></table></figure>
+
+<p>或者通过 PyPI 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 或者通过 PyPI 安装</span></span><br><span class="line">pip install pyenv-virtualenv</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装所需的 Python 版本<br>在创建虚拟环境之前，确保您已经安装了所需的 Python 版本。例如，安装 Python 3.10.0：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv install 3.10.0</span><br></pre></td></tr></table></figure>
+
+<p>您可以通过以下命令查看可用的 Python 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv install --list`</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建虚拟环境<br>使用以下命令创建一个名为 ai 的虚拟环境，并指定 Python 版本（例如 3.10.0）：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv 3.10.0 ai</span><br></pre></td></tr></table></figure>
+
+<p>如果您希望虚拟环境使用系统默认的 Python 版本，可以省略版本号：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv ai</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>激活虚拟环境<br>激活刚刚创建的 ai 虚拟环境：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv activate ai</span><br></pre></td></tr></table></figure>
+
+<p>激活后，您的命令提示符通常会显示当前激活的虚拟环境名称 (ai)。 5. 验证虚拟环境<br>您可以通过以下命令验证当前 Python 版本和虚拟环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<p>输出应类似于：<br>Python 3.10.0</p>
+<ol start="6">
+<li>安装项目依赖<br>在虚拟环境中，您可以像平常一样使用 pip 安装所需的包。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy pandas matplotlib</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>退出虚拟环境<br>当您完成工作并希望退出虚拟环境时，可以使用以下命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv deactivate</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>列出所有虚拟环境<br>要查看系统中所有已创建的虚拟环境，可以使用：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenvs</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>删除虚拟环境<br>如果您不再需要某个虚拟环境，可以使用以下命令删除它：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv uninstall ai</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h4><p>pyenv: command not found<br>确保已将 pyenv 的路径添加到您的 shell 配置文件中，并重新加载配置。<br>virtualenv: command not found<br>确保已安装 pyenv-virtualenv 并正确初始化。<br>虚拟环境未激活<br>确认使用 pyenv activate ai 激活虚拟环境，并检查命令提示符是否显示 (ai)。</p>
+<p>通过以上步骤，您应该能够成功使用 pyenv 创建和管理名为 ai 的虚拟环境。如果您遇到任何问题，请随时提问！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/14/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/14/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-14 09:27:06" itemprop="dateCreated datePublished" datetime="2025-05-14T09:27:06+08:00">2025-05-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p><img src="/images/20250514/020834281.jpg" alt="测试图片"></p>
+<p><img src="https://mm.tpimg.xyz/img/xinggan/20220414/1404601.jpg" alt="test2"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/books/zhongyi/%E5%AD%97%E9%87%8C%E8%97%8F%E5%8C%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/13/books/zhongyi/%E5%AD%97%E9%87%8C%E8%97%8F%E5%8C%BB/" class="post-title-link" itemprop="url">字里藏医</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-13 22:33:27" itemprop="dateCreated datePublished" datetime="2025-05-13T22:33:27+08:00">2025-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-14 09:27:06" itemprop="dateModified" datetime="2025-05-14T09:27:06+08:00">2025-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E5%8C%BB/" itemprop="url" rel="index"><span itemprop="name">中医</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>《字里藏医》是2007年安徽教育出版社出版的图书，作者是徐文兵。该书深入浅出地介绍了中医词汇的古今之别，以帮助读者了解中医的基本知识。</p>
+</blockquote>
+<h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>几千年来，我们使用的都是同样的文字，但表达的意思可能已经不同了。很多字词已经渐渐失去了它们的原意。在多数情况下，这并不会造成什么困扰，但对中医这门古老学问就不同了，它需要我们唤醒那些沉睡的文字的原意。在现代语境下，在涉外教学看病过程中，徐文兵大夫随时会遭遇熟悉字词的陌生化情形。比如说“思想”，思和想有什么区别？又比如“魂魄”，魂是什么，魄是什么？<br>“肥”与“胖”的区别？“皮”与“肤”是一回事吗？<br>    要研究中医，发皇古意，就必须先从最基本的词汇入手，正义严辞。《字里藏医》就是这样一本以深入浅出的文字厘清中医最基本的词汇，恢复中医本来面目的启蒙书。</p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a target="_blank" rel="noopener" href="https://url60.ctfile.com/f/15365260-468202858-445c27?p=5098">字里藏医.txt</a><br> (访问密码: 5098)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/knows/flutter/dart%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -223,6 +498,111 @@
       
           <h3 id="变量学习"><a href="#变量学习" class="headerlink" title="变量学习"></a>变量学习</h3><p>1、var 关键字<br>类似于 JavaScript 中的 var，它可以接收任何类型的变量，但最大的不同是 Dart 中 var 变量一旦赋值，类型便会确定，则<strong>不能再改变其类型</strong>，如：</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义变量</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">name = <span class="number">123</span>; <span class="comment">// 报错;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/knows/python/supervisor%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/13/knows/python/supervisor%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">supervisor配置问题总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-13 10:48:27" itemprop="dateCreated datePublished" datetime="2025-05-13T10:48:27+08:00">2025-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-14 10:17:26" itemprop="dateModified" datetime="2025-05-14T10:17:26+08:00">2025-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="问题-1：supervisor-启动-gunicorn-报错："><a href="#问题-1：supervisor-启动-gunicorn-报错：" class="headerlink" title="问题 1：supervisor 启动 gunicorn 报错："></a>问题 1：supervisor 启动 gunicorn 报错：</h3><p>显示</p>
+<blockquote>
+<p>gunicorn FATAL Exited too quickly (process log may have details)<br>但查找进程显示有 gunicorn 进程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep gunicorn</span><br></pre></td></tr></table></figure>
+
+<p>通过 AI 分析：</p>
+<blockquote>
+<p>daemon &#x3D; True 与 Supervisor 冲突<br>Gunicorn 的 daemon &#x3D; True：<br>会让 Gunicorn 以后台守护进程方式运行（脱离终端），而 Supervisor 本身会管理进程的前台运行。两者同时启用时，Supervisor &gt; 会认为 Gunicorn 已退出（因为 Gunicorn 主进程已退出），导致标记为 FATAL。<br>解决方案：<br>移除 gunicorn 配置文件里的 daemon &#x3D; True，让 Gunicorn 以前台进程方式运行，由 Supervisor 管理。</p>
+</blockquote>
+<h3 id="问题-2：supervisor-启动的项目，还需要指定-pidfile-吗？："><a href="#问题-2：supervisor-启动的项目，还需要指定-pidfile-吗？：" class="headerlink" title="问题 2：supervisor 启动的项目，还需要指定 pidfile 吗？："></a>问题 2：supervisor 启动的项目，还需要指定 pidfile 吗？：</h3><p>显式指定 pidfile,但查看目录并不会生成 pid 文件<br>查 AI：</p>
+<blockquote>
+<p>当你使用 Supervisor 管理应用时，通常不需要再为应用单独配置 pidfile。Supervisor 本身会自动管理所有被监控进程的 PID 文件（进程标识符文件），用于跟踪进程状态（如启动、停止、重启）。以下是详细说明：<br>为什么不需要应用自定义 pidfile？</p>
+<ol>
+<li>Supervisor 自动管理 PID 文件<br>Supervisor 会为每个被管理的程序生成一个 .pid 文件，默认路径为：</li>
+</ol>
+</blockquote>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/var/run/supervisor/supervisord.pid</span><br><span class="line">/tmp/supervisor-&lt;program&gt;.pid</span><br></pre></td></tr></table></figure></blockquote>
+<blockquote>
+<p>或根据你的配置指定路径。<br>作用：Supervisor 使用 .pid 文件来记录进程的 PID，确保进程状态可追踪。</p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>应用自定义 pidfile 的潜在问题<br>冲突风险：如果应用（如 Gunicorn）也配置了 pidfile，可能导致：<br>Supervisor 和应用同时写入同一文件，引发冲突。<br>应用退出后，Supervisor 的 .pid 文件可能残留，导致下次启动失败。<br>冗余操作：Supervisor 已经管理了进程生命周期，应用的 pidfile 通常是多余的。</li>
+</ol>
+</blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/thankcat/p/18140922">CentOS+Django+uWSGI+Celery+Supervisor 配置</a></p>
 
       
     </div>
@@ -534,180 +914,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/knows/python/supervisor%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/knows/python/supervisor%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">supervisor配置问题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 10:48:27" itemprop="dateCreated datePublished" datetime="2025-05-12T10:48:27+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-13 16:30:00" itemprop="dateModified" datetime="2025-05-13T16:30:00+08:00">2025-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="问题-1：supervisor-启动-gunicorn-报错："><a href="#问题-1：supervisor-启动-gunicorn-报错：" class="headerlink" title="问题 1：supervisor 启动 gunicorn 报错："></a>问题 1：supervisor 启动 gunicorn 报错：</h3><p>显示</p>
-<blockquote>
-<p>gunicorn FATAL Exited too quickly (process log may have details)<br>但查找进程显示有 gunicorn 进程</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep gunicorn</span><br></pre></td></tr></table></figure>
-
-<p>通过 AI 分析：</p>
-<blockquote>
-<p>daemon &#x3D; True 与 Supervisor 冲突<br>Gunicorn 的 daemon &#x3D; True：<br>会让 Gunicorn 以后台守护进程方式运行（脱离终端），而 Supervisor 本身会管理进程的前台运行。两者同时启用时，Supervisor &gt; 会认为 Gunicorn 已退出（因为 Gunicorn 主进程已退出），导致标记为 FATAL。<br>解决方案：<br>移除 gunicorn 配置文件里的 daemon &#x3D; True，让 Gunicorn 以前台进程方式运行，由 Supervisor 管理。</p>
-</blockquote>
-<h3 id="问题-2：supervisor-启动的项目，还需要指定-pidfile-吗？："><a href="#问题-2：supervisor-启动的项目，还需要指定-pidfile-吗？：" class="headerlink" title="问题 2：supervisor 启动的项目，还需要指定 pidfile 吗？："></a>问题 2：supervisor 启动的项目，还需要指定 pidfile 吗？：</h3><p>显式指定 pidfile,但查看目录并不会生成 pid 文件<br>查 AI：</p>
-<blockquote>
-<p>当你使用 Supervisor 管理应用时，通常不需要再为应用单独配置 pidfile。Supervisor 本身会自动管理所有被监控进程的 PID 文件（进程标识符文件），用于跟踪进程状态（如启动、停止、重启）。以下是详细说明：<br>为什么不需要应用自定义 pidfile？</p>
-<ol>
-<li>Supervisor 自动管理 PID 文件<br>Supervisor 会为每个被管理的程序生成一个 .pid 文件，默认路径为：</li>
-</ol>
-</blockquote>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/var/run/supervisor/supervisord.pid</span><br><span class="line">/tmp/supervisor-&lt;program&gt;.pid</span><br></pre></td></tr></table></figure></blockquote>
-<blockquote>
-<p>或根据你的配置指定路径。<br>作用：Supervisor 使用 .pid 文件来记录进程的 PID，确保进程状态可追踪。</p>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>应用自定义 pidfile 的潜在问题<br>冲突风险：如果应用（如 Gunicorn）也配置了 pidfile，可能导致：<br>Supervisor 和应用同时写入同一文件，引发冲突。<br>应用退出后，Supervisor 的 .pid 文件可能残留，导致下次启动失败。<br>冗余操作：Supervisor 已经管理了进程生命周期，应用的 pidfile 通常是多余的。</li>
-</ol>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 10:33:18" itemprop="dateCreated datePublished" datetime="2025-05-12T10:33:18+08:00">2025-05-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
 
@@ -774,18 +980,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
