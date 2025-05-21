@@ -173,6 +173,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">Flutter配置相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-20 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-21 18:27:18" itemprop="dateModified" datetime="2025-05-21T18:27:18+08:00">2025-05-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="配置-Java-环境"><a href="#配置-Java-环境" class="headerlink" title="配置 Java 环境"></a>配置 Java 环境</h3><p>1、安装 Java</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install openjdk@21</span><br></pre></td></tr></table></figure>
+
+<p>2、配置环境变量<br>写进.bash_profile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/opt/homebrew/opt/openjdk@21</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>3、验证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p>注意：gradle 版本与 java 版本要匹配<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/compatibility.html#java">https://docs.gradle.org/current/userguide/compatibility.html#java</a></p>
+<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>build.gradle.kts</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>settings.gradle.kts</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>build.gradle.kts 文件中的仓库配置是用于项目所有模块的全局配置，而 settings.gradle.kts 中的配置是用于插件管理的。在 Gradle 项目中，通常需要在这两个地方都配置仓库地址，以确保所有依赖项都能正确下载。建议将 build.gradle.kts 中的仓库配置也替换为阿里云镜像源，以保持一致性并提高构建速度。</p>
+<h4 id="出错"><a href="#出错" class="headerlink" title="出错"></a>出错</h4><ul>
+<li>What went wrong:<br>Plugin [id: ‘com.android.application’, version: ‘8.7.0’, apply: false] was not found in any of the following sources:</li>
+</ul>
+<ul>
+<li>Gradle Core Plugins (plugin is not in ‘org.gradle’ namespace)</li>
+<li>Included Builds (No included builds contain this plugin)</li>
+<li>Plugin Repositories (could not resolve plugin artifact ‘com.android.application:com.android.application.gradle.plugin:8.7.0’)<br>Searched in the following repositories:<br>maven(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/public">https://maven.aliyun.com/repository/public</a>)<br>maven2(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/google">https://maven.aliyun.com/repository/google</a>)<br>maven3(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/gradle-plugin">https://maven.aliyun.com/repository/gradle-plugin</a>)</li>
+</ul>
+<p>错误信息显示无法找到 com.android.application 插件，这是因为阿里云镜像可能没有完全同步 Google 的仓库内容。建议在 settings.gradle.kts 中保留 Google 的官方仓库，同时使用阿里云镜像。以下是修改后的配置：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    google()</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看-Android-模拟器版本号的两种方法："><a href="#查看-Android-模拟器版本号的两种方法：" class="headerlink" title="查看 Android 模拟器版本号的两种方法："></a>查看 Android 模拟器版本号的两种方法：</h3><p>1、ADB 查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.version.release</span><br><span class="line">adb shell getprop ro.build.version.sdk</span><br></pre></td></tr></table></figure>
+
+<p>第一条命令输出 Android 系统版本（如 13），第二条输出 API 级别（如 33）</p>
+<p>2、在模拟器界面查看</p>
+<ul>
+<li>打开模拟器</li>
+<li>进入 Settings → System → About phone → Android version</li>
+<li>连续点击 “Build number” 7 次可解锁开发者选项</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,96 +342,6 @@
 <p>新闻视频 2：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4</a></p>
 <h3 id="M3U8-格式"><a href="#M3U8-格式" class="headerlink" title="M3U8 格式"></a>M3U8 格式</h3><p>西瓜播放器 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8</a></p>
 <p>大白兔：<br><a target="_blank" rel="noopener" href="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">Flutter配置相关</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-20 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-21 16:19:26" itemprop="dateModified" datetime="2025-05-21T16:19:26+08:00">2025-05-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="配置-Java-环境"><a href="#配置-Java-环境" class="headerlink" title="配置 Java 环境"></a>配置 Java 环境</h3><p>1、安装 Java</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install openjdk@21</span><br></pre></td></tr></table></figure>
-
-<p>2、配置环境变量<br>写进.bash_profile</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/opt/homebrew/opt/openjdk@21</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-
-<p>3、验证</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
-<p>注意：gradle 版本与 java 版本要匹配<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/compatibility.html#java">https://docs.gradle.org/current/userguide/compatibility.html#java</a></p>
-<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>build.gradle.kts</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>settings.gradle.kts</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>build.gradle.kts 文件中的仓库配置是用于项目所有模块的全局配置，而 settings.gradle.kts 中的配置是用于插件管理的。在 Gradle 项目中，通常需要在这两个地方都配置仓库地址，以确保所有依赖项都能正确下载。建议将 build.gradle.kts 中的仓库配置也替换为阿里云镜像源，以保持一致性并提高构建速度。</p>
 
       
     </div>
