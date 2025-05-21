@@ -273,10 +273,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-05-20 11:00:27 / 修改时间：15:26:36" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
+              <time title="创建时间：2025-05-20 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-21 16:13:31" itemprop="dateModified" datetime="2025-05-21T16:13:31+08:00">2025-05-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -308,6 +314,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
 
 <p>注意：gradle 版本与 java 版本要匹配<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/compatibility.html#java">https://docs.gradle.org/current/userguide/compatibility.html#java</a></p>
+<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>build.gradle.kts</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/public&#x27;</span> &#125;</span><br><span class="line">        maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/google&#x27;</span> &#125;</span><br><span class="line">        maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin&#x27;</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>settings.gradle.kts</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/public&#x27;</span> &#125;</span><br><span class="line">    maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/google&#x27;</span> &#125;</span><br><span class="line">    maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin&#x27;</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>build.gradle.kts 文件中的仓库配置是用于项目所有模块的全局配置，而 settings.gradle.kts 中的配置是用于插件管理的。在 Gradle 项目中，通常需要在这两个地方都配置仓库地址，以确保所有依赖项都能正确下载。建议将 build.gradle.kts 中的仓库配置也替换为阿里云镜像源，以保持一致性并提高构建速度。</p>
 
       
     </div>
