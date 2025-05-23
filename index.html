@@ -173,6 +173,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/23/knows/flutter/%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/23/knows/flutter/%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">保存文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-23 11:00:27 / 修改时间：17:02:58" itemprop="dateCreated datePublished" datetime="2025-05-23T11:00:27+08:00">2025-05-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String?</span> html = <span class="keyword">await</span> webView.getHtml();</span><br><span class="line">setState(() &#123;</span><br><span class="line">htmlContent = html;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Full Page HTML (<span class="subst">$&#123;html?.length ?? <span class="number">0</span>&#125;</span> characters): <span class="subst">$html</span>&#x27;</span>);</span><br><span class="line"><span class="built_in">String</span> las = html!.substring(html.length - <span class="number">1000</span>);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;last 1000: <span class="subst">$las</span>&quot;</span>);</span><br><span class="line"><span class="keyword">final</span> directory = <span class="keyword">await</span> getApplicationDocumentsDirectory();</span><br><span class="line"><span class="keyword">final</span> filePath = <span class="string">&#x27;<span class="subst">$&#123;directory.path&#125;</span>/douyin_html.html&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 写入文件</span></span><br><span class="line"><span class="keyword">await</span> File(filePath).writeAsString(html ?? <span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;HTML saved to: <span class="subst">$filePath</span>&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>打印显示 &#x2F;data&#x2F;user&#x2F;0&#x2F;wang.awake.video_fetcher&#x2F;app_flutter&#x2F;douyin_html.html</p>
+<h4 id="用-adb-命令查看文件"><a href="#用-adb-命令查看文件" class="headerlink" title="用 adb 命令查看文件"></a>用 adb 命令查看文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run-as wang.awake.video_fetcher</span><br></pre></td></tr></table></figure>
+
+<p>会进入到包目录，此时可以查看包</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -970,83 +1043,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/books/%E4%BD%9B%E5%AD%A6/%E7%A6%85%E7%9A%84%E4%B8%96%E7%95%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/books/%E4%BD%9B%E5%AD%A6/%E7%A6%85%E7%9A%84%E4%B8%96%E7%95%8C/" class="post-title-link" itemprop="url">禅的世界-圣严法师</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 23:48:27" itemprop="dateCreated datePublished" datetime="2025-05-12T23:48:27+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-13 09:26:20" itemprop="dateModified" datetime="2025-05-13T09:26:20+08:00">2025-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BD%9B%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">佛学</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="禅的世界-圣严法师"><a href="#禅的世界-圣严法师" class="headerlink" title="禅的世界-圣严法师"></a>禅的世界-圣严法师</h3><blockquote>
-<p>释圣严，或尊称为圣严“法师”（1931年1月22日－2009年2月3日），俗名张保康，江苏南通人，佛学“大师”，教育家，佛教“弘法大师”，日本立正大学博士，也是禅宗曹洞宗的第五十代传人、临济宗的第五十七代传人、台湾法鼓山的创办人，法鼓山的弟子信众尊称为“师父”。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://url60.ctfile.com/f/15365260-1504986439-8b1483?p=5098">禪的世界 - 聖嚴法師.pdf</a><br> (访问密码: 5098)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1116,7 +1112,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
