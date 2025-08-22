@@ -173,6 +173,437 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/26/knows/flutter/%E5%8A%A0%E8%BD%BDassets%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/26/knows/flutter/%E5%8A%A0%E8%BD%BDassets%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">加载assets文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-26 16:00:27 / 修改时间：18:18:28" itemprop="dateCreated datePublished" datetime="2025-05-26T16:00:27+08:00">2025-05-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="将资源文件加到-assets-目录"><a href="#将资源文件加到-assets-目录" class="headerlink" title="将资源文件加到 assets 目录"></a>将资源文件加到 assets 目录</h3><p>如 assets&#x2F;key&#x2F;public.pem 文件</p>
+<h3 id="读取资源文件"><a href="#读取资源文件" class="headerlink" title="读取资源文件"></a>读取资源文件</h3><p>读取前先在 pubspec.yaml 中配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">flutter:</span></span><br><span class="line">    <span class="attr">assets:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">assets/key/public.pem</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="读取资源文件-1"><a href="#读取资源文件-1" class="headerlink" title="读取资源文件"></a>读取资源文件</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/services.dart&#x27;</span>;</span><br><span class="line"><span class="built_in">String</span> publicKey = <span class="keyword">await</span> rootBundle.loadString(<span class="string">&#x27;assets/key/public.pem&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/26/knows/flutter/%E9%85%8D%E7%BD%AEsha1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/26/knows/flutter/%E9%85%8D%E7%BD%AEsha1/" class="post-title-link" itemprop="url">打包配置sha1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-26 11:00:27 / 修改时间：15:10:49" itemprop="dateCreated datePublished" datetime="2025-05-26T11:00:27+08:00">2025-05-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>主要参考：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7129495755207180319">https://juejin.cn/post/7129495755207180319</a></p>
+<h3 id="生成-key-目录"><a href="#生成-key-目录" class="headerlink" title="生成 key 目录"></a>生成 key 目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/dapp/keys/</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成私钥"><a href="#生成私钥" class="headerlink" title="生成私钥"></a>生成私钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -v -keystore ~/dapp/keys/prod_key.jks -keyalg RSA -keysize 2048 -validity 100000 -<span class="built_in">alias</span> prod_key</span><br></pre></td></tr></table></figure>
+
+<h3 id="local-properties-添加上述设置"><a href="#local-properties-添加上述设置" class="headerlink" title="local.properties 添加上述设置"></a>local.properties 添加上述设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword = xxxxxx</span><br><span class="line">keyPassword = xxxxxx</span><br><span class="line">keyAlias = prod_key</span><br><span class="line">storeFile = /xxxx/xxxx/dapp/keys/prod_key.jks</span><br></pre></td></tr></table></figure>
+
+<h3 id="到项目下的-android-app-build-gradle-中添加"><a href="#到项目下的-android-app-build-gradle-中添加" class="headerlink" title="到项目下的 android&#x2F;app&#x2F;build.gradle 中添加"></a>到项目下的 android&#x2F;app&#x2F;build.gradle 中添加</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Properties</span><br><span class="line">...</span><br><span class="line">android &#123;</span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        create(<span class="string">&quot;release&quot;</span>) &#123;</span><br><span class="line">            <span class="comment">// 加载 local.properties 文件</span></span><br><span class="line">            <span class="keyword">val</span> localProperties = Properties().apply &#123;</span><br><span class="line">                load(rootProject.file(<span class="string">&quot;local.properties&quot;</span>).inputStream())</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 读取配置项</span></span><br><span class="line">            storeFile = file(localProperties.getProperty(<span class="string">&quot;storeFile&quot;</span>))</span><br><span class="line">            storePassword = localProperties.getProperty(<span class="string">&quot;storePassword&quot;</span>)</span><br><span class="line">            keyAlias = localProperties.getProperty(<span class="string">&quot;keyAlias&quot;</span>)</span><br><span class="line">            keyPassword = localProperties.getProperty(<span class="string">&quot;keyPassword&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            signingConfig = signingConfigs.getByName(<span class="string">&quot;release&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        debug &#123;</span><br><span class="line">            signingConfig = signingConfigs.getByName(<span class="string">&quot;debug&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试签名"><a href="#测试签名" class="headerlink" title="测试签名"></a>测试签名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew signingReport</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter build apk --release</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/23/knows/flutter/%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/23/knows/flutter/%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">adb 常用操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-23 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-23T11:00:27+08:00">2025-05-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-06-17 10:16:31" itemprop="dateModified" datetime="2025-06-17T10:16:31+08:00">2025-06-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="列出虚拟设备"><a href="#列出虚拟设备" class="headerlink" title="列出虚拟设备"></a>列出虚拟设备</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
+
+<h3 id="连接虚拟设备-进入-shell"><a href="#连接虚拟设备-进入-shell" class="headerlink" title="连接虚拟设备,进入 shell"></a>连接虚拟设备,进入 shell</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -s 6c49ee85 shell</span><br></pre></td></tr></table></figure>
+
+<h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String?</span> html = <span class="keyword">await</span> webView.getHtml();</span><br><span class="line">setState(() &#123;</span><br><span class="line">htmlContent = html;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Full Page HTML (<span class="subst">$&#123;html?.length ?? <span class="number">0</span>&#125;</span> characters): <span class="subst">$html</span>&#x27;</span>);</span><br><span class="line"><span class="built_in">String</span> las = html!.substring(html.length - <span class="number">1000</span>);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;last 1000: <span class="subst">$las</span>&quot;</span>);</span><br><span class="line"><span class="keyword">final</span> directory = <span class="keyword">await</span> getApplicationDocumentsDirectory();</span><br><span class="line"><span class="keyword">final</span> filePath = <span class="string">&#x27;<span class="subst">$&#123;directory.path&#125;</span>/douyin_html.html&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 写入文件</span></span><br><span class="line"><span class="keyword">await</span> File(filePath).writeAsString(html ?? <span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;HTML saved to: <span class="subst">$filePath</span>&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>打印显示 &#x2F;data&#x2F;user&#x2F;0&#x2F;wang.awake.video_fetcher&#x2F;app_flutter&#x2F;douyin_html.html</p>
+<h4 id="用-adb-命令查看文件"><a href="#用-adb-命令查看文件" class="headerlink" title="用 adb 命令查看文件"></a>用 adb 命令查看文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run-as wang.awake.video_fetcher</span><br></pre></td></tr></table></figure>
+
+<p>会进入到包目录，此时可以查看包</p>
+<h4 id="用-adb-下载虚拟机的文件"><a href="#用-adb-下载虚拟机的文件" class="headerlink" title="用 adb 下载虚拟机的文件"></a>用 adb 下载虚拟机的文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb exec-out run-as wang.awake.yidong <span class="built_in">cat</span> databases/app.db &gt; app.db</span><br></pre></td></tr></table></figure>
+
+<p>这样就将 app.db 下载到了本地</p>
+<p>注意：只有在 root 或 debug 模式下才能用进入到包目录下载文件</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/" class="post-title-link" itemprop="url">视频播放测试地址</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-20 11:00:27 / 修改时间：18:28:37" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在开发视频播放相关的业务功能，开发测试时，需要涉及到 MP4、M3U8 等视频格式。<br>我每次找测试视频地址时，都要找很久，现在把我在网上收集到的 MP4、M3U8 格式视频地址放在这里，希望帮助到正在进行视频播放开发的你。</p>
+<h3 id="MP4-格式"><a href="#MP4-格式" class="headerlink" title="MP4 格式"></a>MP4 格式</h3><p>海洋：<br><a target="_blank" rel="noopener" href="http://vjs.zencdn.net/v/oceans.mp4">http://vjs.zencdn.net/v/oceans.mp4</a></p>
+<p>西瓜视频 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4</a></p>
+<p>大兔子：<br><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/example/html5/mov_bbb.mp4">http://www.w3school.com.cn/example/html5/mov_bbb.mp4</a></p>
+<p>大灰熊：<br><a target="_blank" rel="noopener" href="https://www.w3schools.com/html/movie.mp4">https://www.w3schools.com/html/movie.mp4</a></p>
+<p>冰川：<br><a target="_blank" rel="noopener" href="https://media.w3.org/2010/05/sintel/trailer.mp4">https://media.w3.org/2010/05/sintel/trailer.mp4</a></p>
+<p>新闻视频 1：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209105011F0zPoYzHry.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209105011F0zPoYzHry.mp4</a></p>
+<p>新闻视频 2：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4</a></p>
+<h3 id="M3U8-格式"><a href="#M3U8-格式" class="headerlink" title="M3U8 格式"></a>M3U8 格式</h3><p>西瓜播放器 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8</a></p>
+<p>大白兔：<br><a target="_blank" rel="noopener" href="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">Flutter配置相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-20 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-27 09:53:23" itemprop="dateModified" datetime="2025-05-27T09:53:23+08:00">2025-05-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="配置-Java-环境"><a href="#配置-Java-环境" class="headerlink" title="配置 Java 环境"></a>配置 Java 环境</h3><p>1、安装 Java</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install openjdk@21</span><br></pre></td></tr></table></figure>
+
+<p>2、配置环境变量<br>写进.bash_profile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/opt/homebrew/opt/openjdk@21</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>3、验证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p>注意：gradle 版本与 java 版本要匹配<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/compatibility.html#java">https://docs.gradle.org/current/userguide/compatibility.html#java</a></p>
+<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>build.gradle.kts</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>settings.gradle.kts</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>build.gradle.kts 文件中的仓库配置是用于项目所有模块的全局配置，而 settings.gradle.kts 中的配置是用于插件管理的。在 Gradle 项目中，通常需要在这两个地方都配置仓库地址，以确保所有依赖项都能正确下载。建议将 build.gradle.kts 中的仓库配置也替换为阿里云镜像源，以保持一致性并提高构建速度。</p>
+<h4 id="出错"><a href="#出错" class="headerlink" title="出错"></a>出错</h4><ul>
+<li>What went wrong:<br>Plugin [id: ‘com.android.application’, version: ‘8.7.0’, apply: false] was not found in any of the following sources:</li>
+</ul>
+<ul>
+<li>Gradle Core Plugins (plugin is not in ‘org.gradle’ namespace)</li>
+<li>Included Builds (No included builds contain this plugin)</li>
+<li>Plugin Repositories (could not resolve plugin artifact ‘com.android.application:com.android.application.gradle.plugin:8.7.0’)<br>Searched in the following repositories:<br>maven(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/public">https://maven.aliyun.com/repository/public</a>)<br>maven2(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/google">https://maven.aliyun.com/repository/google</a>)<br>maven3(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/gradle-plugin">https://maven.aliyun.com/repository/gradle-plugin</a>)</li>
+</ul>
+<p>错误信息显示无法找到 com.android.application 插件，这是因为阿里云镜像可能没有完全同步 Google 的仓库内容。建议在 settings.gradle.kts 中保留 Google 的官方仓库，同时使用阿里云镜像。以下是修改后的配置：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    google()</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看-Android-模拟器版本号的两种方法："><a href="#查看-Android-模拟器版本号的两种方法：" class="headerlink" title="查看 Android 模拟器版本号的两种方法："></a>查看 Android 模拟器版本号的两种方法：</h3><p>1、ADB 查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.version.release</span><br><span class="line">adb shell getprop ro.build.version.sdk</span><br></pre></td></tr></table></figure>
+
+<p>第一条命令输出 Android 系统版本（如 13），第二条输出 API 级别（如 33）</p>
+<p>2、在模拟器界面查看</p>
+<ul>
+<li>打开模拟器</li>
+<li>进入 Settings → System → About phone → Android version</li>
+<li>连续点击 “Build number” 7 次可解锁开发者选项</li>
+</ul>
+<h3 id="Android-存储权限变更"><a href="#Android-存储权限变更" class="headerlink" title="Android 存储权限变更"></a>Android 存储权限变更</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.MANAGE_EXTERNAL_STORAGE&quot;/&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_IMAGES&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_VIDEO&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_AUDIO&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如果-ios-目录被删除，应该怎么办？"><a href="#如果-ios-目录被删除，应该怎么办？" class="headerlink" title="如果 ios 目录被删除，应该怎么办？"></a>如果 ios 目录被删除，应该怎么办？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create --platform ios .</span><br></pre></td></tr></table></figure>
+
+<p>这样会在当前目录下生成一个新的 ios 目录，其中包含了 Flutter 所需的所有文件和配置。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/16/knows/git/%E8%AF%AF%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -626,518 +1057,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/knows/python/supervisor%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/13/knows/python/supervisor%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">supervisor配置问题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-13 10:48:27" itemprop="dateCreated datePublished" datetime="2025-05-13T10:48:27+08:00">2025-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-14 10:17:26" itemprop="dateModified" datetime="2025-05-14T10:17:26+08:00">2025-05-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="问题-1：supervisor-启动-gunicorn-报错："><a href="#问题-1：supervisor-启动-gunicorn-报错：" class="headerlink" title="问题 1：supervisor 启动 gunicorn 报错："></a>问题 1：supervisor 启动 gunicorn 报错：</h3><p>显示</p>
-<blockquote>
-<p>gunicorn FATAL Exited too quickly (process log may have details)<br>但查找进程显示有 gunicorn 进程</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep gunicorn</span><br></pre></td></tr></table></figure>
-
-<p>通过 AI 分析：</p>
-<blockquote>
-<p>daemon &#x3D; True 与 Supervisor 冲突<br>Gunicorn 的 daemon &#x3D; True：<br>会让 Gunicorn 以后台守护进程方式运行（脱离终端），而 Supervisor 本身会管理进程的前台运行。两者同时启用时，Supervisor &gt; 会认为 Gunicorn 已退出（因为 Gunicorn 主进程已退出），导致标记为 FATAL。<br>解决方案：<br>移除 gunicorn 配置文件里的 daemon &#x3D; True，让 Gunicorn 以前台进程方式运行，由 Supervisor 管理。</p>
-</blockquote>
-<h3 id="问题-2：supervisor-启动的项目，还需要指定-pidfile-吗？："><a href="#问题-2：supervisor-启动的项目，还需要指定-pidfile-吗？：" class="headerlink" title="问题 2：supervisor 启动的项目，还需要指定 pidfile 吗？："></a>问题 2：supervisor 启动的项目，还需要指定 pidfile 吗？：</h3><p>显式指定 pidfile,但查看目录并不会生成 pid 文件<br>查 AI：</p>
-<blockquote>
-<p>当你使用 Supervisor 管理应用时，通常不需要再为应用单独配置 pidfile。Supervisor 本身会自动管理所有被监控进程的 PID 文件（进程标识符文件），用于跟踪进程状态（如启动、停止、重启）。以下是详细说明：<br>为什么不需要应用自定义 pidfile？</p>
-<ol>
-<li>Supervisor 自动管理 PID 文件<br>Supervisor 会为每个被管理的程序生成一个 .pid 文件，默认路径为：</li>
-</ol>
-</blockquote>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/var/run/supervisor/supervisord.pid</span><br><span class="line">/tmp/supervisor-&lt;program&gt;.pid</span><br></pre></td></tr></table></figure></blockquote>
-<blockquote>
-<p>或根据你的配置指定路径。<br>作用：Supervisor 使用 .pid 文件来记录进程的 PID，确保进程状态可追踪。</p>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>应用自定义 pidfile 的潜在问题<br>冲突风险：如果应用（如 Gunicorn）也配置了 pidfile，可能导致：<br>Supervisor 和应用同时写入同一文件，引发冲突。<br>应用退出后，Supervisor 的 .pid 文件可能残留，导致下次启动失败。<br>冗余操作：Supervisor 已经管理了进程生命周期，应用的 pidfile 通常是多余的。</li>
-</ol>
-</blockquote>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/thankcat/p/18140922">CentOS+Django+uWSGI+Celery+Supervisor 配置</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/books/%E4%BD%9B%E5%AD%A6/%E7%A6%85%E7%9A%84%E4%B8%96%E7%95%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/books/%E4%BD%9B%E5%AD%A6/%E7%A6%85%E7%9A%84%E4%B8%96%E7%95%8C/" class="post-title-link" itemprop="url">禅的世界-圣严法师</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 23:48:27" itemprop="dateCreated datePublished" datetime="2025-05-12T23:48:27+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-13 09:26:20" itemprop="dateModified" datetime="2025-05-13T09:26:20+08:00">2025-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BD%9B%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">佛学</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="禅的世界-圣严法师"><a href="#禅的世界-圣严法师" class="headerlink" title="禅的世界-圣严法师"></a>禅的世界-圣严法师</h3><blockquote>
-<p>释圣严，或尊称为圣严“法师”（1931年1月22日－2009年2月3日），俗名张保康，江苏南通人，佛学“大师”，教育家，佛教“弘法大师”，日本立正大学博士，也是禅宗曹洞宗的第五十代传人、临济宗的第五十七代传人、台湾法鼓山的创办人，法鼓山的弟子信众尊称为“师父”。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://url60.ctfile.com/f/15365260-1504986439-8b1483?p=5098">禪的世界 - 聖嚴法師.pdf</a><br> (访问密码: 5098)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/knows/flutter/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/knows/flutter/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" class="post-title-link" itemprop="url">Flutter基础组件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-12T11:00:27+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-29 11:32:06" itemprop="dateModified" datetime="2025-05-29T11:32:06+08:00">2025-05-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="文本组件"><a href="#文本组件" class="headerlink" title="文本组件"></a>文本组件</h3><ul>
-<li>Text：用于显示文本。</li>
-<li>RichText：用于显示富文本，支持多种样式。</li>
-<li>DefaultTextStyle：用于设置默认文本样式。</li>
-<li>SelectableText：用于显示可选择的文本。</li>
-<li>FittedBox：用于调整文本大小以适应可用空间。</li>
-<li>TextSpan：用于构建富文本的文本片段。</li>
-<li>TextStyle：用于定义文本的样式，如字体、大小、颜色等。</li>
-<li>TextDecoration：用于定义文本的装饰，如下划线、删除线等。</li>
-<li>TextAlign：用于定义文本的对齐方式，如左对齐、右对齐、居中对齐等。</li>
-<li>TextOverflow：用于定义文本溢出时的处理方式，如截断、省略号等。</li>
-<li>TextDirection：用于定义文本的方向，如左到右、右到左等。</li>
-<li>TextScaleFactor：用于定义文本的缩放因子。</li>
-<li>TextWidthBasis：用于定义文本的宽度基准。</li>
-<li>TextHeightBehavior：用于定义文本的高度行为。</li>
-<li>TextBaseline：用于定义文本的基线。</li>
-<li>TextDecorationStyle：用于定义文本装饰的样式，如实线、虚线等。</li>
-<li>TextDecorationColor：用于定义文本装饰的颜色。</li>
-</ul>
-<h3 id="布局组件"><a href="#布局组件" class="headerlink" title="布局组件"></a>布局组件</h3><ul>
-<li>Container：用于创建一个矩形的容器，用于包裹其他组件。</li>
-<li>Padding：用于在容器内添加内边距，用于调整组件的位置。</li>
-<li>Margin：用于在容器外添加外边距，用于调整组件的位置。</li>
-</ul>
-<h4 id="SingleChildScrollView"><a href="#SingleChildScrollView" class="headerlink" title="SingleChildScrollView"></a>SingleChildScrollView</h4><ul>
-<li>SingleChildScrollView：用于创建一个单子滚动视图，用于包裹其他组件。</li>
-</ul>
-<h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>SingleChildScrollView 是 Flutter 中的滚动组件。其作用是包裹子组件，当子组件内容超过屏幕可视区域时，允许用户通过滚动查看完整内容。</p>
-<p>当前代码中， SingleChildScrollView 作为 Scaffold 的 body 属性值，内部通过 Padding 和 Column 布局容纳其他子控件（如 TextField 等），确保页面内容超出屏幕时可滚动浏览。</p>
-<ul>
-<li>ListView：用于创建一个列表视图，用于包裹其他组件。</li>
-<li>GridView：用于创建一个网格视图，用于包裹其他组件。</li>
-<li>Stack：用于创建一个堆叠视图，用于包裹其他组件。</li>
-<li>Positioned：用于创建一个可定位的组件，用于调整组件的位置。</li>
-</ul>
-<h3 id="交互组件"><a href="#交互组件" class="headerlink" title="交互组件"></a>交互组件</h3><ul>
-<li>GestureDetector：用于检测用户的手势，如点击、长按、滑动等。</li>
-<li>InkWell：用于创建一个可点击的 ink 效果，用于响应用户的手势。</li>
-<li>Draggable：用于创建可拖动的组件。</li>
-<li>DropTarget：用于创建可接收拖动组件的目标。</li>
-<li>DragTarget：用于创建可接收拖动组件的目标。</li>
-<li>DragSource：用于创建可拖动的组件。</li>
-<li>DragSourceListener：用于监听拖动组件的状态。</li>
-<li>DropTargetListener：用于监听接收拖动组件的状态。</li>
-<li>DragTargetAcceptor：用于接受拖动组件的目标。</li>
-<li>DragTargetAcceptorListener：用于监听接收拖动组件的状态。</li>
-<li>DragTargetAcceptorDelegate：用于定义接收拖动组件的目标的行为。</li>
-<li>DragTargetAcceptorDelegateListener：用于监听接收拖动组件的状态。</li>
-<li>DragTargetAcceptorDelegateBuilder：用于构建接收拖动组件的目标的行为。</li>
-</ul>
-<h3 id="动画组件"><a href="#动画组件" class="headerlink" title="动画组件"></a>动画组件</h3><ul>
-<li>AnimatedContainer：用于创建一个可动画的容器，用于调整组件的位置、大小、颜色等。</li>
-<li>AnimatedOpacity：用于创建一个可动画的透明度，用于调整组件的透明度。</li>
-<li>AnimatedPositioned：用于创建一个可动画的位置，用于调整组件的位置。</li>
-<li>AnimatedPadding：用于创建一个可动画的内边距，用于调整组件的位置。</li>
-<li>AnimatedMargin：用于创建一个可动画的外边距，用于调整组件的位置。</li>
-<li>AnimatedSize：用于创建一个可动画的大小，用于调整组件的大小。</li>
-<li>AnimatedAlign：用于创建一个可动画的对齐方式，用于调整组件的位置。</li>
-</ul>
-<h3 id="弹窗组件"><a href="#弹窗组件" class="headerlink" title="弹窗组件"></a>弹窗组件</h3><ul>
-<li>AlertDialog：用于创建一个对话框，用于显示提示信息。</li>
-<li>SimpleDialog：用于创建一个简单的对话框，用于显示提示信息。</li>
-<li>BottomSheet：用于创建一个底部弹出的对话框，用于显示提示信息。</li>
-<li>Dialog：用于创建一个对话框，用于显示提示信息。</li>
-<li>SnackBar：用于创建一个弹出的提示信息，用于显示提示信息。</li>
-<li>BottomAppBar：用于创建一个底部弹出的对话框，用于显示提示信息。</li>
-<li>BottomNavigationBar：用于创建一个底部导航栏，用于显示提示信息。</li>
-<li>BottomNavigationBarItem：用于创建一个底部导航栏的条目，用于显示提示信息。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">正则表达式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 10:48:27" itemprop="dateCreated datePublished" datetime="2025-05-12T10:48:27+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-07-10 11:12:42" itemprop="dateModified" datetime="2025-07-10T11:12:42+08:00">2025-07-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="正则表达式基础"><a href="#正则表达式基础" class="headerlink" title="正则表达式基础"></a>正则表达式基础</h3><h4 id="表示什么？"><a href="#表示什么？" class="headerlink" title="[^&gt;]表示什么？"></a>[^&gt;]表示什么？</h4><h5 id="🔍-在正则表达式中的含义："><a href="#🔍-在正则表达式中的含义：" class="headerlink" title="🔍 [] 在正则表达式中的含义："></a>🔍 <strong><code>[]</code> 在正则表达式中的含义：</strong></h5><h5 id="字符类（Character-Class）"><a href="#字符类（Character-Class）" class="headerlink" title="字符类（Character Class）"></a><strong>字符类（Character Class）</strong></h5><p><code>[]</code> 表示<strong>字符类</strong>，用来定义一组可匹配的字符。</p>
-<h5 id="基本语法："><a href="#基本语法：" class="headerlink" title="基本语法："></a><strong>基本语法：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[abc]     <span class="comment">// 匹配 a 或 b 或 c 中的任意一个字符</span></span><br><span class="line">[a-z]     <span class="comment">// 匹配 a 到 z 的任意小写字母</span></span><br><span class="line">[<span class="number">0</span>-<span class="number">9</span>]     <span class="comment">// 匹配 0 到 9 的任意数字</span></span><br><span class="line">[A-Za-z]  <span class="comment">// 匹配任意大小写字母</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="否定字符类："><a href="#否定字符类：" class="headerlink" title="否定字符类："></a><strong>否定字符类：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[^abc]    <span class="comment">// 匹配除了 a、b、c 之外的任何字符</span></span><br><span class="line">[^<span class="number">0</span>-<span class="number">9</span>]    <span class="comment">// 匹配非数字字符</span></span><br><span class="line">[^&gt;]      <span class="comment">// 匹配除了 &gt; 之外的任何字符</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="在你的例子中："><a href="#在你的例子中：" class="headerlink" title="在你的例子中："></a><strong>在你的例子中：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^&gt;]*</span><br></pre></td></tr></table></figure>
-
-<p><strong>分解：</strong></p>
-<ul>
-<li><code>[^&gt;]</code> - <strong>字符类</strong>：匹配除了 <code>&gt;</code> 之外的任意一个字符</li>
-<li><code>*</code> - <strong>量词</strong>：表示前面的字符类可以出现 0 次或多次</li>
-</ul>
-<h5 id="实际匹配示例："><a href="#实际匹配示例：" class="headerlink" title="实际匹配示例："></a><strong>实际匹配示例：</strong></h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 原始HTML --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span> <span class="attr">data-rh</span>=<span class="string">&quot;true&quot;</span> <span class="attr">class</span>=<span class="string">&quot;page-title&quot;</span>&gt;</span>我的标题 - 知乎<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 正则匹配过程 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span> ← <span class="attr">匹配字面量</span> [^&gt;</span></span><br><span class="line">	]* ← 匹配 &quot; data-rh=\&quot;true\&quot; class=\&quot;page-title\&quot;&quot; &gt; ← 匹配标签结束符 (.*?)</span><br><span class="line">	← 捕获 &quot;我的标题&quot; - 知乎</span><br><span class="line"><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">← 匹配结尾</span><br></pre></td></tr></table></figure>
-
-<h5 id="其他字符类例子："><a href="#其他字符类例子：" class="headerlink" title="其他字符类例子："></a><strong>其他字符类例子：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[aeiou]&#x27;</span>)     <span class="comment">// 匹配元音字母</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[^aeiou]&#x27;</span>)    <span class="comment">// 匹配非元音字母</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[0-9]+&#x27;</span>)      <span class="comment">// 匹配一个或多个数字</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[a-zA-Z_]&#x27;</span>)   <span class="comment">// 匹配字母或下划线</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[^a-zA-Z0-9]&#x27;</span>) <span class="comment">// 匹配非字母数字字符</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>总结：<code>[]</code> 就是用来定义一组字符选择的容器！</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/knows/MarkDown%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/12/knows/MarkDown%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">MarkDown学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 10:48:27" itemprop="dateCreated datePublished" datetime="2025-05-12T10:48:27+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-13 09:26:20" itemprop="dateModified" datetime="2025-05-13T09:26:20+08:00">2025-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="标题学习"><a href="#标题学习" class="headerlink" title="标题学习"></a>标题学习</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br></pre></td></tr></table></figure>
-
-<h3 id="列表学习"><a href="#列表学习" class="headerlink" title="列表学习"></a>列表学习</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 无序列表</span><br><span class="line">- 无序列表</span><br><span class="line">- 无序列表</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表</span><br><span class="line">2. 有序列表</span><br><span class="line">3. 有序列表</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用学习"><a href="#引用学习" class="headerlink" title="引用学习"></a>引用学习</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 引用学习</span><br></pre></td></tr></table></figure>
-
-<h3 id="分割线学习"><a href="#分割线学习" class="headerlink" title="分割线学习"></a>分割线学习</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片学习"><a href="#图片学习" class="headerlink" title="图片学习"></a>图片学习</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片名称](图片路径)</span><br></pre></td></tr></table></figure>
-
-<h3 id="超链接学习"><a href="#超链接学习" class="headerlink" title="超链接学习"></a>超链接学习</h3><pre><code>[超链接名称](超链接路径)
-
-或者 跳转到新的窗口
-[超链接名称](超链接路径 &quot;新窗口&quot;)&#123;target=&quot;_blank&quot;&#125;
-
-### 代码学习
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```代码语言</span><br><span class="line">代码内容</span><br></pre></td></tr></table></figure>
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1203,7 +1126,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1214,7 +1137,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
