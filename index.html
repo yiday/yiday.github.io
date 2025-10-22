@@ -173,6 +173,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/10/22/knows/os/VTDecoderXPCService%E6%98%AF%E4%BB%80%E4%B9%88%E8%BF%9B%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/10/22/knows/os/VTDecoderXPCService%E6%98%AF%E4%BB%80%E4%B9%88%E8%BF%9B%E7%A8%8B/" class="post-title-link" itemprop="url">VTDecoderXPCService是什么进程? 为什么占用 4GB 内存？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-10-22 10:48:27 / 修改时间：16:21:33" itemprop="dateCreated datePublished" datetime="2025-10-22T10:48:27+08:00">2025-10-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>VTDecoderXPCService 是 macOS 系统中负责<strong>视频解码与处理</strong>的核心进程，尤其关联 QuickTime、动态屏保、视频聊天等场景。它通过 XPC 机制独立运行，避免视频处理崩溃影响主系统，但在特定情况下会出现内存占用异常——有用户反馈该进程甚至能占用 6GB 以上内存，导致系统卡顿。</p>
+<h3 id="一、核心功能：视频处理的“幕后工作者”"><a href="#一、核心功能：视频处理的“幕后工作者”" class="headerlink" title="一、核心功能：视频处理的“幕后工作者”"></a>一、核心功能：视频处理的“幕后工作者”</h3><p>该进程的主要职责包括：</p>
+<ul>
+<li><strong>硬件加速解码</strong>：调用 macOS 视频工具箱（Video Toolbox）框架，处理 H.264、HEVC 等格式的视频流</li>
+<li><strong>动态内容渲染</strong>：支持 macOS Sonoma 新增的<strong>动态屏幕保护程序</strong>（如慢镜头风景视频）</li>
+<li><strong>第三方应用协作</strong>：为微信、浏览器等应用提供视频预览和通话的解码能力，例如微信视频聊天时会触发其后台运行</li>
+</ul>
+<p>正常情况下，进程内存占用应在 100MB-500MB 范围内，退出视频相关应用后会自动释放资源。</p>
+<h3 id="二、内存异常的典型场景与成因"><a href="#二、内存异常的典型场景与成因" class="headerlink" title="二、内存异常的典型场景与成因"></a>二、内存异常的典型场景与成因</h3><ol>
+<li><p><strong>动态屏保的“内存泄漏”</strong><br>macOS Sonoma 引入的动态视频屏保是最常见诱因。用户发现启用后，VTDecoderXPCService 内存占用会持续累积且无法自动回收，即使关闭屏幕保护后仍驻留内存。有推测这是系统为减少硬盘读写而采用的缓存策略，但实际导致资源浪费。</p>
+</li>
+<li><p><strong>第三方应用的持续调用</strong><br>微信等应用的视频预览功能可能导致进程长期活跃。某用户观察到：“随着微信的登陆，VTDecoderXPCService 就启动起来，偶尔 CPU 占用飙到 30%+”。即使未主动发起视频通话，后台消息中的视频缩略图处理也可能触发内存累积。</p>
+</li>
+<li><p><strong>系统版本兼容性问题</strong><br>从用户反馈看，内存异常集中出现在 macOS 14（Sonoma）版本，16GB&#x2F;32GB 内存机型同样受影响，说明可能与新系统的视频处理逻辑缺陷相关。</p>
+</li>
+</ol>
+<h3 id="三、临时解决方案与优化建议"><a href="#三、临时解决方案与优化建议" class="headerlink" title="三、临时解决方案与优化建议"></a>三、临时解决方案与优化建议</h3><h4 id="1-快速缓解：手动终止与限制自启"><a href="#1-快速缓解：手动终止与限制自启" class="headerlink" title="1. 快速缓解：手动终止与限制自启"></a>1. 快速缓解：手动终止与限制自启</h4><ul>
+<li><strong>强制退出</strong>：打开「活动监视器」→ 搜索 <code>VTDecoderXPCService</code> → 点击「退出进程」，内存占用会立即释放（但可能被应用再次唤起）</li>
+<li><strong>禁用动态屏保</strong>：系统设置 → 桌面与屏幕保护程序 → 屏幕保护程序 → 选择静态图片或关闭，可彻底避免视频屏保导致的内存问题</li>
+</ul>
+<h4 id="2-长期优化：应用与系统管理"><a href="#2-长期优化：应用与系统管理" class="headerlink" title="2. 长期优化：应用与系统管理"></a>2. 长期优化：应用与系统管理</h4><ul>
+<li><strong>更新软件</strong>：将微信等关联应用升级至最新版本，某案例显示微信更新后视频预览导致的内存泄漏问题显著改善</li>
+<li><strong>系统降级&#x2F;更新</strong>：若使用 Sonoma 问题严重，可考虑降级至 macOS Ventura；或等待 Apple 推送修复更新（关注系统偏好设置中的「软件更新」）</li>
+<li><strong>监控后台调用</strong>：通过「活动监视器」的「样本」功能，查看该进程被哪些应用触发（如微信、Safari 等），针对性限制应用的视频权限</li>
+</ul>
+<h3 id="四、根本解决：等待系统修复"><a href="#四、根本解决：等待系统修复" class="headerlink" title="四、根本解决：等待系统修复"></a>四、根本解决：等待系统修复</h3><p>从技术本质看，当前内存异常更可能是 macOS Sonoma 的「设计缺陷」而非硬件问题。正如用户吐槽：“你一个动态屏幕本来就是额外的东西，还要占用系统内存资源就太夸张了，关键你要主动回收啊”。建议受影响用户通过 Apple 反馈助手提交问题报告，推动官方修复。</p>
+<p>毕竟在 8GB 内存的 Mac 机型上，一个视频处理进程吃掉 6GB 内存的情况，显然违背了 macOS “高效利用资源”的设计初衷。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/09/22/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AFmcp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1453,81 +1547,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/07/02/knows/node&js/npm%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/07/02/knows/node&js/npm%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">npm相关</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-07-02 16:00:27 / 修改时间：16:50:03" itemprop="dateCreated datePublished" datetime="2025-07-02T16:00:27+08:00">2025-07-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="项目运行在-node-18-下出错"><a href="#项目运行在-node-18-下出错" class="headerlink" title="项目运行在 node 18 下出错"></a>项目运行在 node 18 下出错</h3><p>16 下正常，但 18 下出错</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">用18会提示node:internal/crypto/hash:67</span><br><span class="line">this[kHandle] = new _Hash(algorithm, xofLen);</span><br><span class="line">^</span><br><span class="line"></span><br><span class="line">Error: error:0308010C:digital envelope routines::unsupported</span><br><span class="line">at new Hash (node:internal/crypto/hash:67:19)</span><br><span class="line">at Object.createHash (node:crypto:133:10)</span><br><span class="line">at BulkUpdateDecorator.hashFactory (/Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:184161:18)</span><br><span class="line">at BulkUpdateDecorator.update (/Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:184062:50)</span><br><span class="line">at /Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:107101:9</span><br><span class="line">at /Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:33829:16</span><br><span class="line">at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) &#123;</span><br><span class="line">opensslErrorStack: [ <span class="string">&#x27;error:03000086:digital envelope routines::initialization error&#x27;</span> ],</span><br><span class="line">library: <span class="string">&#x27;digital envelope routines&#x27;</span>,</span><br><span class="line">reason: <span class="string">&#x27;unsupported&#x27;</span>,</span><br><span class="line">code: <span class="string">&#x27;ERR_OSSL_EVP_UNSUPPORTED&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Node.js v18.0.0</span><br></pre></td></tr></table></figure>
-
-<p>可以在命令行下直接运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_OPTIONS=<span class="string">&quot;--openssl-legacy-provider --max-old-space-size=8192&quot;</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-
-<p>在.env.local 下运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NODE_OPTIONS=--openssl-legacy-provider --max-old-space-size=8192</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1597,7 +1616,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
