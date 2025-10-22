@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yiday.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="“敞口”是一个在金融领域非常常用的术语，英文对应的是 Exposure。 简单来说，“敞口”指的是你（或你的投资组合）在某个特定风险因素面前暴露的程度，也就是你可能因此遭受损失或获得收益的“风险&#x2F;机会规模”。 你可以把它理解为 “风险暴露” 或 “风险暴露头寸”。  🌰 举个通俗的例子：假设你买了 100 股腾讯的股票，每股 500 元，总共投入 5 万元。  你的“腾讯股票敞口”就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是敞口">
+<meta property="og:url" content="https://yiday.github.io/2025/09/17/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E5%8F%AB%E6%95%9E%E5%8F%A3/index.html">
+<meta property="og:site_name" content="海量图书馆">
+<meta property="og:description" content="“敞口”是一个在金融领域非常常用的术语，英文对应的是 Exposure。 简单来说，“敞口”指的是你（或你的投资组合）在某个特定风险因素面前暴露的程度，也就是你可能因此遭受损失或获得收益的“风险&#x2F;机会规模”。 你可以把它理解为 “风险暴露” 或 “风险暴露头寸”。  🌰 举个通俗的例子：假设你买了 100 股腾讯的股票，每股 500 元，总共投入 5 万元。  你的“腾讯股票敞口”就是">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-17T00:48:27.000Z">
+<meta property="article:modified_time" content="2025-09-17T01:18:46.675Z">
+<meta property="article:author" content="Share Library">
+<meta property="article:tag" content="投资">
+<meta property="article:tag" content="股票">
+<meta property="article:tag" content="敞口">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yiday.github.io/2025/09/17/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E5%8F%AB%E6%95%9E%E5%8F%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是敞口 | 海量图书馆</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">海量图书馆</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/09/17/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E5%8F%AB%E6%95%9E%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是敞口
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-09-17 08:48:27 / 修改时间：09:18:46" itemprop="dateCreated datePublished" datetime="2025-09-17T08:48:27+08:00">2025-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>“敞口”是一个在金融领域非常常用的术语，英文对应的是 <strong>Exposure</strong>。</p>
+<p>简单来说，<strong>“敞口”指的是你（或你的投资组合）在某个特定风险因素面前暴露的程度，也就是你可能因此遭受损失或获得收益的“风险&#x2F;机会规模”</strong>。</p>
+<p>你可以把它理解为 <strong>“风险暴露”</strong> 或 <strong>“风险暴露头寸”</strong>。</p>
+<hr>
+<h3 id="🌰-举个通俗的例子："><a href="#🌰-举个通俗的例子：" class="headerlink" title="🌰 举个通俗的例子："></a>🌰 举个通俗的例子：</h3><p>假设你买了 100 股腾讯的股票，每股 500 元，总共投入 5 万元。</p>
+<ul>
+<li><strong>你的“腾讯股票敞口”就是 5 万元</strong>。</li>
+<li>这意味着：腾讯股价每上涨 1%，你赚 500 元；每下跌 1%，你就亏 500 元。</li>
+<li>你在这 5 万元上，完全“暴露”在腾讯股价波动的风险（和机会）之下。</li>
+</ul>
+<hr>
+<h3 id="🔍-常见的“敞口”类型："><a href="#🔍-常见的“敞口”类型：" class="headerlink" title="🔍 常见的“敞口”类型："></a>🔍 常见的“敞口”类型：</h3><table>
+<thead>
+<tr>
+<th align="left">敞口类型</th>
+<th align="left">含义</th>
+<th align="left">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>市场敞口</strong></td>
+<td align="left">对整体市场波动的风险暴露</td>
+<td align="left">你持有 A 股，就对 A 股市场有敞口</td>
+</tr>
+<tr>
+<td align="left"><strong>行业敞口</strong></td>
+<td align="left">对某个行业的风险暴露</td>
+<td align="left">你重仓新能源车股票，就对新能源行业有高敞口</td>
+</tr>
+<tr>
+<td align="left"><strong>个股敞口</strong></td>
+<td align="left">对某一只股票的风险暴露</td>
+<td align="left">你持有大量茅台股票，茅台就是你的“个股敞口”</td>
+</tr>
+<tr>
+<td align="left"><strong>货币敞口</strong></td>
+<td align="left">对汇率波动的风险暴露</td>
+<td align="left">你投资了美股，就对美元&#x2F;人民币汇率有敞口</td>
+</tr>
+<tr>
+<td align="left"><strong>利率敞口</strong></td>
+<td align="left">对利率变化的风险暴露</td>
+<td align="left">银行放贷多，就对利率下行有敞口（利息收入减少）</td>
+</tr>
+<tr>
+<td align="left"><strong>信用敞口</strong></td>
+<td align="left">对借款人违约的风险暴露</td>
+<td align="left">银行借给某公司 1 亿，这 1 亿就是信用敞口</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="📌-在之前关于-NVDY-ETF-的讨论中，“敞口”是什么意思？"><a href="#📌-在之前关于-NVDY-ETF-的讨论中，“敞口”是什么意思？" class="headerlink" title="📌 在之前关于 NVDY ETF 的讨论中，“敞口”是什么意思？"></a>📌 在之前关于 NVDY ETF 的讨论中，“敞口”是什么意思？</h3><p>我们说 NVDY “复制英伟达的敞口”，意思是：</p>
+<blockquote>
+<p>NVDY 虽然不直接买英伟达的股票，但它通过期货、期权等工具，让自己基金的表现<strong>尽可能地跟随英伟达股价的涨跌</strong>。也就是说，投资者通过买 NVDY，就“暴露”在了英伟达股价波动的风险和机会中——这就是获得了“英伟达的敞口”。</p>
+</blockquote>
+<hr>
+<h3 id="✅-总结一句话："><a href="#✅-总结一句话：" class="headerlink" title="✅ 总结一句话："></a>✅ 总结一句话：</h3><blockquote>
+<p><strong>“敞口”就是你“押了多少钱”在某个风险上。敞口越大，潜在的收益和亏损空间就越大。</strong></p>
+</blockquote>
+<p>理解“敞口”有助于你评估投资组合的风险集中度，避免把所有鸡蛋放在一个篮子里。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%95%E8%B5%84/" rel="tag"># 投资</a>
+              <a href="/tags/%E8%82%A1%E7%A5%A8/" rel="tag"># 股票</a>
+              <a href="/tags/%E6%95%9E%E5%8F%A3/" rel="tag"># 敞口</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/09/12/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%A0%E9%87%8F/" rel="prev" title="什么是张量">
+      <i class="fa fa-chevron-left"></i> 什么是张量
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/09/22/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AFaigc/" rel="next" title="什么是AIGC">
+      什么是AIGC <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8C%B0-%E4%B8%BE%E4%B8%AA%E9%80%9A%E4%BF%97%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">🌰 举个通俗的例子：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%8D-%E5%B8%B8%E8%A7%81%E7%9A%84%E2%80%9C%E6%95%9E%E5%8F%A3%E2%80%9D%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">🔍 常见的“敞口”类型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%8C-%E5%9C%A8%E4%B9%8B%E5%89%8D%E5%85%B3%E4%BA%8E-NVDY-ETF-%E7%9A%84%E8%AE%A8%E8%AE%BA%E4%B8%AD%EF%BC%8C%E2%80%9C%E6%95%9E%E5%8F%A3%E2%80%9D%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">📌 在之前关于 NVDY ETF 的讨论中，“敞口”是什么意思？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93%E4%B8%80%E5%8F%A5%E8%AF%9D%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">✅ 总结一句话：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Share Library</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Share Library</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

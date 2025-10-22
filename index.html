@@ -173,6 +173,666 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/09/22/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AFmcp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/09/22/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AFmcp/" class="post-title-link" itemprop="url">什么是MCP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-09-22 10:48:27 / 修改时间：17:02:12" itemprop="dateCreated datePublished" datetime="2025-09-22T10:48:27+08:00">2025-09-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>MCP（Model Context Protocol，模型上下文协议）是 AI 领域的一种<strong>开放标准通信协议</strong>，由 Anthropic 于 2024 年 11 月率先提出，旨在解决大模型（LLM）与外部工具、数据源交互的标准化问题。其核心价值是通过统一接口打破“信息孤岛”，简化开发流程，实现“即插即用”的 AI 应用扩展。</p>
+<p>以下是关键要点解析：</p>
+<hr>
+<h3 id="一、MCP-的核心功能与设计目标"><a href="#一、MCP-的核心功能与设计目标" class="headerlink" title="一、MCP 的核心功能与设计目标"></a><strong>一、MCP 的核心功能与设计目标</strong></h3><ol>
+<li><p><strong>统一交互标准</strong></p>
+<ul>
+<li>传统 AI 工具集成需针对不同 API 编写定制化代码，开发成本高、复用性低（N×M 复杂度）；而 MCP 定义通用协议，使工具与模型的交互标准化（N+M 复杂度），显著降低开发门槛。</li>
+<li><strong>类比说明</strong>：<ul>
+<li>类似<strong>USB-C 接口</strong>，统一不同设备的连接方式。</li>
+<li>或像<strong>万能遥控器</strong>，协调多设备协作（如“观影模式”自动关灯+开投影仪）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>动态扩展能力</strong></p>
+<ul>
+<li>MCP 允许模型动态发现并调用新工具：例如新增日历服务时，AI 无需修改代码即可直接调用。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、核心架构与工作流程"><a href="#二、核心架构与工作流程" class="headerlink" title="二、核心架构与工作流程"></a><strong>二、核心架构与工作流程</strong></h3><p>MCP 采用<strong>客户端-服务器模型</strong>，包含三个角色：  </p>
+<table>
+<thead>
+<tr>
+<th><strong>组件</strong></th>
+<th><strong>功能</strong></th>
+<th><strong>实例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>MCP 主机（Host）</strong></td>
+<td>用户交互界面（如聊天机器人、IDE 插件）</td>
+<td>Claude Desktop、Cursor IDE</td>
+</tr>
+<tr>
+<td><strong>MCP 客户端（Client）</strong></td>
+<td>集成于主机，管理连接与协议解析</td>
+<td>内嵌于 IDE 的通信模块</td>
+</tr>
+<tr>
+<td><strong>MCP 服务器（Server）</strong></td>
+<td>提供工具或数据访问的轻量服务（如数据库、API、本地文件）</td>
+<td>GitHub MCP Server、Slack MCP 工具包</td>
+</tr>
+</tbody></table>
+<p><strong>工作流程</strong>：</p>
+<ol>
+<li>主机通过客户端发现可用服务器，获取工具描述（名称&#x2F;参数&#x2F;功能）；</li>
+<li>用户提问 → 模型生成标准化调用指令 → 发送至 MCP 服务器；</li>
+<li>服务器执行操作（如查询数据库）→ 返回结果 → 模型生成最终回复。</li>
+</ol>
+<hr>
+<h3 id="三、实际应用场景与案例"><a href="#三、实际应用场景与案例" class="headerlink" title="三、实际应用场景与案例"></a><strong>三、实际应用场景与案例</strong></h3><ul>
+<li><strong>开发效率提升</strong>：<ul>
+<li>在 Cursor IDE 中连接 Postgres MCP Server，直接执行 SQL 查询，无需切换工具。</li>
+</ul>
+</li>
+<li><strong>智能工作流</strong>：<ul>
+<li>企业客服系统通过 MCP 整合订单数据库+物流 API，自动回复用户“包裹状态”。</li>
+</ul>
+</li>
+<li><strong>多模型协作</strong>：<ul>
+<li>调用图像生成 MCP 服务器（如 Replicate），为代码项目自动生成界面设计。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="四、与其他技术的区别"><a href="#四、与其他技术的区别" class="headerlink" title="四、与其他技术的区别"></a><strong>四、与其他技术的区别</strong></h3><table>
+<thead>
+<tr>
+<th><strong>技术</strong></th>
+<th><strong>定位</strong></th>
+<th><strong>与 MCP 的关系</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Function Calling</strong></td>
+<td>单模型调用的功能模块（如 OpenAI 工具调用）</td>
+<td>MCP 的底层实现基础之一，但仅限单一模型。</td>
+</tr>
+<tr>
+<td><strong>AI Agent</strong></td>
+<td>能自主决策的智能系统</td>
+<td>依赖 MCP 调用工具完成复杂任务（如决策+执行链）。</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="五、当前生态与挑战"><a href="#五、当前生态与挑战" class="headerlink" title="五、当前生态与挑战"></a><strong>五、当前生态与挑战</strong></h3><ol>
+<li><strong>生态进展</strong>：<ul>
+<li><strong>巨头支持</strong>：OpenAI、谷歌、阿里、字节等均宣布兼容 MCP 协议。</li>
+<li><strong>工具市场</strong>：高德地图、微信读书等已推出官方 MCP 服务器。</li>
+</ul>
+</li>
+<li><strong>现存挑战</strong>：<ul>
+<li><strong>安全性风险</strong>：恶意服务器可通过提示词投毒攻击模型（如强制输出特定内容）。</li>
+<li><strong>协议成熟度</strong>：部分开发者认为 MCP“为统一而统一”，实际工具复用率仍待验证。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a><strong>六、总结</strong></h3><p>MCP 通过<strong>标准化协议</strong>解决了大模型与外部世界的连接难题，成为 AI Agent 落地的关键技术支撑。其价值在于：<br>✅ <strong>降低开发成本</strong>：避免重复编写工具适配代码；<br>✅ <strong>增强模型能力</strong>：实时获取外部数据（如天气&#x2F;股票）；<br>✅ <strong>促进生态协同</strong>：推动工具服务商与模型厂商开放协作。</p>
+<blockquote>
+<p>注：更多技术细节可参考 <a target="_blank" rel="noopener" href="https://modelcontextprotocol.io/">MCP 官方文档</a> 或开源项目实践（如 <a target="_blank" rel="noopener" href="https://github.com/qqqqqcy/mcp-demo">MCP-Demo</a>）。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/09/22/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AFaigc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/09/22/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AFaigc/" class="post-title-link" itemprop="url">什么是AIGC</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-09-22 09:48:27 / 修改时间：09:53:11" itemprop="dateCreated datePublished" datetime="2025-09-22T09:48:27+08:00">2025-09-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>AIGC（Artificial Intelligence Generated Content，人工智能生成内容）是继 PGC（专业生产内容）和 UGC（用户生产内容）之后的第三代内容创作范式，通过 AI 算法自动生成文本、图像、音频、视频、3D 模型等多模态内容。其核心在于利用生成对抗网络（GAN）、扩散模型（Diffusion）、大语言模型（LLM）等技术，从数据中学习规律并创造新内容。以下从技术原理、应用场景、争议挑战及未来发展四个维度综合分析：</p>
+<hr>
+<h3 id="⚙️-一、技术原理与核心组件"><a href="#⚙️-一、技术原理与核心组件" class="headerlink" title="⚙️ 一、技术原理与核心组件"></a>⚙️ <strong>一、技术原理与核心组件</strong></h3><ol>
+<li><strong>生成模型架构</strong><ul>
+<li><strong>GAN（生成对抗网络）</strong>：通过生成器与判别器的对抗训练生成逼真内容（如图像、音频）。</li>
+<li><strong>扩散模型</strong>：从噪声逐步重构数据，生成高质量内容（如 Stable Diffusion、DALL·E）。</li>
+<li><strong>Transformer 与大语言模型（LLM）</strong>：基于预训练模型（如 GPT 系列）实现文本创作、代码生成等任务。</li>
+</ul>
+</li>
+<li><strong>多模态与跨模态技术</strong><ul>
+<li>整合文本、图像、视频等多类型数据，实现跨模态生成（如文生图、文生视频）。</li>
+<li><strong>RAG（检索增强生成）</strong>：结合信息检索与生成模型，提升内容准确性与深度。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="🌐-二、应用场景与行业变革"><a href="#🌐-二、应用场景与行业变革" class="headerlink" title="🌐 二、应用场景与行业变革"></a>🌐 <strong>二、应用场景与行业变革</strong></h3><table>
+<thead>
+<tr>
+<th><strong>领域</strong></th>
+<th><strong>典型应用</strong></th>
+<th><strong>案例&#x2F;工具</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>内容创作</strong></td>
+<td>自动生成新闻稿、营销文案、短视频脚本</td>
+<td>ChatGPT、通义千问</td>
+</tr>
+<tr>
+<td><strong>设计娱乐</strong></td>
+<td>AI 绘画、3D 建模、游戏角色生成、影视特效</td>
+<td>Midjourney、Sora、Unity AIGC 工具</td>
+</tr>
+<tr>
+<td><strong>教育医疗</strong></td>
+<td>个性化学习材料生成、医学影像分析报告</td>
+<td>AI 虚拟教师、医疗知识图谱</td>
+</tr>
+<tr>
+<td><strong>工业与科研</strong></td>
+<td>集成电路设计优化、科研文献摘要生成</td>
+<td>PRIME 深度学习框架</td>
+</tr>
+<tr>
+<td><strong>数字人服务</strong></td>
+<td>虚拟主播、AI 客服、康养监测（如跌倒报警）</td>
+<td>广州虚拟动力 3D 数字人</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>突破性价值</strong>：</p>
+<ul>
+<li><strong>效率提升</strong>：10 分钟生成 1000 条广告文案，成本降低 90%；</li>
+<li><strong>创新赋能</strong>：设计师用 AI 生成基础方案，聚焦创意优化。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="️-三、争议与挑战"><a href="#️-三、争议与挑战" class="headerlink" title="️ 三、争议与挑战"></a>️ <strong>三、争议与挑战</strong></h3><ol>
+<li><strong>内容真实性风险</strong><ul>
+<li><strong>虚假信息泛滥</strong>：深度伪造技术生成虚假新闻、视频，扰乱舆论。</li>
+<li><strong>学术伦理争议</strong>：多所高校引入 AIGC 查重系统（如四川大学要求 AIGC 率＜ 20%），但手写内容常被误判为 AI 生成。</li>
+</ul>
+</li>
+<li><strong>技术局限性</strong><ul>
+<li><strong>逻辑缺陷</strong>：依赖概率统计生成内容，缺乏因果推理能力（如医疗诊断可能出错）。</li>
+<li><strong>版权归属模糊</strong>：AI 生成作品版权界定不清，法律监管滞后。</li>
+</ul>
+</li>
+<li><strong>社会影响</strong><ul>
+<li><strong>信息过载</strong>：低质同质化内容淹没优质信息，用户筛选成本增加。</li>
+<li><strong>就业冲击</strong>：部分创意岗位可能被替代（如基础文案、插画师）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="🚀-四、未来发展方向"><a href="#🚀-四、未来发展方向" class="headerlink" title="🚀 四、未来发展方向"></a>🚀 <strong>四、未来发展方向</strong></h3><ol>
+<li><strong>技术融合创新</strong><ul>
+<li><strong>语义通信（SemCom）</strong>：提升无线网络中的 AIGC 传输效率，降低延迟。</li>
+<li><strong>边缘计算部署</strong>：在移动端部署轻量化模型（如手机实时生成 3D 内容）。</li>
+</ul>
+</li>
+<li><strong>治理与标准化</strong><ul>
+<li>中国推行《AIGC 内容标识办法》，要求平台标注“AI 生成合成”标识；</li>
+<li>欧盟《AI 法案》建立伦理框架，规范深度伪造使用。</li>
+</ul>
+</li>
+<li><strong>人机协同范式</strong><ul>
+<li><strong>认知套利模式</strong>：人类聚焦场景化转译与价值审核，AI 负责批量生产；</li>
+<li><strong>教育适配</strong>：高校课程融入 AIGC 工具教学（如提示词工程），培养“AI+专业”复合能力。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="💎-总结：颠覆性潜力与理性应对"><a href="#💎-总结：颠覆性潜力与理性应对" class="headerlink" title="💎 总结：颠覆性潜力与理性应对"></a>💎 <strong>总结：颠覆性潜力与理性应对</strong></h3><p>AIGC 的本质是<strong>生产力工具的革命</strong>，其核心价值在于释放人类创造力而非替代人类。当前需平衡三组关系：</p>
+<ul>
+<li><strong>效率与质量</strong>：利用 AI 提升内容产出规模，同时建立人工审核机制保障深度；</li>
+<li><strong>开放与治理</strong>：鼓励技术开源（如 ComfyUI 社区），同步完善法律与伦理规范；</li>
+<li><strong>工具与主体</strong>：避免陷入“技术万能”误区，明确“人类决策+AI 执行”的协作边界。</li>
+</ul>
+<blockquote>
+<p><strong>行动建议</strong>：</p>
+<ul>
+<li>开发者：深耕多模态模型优化与垂直场景落地（如工业设计、医疗影像）；</li>
+<li>普通用户：掌握提示词设计、跨工具工作流整合（如 Midjourney+PS 后期）；</li>
+<li>政策制定者：加速数据安全立法，建立 AIGC 内容溯源机制。</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/09/17/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E5%8F%AB%E6%95%9E%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/09/17/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E5%8F%AB%E6%95%9E%E5%8F%A3/" class="post-title-link" itemprop="url">什么是敞口</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-09-17 08:48:27 / 修改时间：09:18:46" itemprop="dateCreated datePublished" datetime="2025-09-17T08:48:27+08:00">2025-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>“敞口”是一个在金融领域非常常用的术语，英文对应的是 <strong>Exposure</strong>。</p>
+<p>简单来说，<strong>“敞口”指的是你（或你的投资组合）在某个特定风险因素面前暴露的程度，也就是你可能因此遭受损失或获得收益的“风险&#x2F;机会规模”</strong>。</p>
+<p>你可以把它理解为 <strong>“风险暴露”</strong> 或 <strong>“风险暴露头寸”</strong>。</p>
+<hr>
+<h3 id="🌰-举个通俗的例子："><a href="#🌰-举个通俗的例子：" class="headerlink" title="🌰 举个通俗的例子："></a>🌰 举个通俗的例子：</h3><p>假设你买了 100 股腾讯的股票，每股 500 元，总共投入 5 万元。</p>
+<ul>
+<li><strong>你的“腾讯股票敞口”就是 5 万元</strong>。</li>
+<li>这意味着：腾讯股价每上涨 1%，你赚 500 元；每下跌 1%，你就亏 500 元。</li>
+<li>你在这 5 万元上，完全“暴露”在腾讯股价波动的风险（和机会）之下。</li>
+</ul>
+<hr>
+<h3 id="🔍-常见的“敞口”类型："><a href="#🔍-常见的“敞口”类型：" class="headerlink" title="🔍 常见的“敞口”类型："></a>🔍 常见的“敞口”类型：</h3><table>
+<thead>
+<tr>
+<th align="left">敞口类型</th>
+<th align="left">含义</th>
+<th align="left">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>市场敞口</strong></td>
+<td align="left">对整体市场波动的风险暴露</td>
+<td align="left">你持有 A 股，就对 A 股市场有敞口</td>
+</tr>
+<tr>
+<td align="left"><strong>行业敞口</strong></td>
+<td align="left">对某个行业的风险暴露</td>
+<td align="left">你重仓新能源车股票，就对新能源行业有高敞口</td>
+</tr>
+<tr>
+<td align="left"><strong>个股敞口</strong></td>
+<td align="left">对某一只股票的风险暴露</td>
+<td align="left">你持有大量茅台股票，茅台就是你的“个股敞口”</td>
+</tr>
+<tr>
+<td align="left"><strong>货币敞口</strong></td>
+<td align="left">对汇率波动的风险暴露</td>
+<td align="left">你投资了美股，就对美元&#x2F;人民币汇率有敞口</td>
+</tr>
+<tr>
+<td align="left"><strong>利率敞口</strong></td>
+<td align="left">对利率变化的风险暴露</td>
+<td align="left">银行放贷多，就对利率下行有敞口（利息收入减少）</td>
+</tr>
+<tr>
+<td align="left"><strong>信用敞口</strong></td>
+<td align="left">对借款人违约的风险暴露</td>
+<td align="left">银行借给某公司 1 亿，这 1 亿就是信用敞口</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="📌-在之前关于-NVDY-ETF-的讨论中，“敞口”是什么意思？"><a href="#📌-在之前关于-NVDY-ETF-的讨论中，“敞口”是什么意思？" class="headerlink" title="📌 在之前关于 NVDY ETF 的讨论中，“敞口”是什么意思？"></a>📌 在之前关于 NVDY ETF 的讨论中，“敞口”是什么意思？</h3><p>我们说 NVDY “复制英伟达的敞口”，意思是：</p>
+<blockquote>
+<p>NVDY 虽然不直接买英伟达的股票，但它通过期货、期权等工具，让自己基金的表现<strong>尽可能地跟随英伟达股价的涨跌</strong>。也就是说，投资者通过买 NVDY，就“暴露”在了英伟达股价波动的风险和机会中——这就是获得了“英伟达的敞口”。</p>
+</blockquote>
+<hr>
+<h3 id="✅-总结一句话："><a href="#✅-总结一句话：" class="headerlink" title="✅ 总结一句话："></a>✅ 总结一句话：</h3><blockquote>
+<p><strong>“敞口”就是你“押了多少钱”在某个风险上。敞口越大，潜在的收益和亏损空间就越大。</strong></p>
+</blockquote>
+<p>理解“敞口”有助于你评估投资组合的风险集中度，避免把所有鸡蛋放在一个篮子里。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/09/12/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%A0%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/09/12/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%A0%E9%87%8F/" class="post-title-link" itemprop="url">什么是张量</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-09-12 15:48:27 / 修改时间：10:54:36" itemprop="dateCreated datePublished" datetime="2025-09-12T15:48:27+08:00">2025-09-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>“<strong>张量</strong>”（Tensor）是一个在<strong>数学、物理和人工智能</strong>（尤其是深度学习）中非常重要的概念。它的含义在不同领域略有不同，但核心思想一致。</p>
+<p>我们从易到难，逐步解释：</p>
+<hr>
+<h3 id="一、通俗理解：张量就是“多维数组”"><a href="#一、通俗理解：张量就是“多维数组”" class="headerlink" title="一、通俗理解：张量就是“多维数组”"></a>一、通俗理解：张量就是“多维数组”</h3><p>你可以把张量理解为<strong>数字的容器</strong>，根据维度不同，分为：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>名称</th>
+<th>例子</th>
+<th>类比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 维</td>
+<td><strong>标量</strong>（Scalar）</td>
+<td>一个数字，如 <code>5</code>、<code>3.14</code></td>
+<td>只有大小，没有方向</td>
+</tr>
+<tr>
+<td>1 维</td>
+<td><strong>向量</strong>（Vector）</td>
+<td><code>[1, 2, 3]</code></td>
+<td>一列数字，像 Excel 的一列</td>
+</tr>
+<tr>
+<td>2 维</td>
+<td><strong>矩阵</strong>（Matrix）</td>
+<td><code>[[1,2], [3,4]]</code></td>
+<td>像 Excel 的表格（行和列）</td>
+</tr>
+<tr>
+<td>3 维</td>
+<td>3D 张量</td>
+<td><code>[[[1,2],[3,4]], [[5,6],[7,8]]]</code></td>
+<td>像一堆矩阵叠在一起</td>
+</tr>
+<tr>
+<td>4 维及以上</td>
+<td>高维张量</td>
+<td>常用于图像、视频、批量数据</td>
+<td>多层“数据立方体”</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>✅ <strong>张量 &#x3D; 多维数组</strong>，是标量、向量、矩阵的<strong>推广</strong>。</p>
+</blockquote>
+<hr>
+<h3 id="二、举个生活中的例子-🌰"><a href="#二、举个生活中的例子-🌰" class="headerlink" title="二、举个生活中的例子 🌰"></a>二、举个生活中的例子 🌰</h3><h4 id="例子-1：一张灰度图片"><a href="#例子-1：一张灰度图片" class="headerlink" title="例子 1：一张灰度图片"></a>例子 1：一张灰度图片</h4><ul>
+<li>大小是 28×28 像素</li>
+<li>每个像素是一个数字（0~255 表示黑白）</li>
+<li>它就是一个 <strong>2D 张量</strong>：形状为 <code>(28, 28)</code></li>
+</ul>
+<h4 id="例子-2：一张彩色图片（如-RGB）"><a href="#例子-2：一张彩色图片（如-RGB）" class="headerlink" title="例子 2：一张彩色图片（如 RGB）"></a>例子 2：一张彩色图片（如 RGB）</h4><ul>
+<li>大小 28×28，有 3 个颜色通道（红、绿、蓝）</li>
+<li>它是一个 <strong>3D 张量</strong>：形状为 <code>(28, 28, 3)</code></li>
+</ul>
+<h4 id="例子-3：一批彩色图片（如深度学习中）"><a href="#例子-3：一批彩色图片（如深度学习中）" class="headerlink" title="例子 3：一批彩色图片（如深度学习中）"></a>例子 3：一批彩色图片（如深度学习中）</h4><ul>
+<li>一次处理 32 张 28×28×3 的图片</li>
+<li>这就是一个 <strong>4D 张量</strong>：形状为 <code>(32, 28, 28, 3)</code><ul>
+<li>第一维：32 张图（批量大小）</li>
+<li>后三维：每张图的结构</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="三、在深度学习中的作用（如-TensorFlow、PyTorch）"><a href="#三、在深度学习中的作用（如-TensorFlow、PyTorch）" class="headerlink" title="三、在深度学习中的作用（如 TensorFlow、PyTorch）"></a>三、在深度学习中的作用（如 TensorFlow、PyTorch）</h3><p>在 AI 框架中：</p>
+<ul>
+<li>所有数据（图片、文字、音频）都会被转换成<strong>张量</strong></li>
+<li>神经网络的输入、输出、权重、梯度……全是张量</li>
+<li>所有计算（加减乘除、卷积、矩阵乘）都是在张量上进行的</li>
+</ul>
+<blockquote>
+<p>🔧 例如：<br>你输入一张猫的图片 → 被转成一个 4D 张量 → 经过神经网络层层计算 → 输出一个 1D 张量表示“是猫的概率”</p>
+</blockquote>
+<hr>
+<h3 id="四、数学-物理中的张量（进阶理解）"><a href="#四、数学-物理中的张量（进阶理解）" class="headerlink" title="四、数学&#x2F;物理中的张量（进阶理解）"></a>四、数学&#x2F;物理中的张量（进阶理解）</h3><p>在物理和微分几何中，张量更强调<strong>在坐标变换下保持不变的性质</strong>，用于描述：</p>
+<ul>
+<li>应力、应变（工程）</li>
+<li>电磁场（物理）</li>
+<li>时空弯曲（广义相对论）</li>
+</ul>
+<blockquote>
+<p>⚠️ 这个定义更抽象，涉及“协变”“逆变”等概念，普通用户了解即可。</p>
+</blockquote>
+<hr>
+<h3 id="五、关键概念总结"><a href="#五、关键概念总结" class="headerlink" title="五、关键概念总结"></a>五、关键概念总结</h3><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>形状（Shape）</strong></td>
+<td>张量的维度结构，如 <code>(3, 4)</code> 表示 3 行 4 列</td>
+</tr>
+<tr>
+<td><strong>秩（Rank）</strong></td>
+<td>张量的维度数，如矩阵是秩为 2 的张量</td>
+</tr>
+<tr>
+<td><strong>数据类型（dtype）</strong></td>
+<td>张量中元素的类型，如 float32、int64</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="✅-总结一句话："><a href="#✅-总结一句话：" class="headerlink" title="✅ 总结一句话："></a>✅ 总结一句话：</h3><blockquote>
+<p><strong>张量就是“多维数组”，是表示和处理数据的通用工具，从一个数字到图像、视频、批量样本，都可以用张量来表示。</strong></p>
+</blockquote>
+<p>📌 在 AI 时代，你可以说：</p>
+<blockquote>
+<p>“<strong>张量是深度学习的血液</strong>”，几乎所有计算都围绕它展开。</p>
+</blockquote>
+<hr>
+<p>如果你在学习 PyTorch 或 TensorFlow，你会频繁看到：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])  <span class="comment"># 创建一个 2D 张量</span></span><br><span class="line"><span class="built_in">print</span>(x.shape)  <span class="comment"># 输出: torch.Size([2, 2])</span></span><br></pre></td></tr></table></figure>
+
+<p>这就是张量的实际使用方式。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/07/31/knows/ai/%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E9%9B%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -868,317 +1528,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/07/02/knows/flutter/%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/07/02/knows/flutter/%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95/" class="post-title-link" itemprop="url">常见目录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-07-02 11:00:27 / 修改时间：15:14:10" itemprop="dateCreated datePublished" datetime="2025-07-02T11:00:27+08:00">2025-07-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="常见目录"><a href="#常见目录" class="headerlink" title="常见目录"></a>常见目录</h3><h4 id="Android-标准目录说明："><a href="#Android-标准目录说明：" class="headerlink" title="Android 标准目录说明："></a>Android 标准目录说明：</h4><p>DCIM - 所有 Android 设备都有，相机默认存储目录<br>Pictures - 大部分设备有，但不是强制要求<br>Movies - 部分设备有，用于存储视频<br>Download - 所有设备都有，下载目录</p>
-<h4 id="IOS-标准目录说明："><a href="#IOS-标准目录说明：" class="headerlink" title="IOS 标准目录说明："></a>IOS 标准目录说明：</h4><p>iOS 没有传统的文件目录结构，使用相册概念<br>relativePath 在 iOS 上是相册名称，不是文件路径<br>权限管理更严格，需要专门的照片库权限<br>iOS 14+ 引入了有限权限模式<br>自定义相册创建失败时，应该有备用策略（保存到默认相册）<br>沙盒机制限制，只能通过系统 API 访问照片库<br>这就是为什么我们在处理 iOS 时需要与 Android 完全不同的策略！</p>
-<h5 id="应用沙盒"><a href="#应用沙盒" class="headerlink" title="应用沙盒"></a>应用沙盒</h5><p>应用沙盒&#x2F;<br>├── Documents&#x2F; # 用户文档，会被 iTunes 备份<br>├── Library&#x2F;<br>│ ├── Caches&#x2F; # 缓存文件，系统可能清理<br>│ └── Preferences&#x2F; # 应用偏好设置<br>├── tmp&#x2F; # 临时文件，系统会定期清理<br>└── SystemData&#x2F; # 系统数据（iOS 14+）</p>
-<h5 id="照片相册类型"><a href="#照片相册类型" class="headerlink" title="照片相册类型"></a>照片相册类型</h5><p>&#x2F;&#x2F; 系统预置相册（不能删除）<br>‘Camera Roll’ &#x2F;&#x2F; 相机胶卷（主相册）<br>‘Favorites’ &#x2F;&#x2F; 收藏<br>‘Recently Added’ &#x2F;&#x2F; 最近添加<br>‘Screenshots’ &#x2F;&#x2F; 屏幕截图<br>‘Selfies’ &#x2F;&#x2F; 自拍<br>‘Live Photos’ &#x2F;&#x2F; Live 照片<br>‘Portrait’ &#x2F;&#x2F; 人像<br>‘Panoramas’ &#x2F;&#x2F; 全景<br>‘Videos’ &#x2F;&#x2F; 视频<br>‘Slo-mo’ &#x2F;&#x2F; 慢动作<br>‘Time-lapse’ &#x2F;&#x2F; 延时摄影<br>‘Bursts’ &#x2F;&#x2F; 连拍<br>‘Recently Deleted’ &#x2F;&#x2F; 最近删除</p>
-<h5 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建/保存到自定义相册</span></span><br><span class="line"><span class="keyword">final</span> result = <span class="keyword">await</span> PhotoManager.editor.saveImage(</span><br><span class="line">  imageBytes,</span><br><span class="line">  filename: fileName,</span><br><span class="line">  title: fileName,</span><br><span class="line">  relativePath: <span class="string">&#x27;易动收藏&#x27;</span>, <span class="comment">// 相册名称，不是路径</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/06/11/knows/python/celery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/11/knows/python/celery/" class="post-title-link" itemprop="url">celery 使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-06-11 17:28:27" itemprop="dateCreated datePublished" datetime="2025-06-11T17:28:27+08:00">2025-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-07-03 15:25:57" itemprop="dateModified" datetime="2025-07-03T15:25:57+08:00">2025-07-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="celery-使用"><a href="#celery-使用" class="headerlink" title="celery 使用"></a>celery 使用</h3><p>beat 和 worker 一起使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A projectname worker -l DEBUG -B -l DEBUG</span><br></pre></td></tr></table></figure>
-
-<p>分开执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A projectname beat -l DEBUG</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A srereport worker -Q reports_queue -l DEBUG</span><br></pre></td></tr></table></figure>
-
-<p>上面的-Q 是配置了队列参数</p>
-<h3 id="有队列时，注意要在代码里加上队列名"><a href="#有队列时，注意要在代码里加上队列名" class="headerlink" title="有队列时，注意要在代码里加上队列名"></a>有队列时，注意要在代码里加上队列名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@shared_task(<span class="params">queue=<span class="string">&#x27;reports_queue&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">some_task</span>(<span class="params">method_type: <span class="built_in">str</span></span>):</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="根据-task-id-查看任务状态"><a href="#根据-task-id-查看任务状态" class="headerlink" title="根据 task_id 查看任务状态"></a>根据 task_id 查看任务状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A srereport inspect query_task 03ae7485-a86b-4d6d-aaee-1bda50978a26</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/" class="post-title-link" itemprop="url">Flutter基础组件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-30 14:00:27 / 修改时间：14:04:01" itemprop="dateCreated datePublished" datetime="2025-05-30T14:00:27+08:00">2025-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Completer"><a href="#Completer" class="headerlink" title="Completer"></a>Completer</h3><p>其作用是创建 Future 对象，并且能手动控制该对象的完成状态 1 。借助 Completer，开发者能够在异步操作完成后，将结果传递给对应的 Future 对象，这样依赖该 Future 的代码就可以继续执行。</p>
-<p>下面是一个简单的示例代码，展示了如何使用 Completer：</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:async&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="comment">// 创建一个 Completer 对象</span></span><br><span class="line">  Completer&lt;<span class="built_in">String</span>&gt; completer = Completer&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取 Completer 关联的 Future 对象</span></span><br><span class="line">  Future&lt;<span class="built_in">String</span>&gt; future = completer.future;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 为 Future 对象添加回调函数</span></span><br><span class="line">  future.then((value) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Future 完成，结果是: <span class="subst">$value</span>&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模拟异步操作</span></span><br><span class="line">  Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">2</span>), () &#123;</span><br><span class="line">    <span class="comment">// 完成 Completer，并传递结果</span></span><br><span class="line">    completer.complete(<span class="string">&#x27;操作完成&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个示例中，我们创建了一个 Completer 对象，获取其关联的 Future 对象，并为该 Future 添加了一个回调函数。接着模拟了一个异步操作，在操作完成后调用 completer.complete 方法，将结果传递给 Future ，触发回调函数的执行。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/30/knows/flutter/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">虚拟机相关</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-30 14:00:27" itemprop="dateCreated datePublished" datetime="2025-05-30T14:00:27+08:00">2025-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-06-04 21:52:38" itemprop="dateModified" datetime="2025-06-04T21:52:38+08:00">2025-06-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="手动启动虚拟机"><a href="#手动启动虚拟机" class="headerlink" title="手动启动虚拟机"></a>手动启动虚拟机</h3><h4 id="1-列出虚拟机"><a href="#1-列出虚拟机" class="headerlink" title="1. 列出虚拟机"></a>1. 列出虚拟机</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有已创建的虚拟设备</span></span><br><span class="line">emulator -list-avds</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用 avdmanager</span></span><br><span class="line">avdmanager list avd</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-启动虚拟机"><a href="#2-启动虚拟机" class="headerlink" title="2. 启动虚拟机"></a>2. 启动虚拟机</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本启动</span></span><br><span class="line">emulator -avd [AVD名称]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后台启动（不阻塞命令行）</span></span><br><span class="line">emulator -avd [AVD名称] &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Windows 后台启动</span></span><br><span class="line">start emulator -avd [AVD名称]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定分辨率启动</span></span><br><span class="line">emulator -avd [AVD名称] -skin 1080x1920</span><br><span class="line"></span><br><span class="line"><span class="comment"># 冷启动（清除状态）</span></span><br><span class="line">emulator -avd [AVD名称] -wipe-data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 无声启动</span></span><br><span class="line">emulator -avd [AVD名称] -no-audio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示详细日志</span></span><br><span class="line">emulator -avd [AVD名称] -verbose</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-性能相关"><a href="#3-性能相关" class="headerlink" title="3.性能相关"></a>3.性能相关</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用硬件加速</span></span><br><span class="line">emulator -avd [AVD名称] -gpu host</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分配更多内存</span></span><br><span class="line">emulator -avd [AVD名称] -memory 2048</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用多核支持</span></span><br><span class="line">emulator -avd [AVD名称] -cores 4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用快速启动</span></span><br><span class="line">emulator -avd [AVD名称] -no-snapshot-save</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1248,7 +1597,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1259,7 +1608,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
