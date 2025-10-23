@@ -173,6 +173,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">正则表达式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-12 10:48:27" itemprop="dateCreated datePublished" datetime="2025-05-12T10:48:27+08:00">2025-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-07-10 11:14:47" itemprop="dateModified" datetime="2025-07-10T11:14:47+08:00">2025-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="正则表达式基础"><a href="#正则表达式基础" class="headerlink" title="正则表达式基础"></a>正则表达式基础</h3><h4 id="表示什么？"><a href="#表示什么？" class="headerlink" title="[^&gt;]表示什么？"></a>[^&gt;]表示什么？</h4><h5 id="🔍-在正则表达式中的含义："><a href="#🔍-在正则表达式中的含义：" class="headerlink" title="🔍 [] 在正则表达式中的含义："></a>🔍 <strong><code>[]</code> 在正则表达式中的含义：</strong></h5><h5 id="字符类（Character-Class）"><a href="#字符类（Character-Class）" class="headerlink" title="字符类（Character Class）"></a><strong>字符类（Character Class）</strong></h5><p><code>[]</code> 表示<strong>字符类</strong>，用来定义一组可匹配的字符。</p>
+<h5 id="基本语法："><a href="#基本语法：" class="headerlink" title="基本语法："></a><strong>基本语法：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[abc]     <span class="comment">// 匹配 a 或 b 或 c 中的任意一个字符</span></span><br><span class="line">[a-z]     <span class="comment">// 匹配 a 到 z 的任意小写字母</span></span><br><span class="line">[<span class="number">0</span>-<span class="number">9</span>]     <span class="comment">// 匹配 0 到 9 的任意数字</span></span><br><span class="line">[A-Za-z]  <span class="comment">// 匹配任意大小写字母</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="否定字符类："><a href="#否定字符类：" class="headerlink" title="否定字符类："></a><strong>否定字符类：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[^abc]    <span class="comment">// 匹配除了 a、b、c 之外的任何字符</span></span><br><span class="line">[^<span class="number">0</span>-<span class="number">9</span>]    <span class="comment">// 匹配非数字字符</span></span><br><span class="line">[^&gt;]      <span class="comment">// 匹配除了 &gt; 之外的任何字符</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="在你的例子中："><a href="#在你的例子中：" class="headerlink" title="在你的例子中："></a><strong>在你的例子中：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^&gt;]*</span><br></pre></td></tr></table></figure>
+
+<p><strong>分解：</strong></p>
+<ul>
+<li><code>[^&gt;]</code> - <strong>字符类</strong>：匹配除了 <code>&gt;</code> 之外的任意一个字符</li>
+<li><code>*</code> - <strong>量词</strong>：表示前面的字符类可以出现 0 次或多次</li>
+</ul>
+<h5 id="实际匹配示例："><a href="#实际匹配示例：" class="headerlink" title="实际匹配示例："></a><strong>实际匹配示例：</strong></h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 原始HTML --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span> <span class="attr">data-rh</span>=<span class="string">&quot;true&quot;</span> <span class="attr">class</span>=<span class="string">&quot;page-title&quot;</span>&gt;</span>我的标题 - 知乎<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 正则匹配过程 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span> ← <span class="attr">匹配字面量</span> [^&gt;</span></span><br><span class="line">	]* ← 匹配 &quot; data-rh=\&quot;true\&quot; class=\&quot;page-title\&quot;&quot; &gt; ← 匹配标签结束符 (.*?)</span><br><span class="line">	← 捕获 &quot;我的标题&quot; - 知乎</span><br><span class="line"><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">← 匹配结尾</span><br></pre></td></tr></table></figure>
+
+<h5 id="其他字符类例子："><a href="#其他字符类例子：" class="headerlink" title="其他字符类例子："></a><strong>其他字符类例子：</strong></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[aeiou]&#x27;</span>)     <span class="comment">// 匹配元音字母</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[^aeiou]&#x27;</span>)    <span class="comment">// 匹配非元音字母</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[0-9]+&#x27;</span>)      <span class="comment">// 匹配一个或多个数字</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[a-zA-Z_]&#x27;</span>)   <span class="comment">// 匹配字母或下划线</span></span><br><span class="line"><span class="built_in">RegExp</span>(<span class="string">r&#x27;[^a-zA-Z0-9]&#x27;</span>) <span class="comment">// 匹配非字母数字字符</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：<code>[]</code> 就是用来定义一组字符选择的容器！</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/12/knows/MarkDown%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -346,7 +436,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -357,7 +447,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
