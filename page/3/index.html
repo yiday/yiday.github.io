@@ -173,6 +173,156 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/" class="post-title-link" itemprop="url">Flutter基础组件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-30 14:00:27 / 修改时间：14:04:01" itemprop="dateCreated datePublished" datetime="2025-05-30T14:00:27+08:00">2025-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Completer"><a href="#Completer" class="headerlink" title="Completer"></a>Completer</h3><p>其作用是创建 Future 对象，并且能手动控制该对象的完成状态 1 。借助 Completer，开发者能够在异步操作完成后，将结果传递给对应的 Future 对象，这样依赖该 Future 的代码就可以继续执行。</p>
+<p>下面是一个简单的示例代码，展示了如何使用 Completer：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:async&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="comment">// 创建一个 Completer 对象</span></span><br><span class="line">  Completer&lt;<span class="built_in">String</span>&gt; completer = Completer&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取 Completer 关联的 Future 对象</span></span><br><span class="line">  Future&lt;<span class="built_in">String</span>&gt; future = completer.future;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 为 Future 对象添加回调函数</span></span><br><span class="line">  future.then((value) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Future 完成，结果是: <span class="subst">$value</span>&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模拟异步操作</span></span><br><span class="line">  Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">2</span>), () &#123;</span><br><span class="line">    <span class="comment">// 完成 Completer，并传递结果</span></span><br><span class="line">    completer.complete(<span class="string">&#x27;操作完成&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们创建了一个 Completer 对象，获取其关联的 Future 对象，并为该 Future 添加了一个回调函数。接着模拟了一个异步操作，在操作完成后调用 completer.complete 方法，将结果传递给 Future ，触发回调函数的执行。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/30/knows/flutter/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">虚拟机相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-30 14:00:27" itemprop="dateCreated datePublished" datetime="2025-05-30T14:00:27+08:00">2025-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-06-04 21:52:38" itemprop="dateModified" datetime="2025-06-04T21:52:38+08:00">2025-06-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="手动启动虚拟机"><a href="#手动启动虚拟机" class="headerlink" title="手动启动虚拟机"></a>手动启动虚拟机</h3><h4 id="1-列出虚拟机"><a href="#1-列出虚拟机" class="headerlink" title="1. 列出虚拟机"></a>1. 列出虚拟机</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有已创建的虚拟设备</span></span><br><span class="line">emulator -list-avds</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用 avdmanager</span></span><br><span class="line">avdmanager list avd</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-启动虚拟机"><a href="#2-启动虚拟机" class="headerlink" title="2. 启动虚拟机"></a>2. 启动虚拟机</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本启动</span></span><br><span class="line">emulator -avd [AVD名称]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后台启动（不阻塞命令行）</span></span><br><span class="line">emulator -avd [AVD名称] &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Windows 后台启动</span></span><br><span class="line">start emulator -avd [AVD名称]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定分辨率启动</span></span><br><span class="line">emulator -avd [AVD名称] -skin 1080x1920</span><br><span class="line"></span><br><span class="line"><span class="comment"># 冷启动（清除状态）</span></span><br><span class="line">emulator -avd [AVD名称] -wipe-data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 无声启动</span></span><br><span class="line">emulator -avd [AVD名称] -no-audio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示详细日志</span></span><br><span class="line">emulator -avd [AVD名称] -verbose</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-性能相关"><a href="#3-性能相关" class="headerlink" title="3.性能相关"></a>3.性能相关</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用硬件加速</span></span><br><span class="line">emulator -avd [AVD名称] -gpu host</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分配更多内存</span></span><br><span class="line">emulator -avd [AVD名称] -memory 2048</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用多核支持</span></span><br><span class="line">emulator -avd [AVD名称] -cores 4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用快速启动</span></span><br><span class="line">emulator -avd [AVD名称] -no-snapshot-save</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/26/knows/flutter/%E5%8A%A0%E8%BD%BDassets%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -411,83 +561,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/" class="post-title-link" itemprop="url">视频播放测试地址</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-20 11:00:27 / 修改时间：18:28:37" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近在开发视频播放相关的业务功能，开发测试时，需要涉及到 MP4、M3U8 等视频格式。<br>我每次找测试视频地址时，都要找很久，现在把我在网上收集到的 MP4、M3U8 格式视频地址放在这里，希望帮助到正在进行视频播放开发的你。</p>
-<h3 id="MP4-格式"><a href="#MP4-格式" class="headerlink" title="MP4 格式"></a>MP4 格式</h3><p>海洋：<br><a target="_blank" rel="noopener" href="http://vjs.zencdn.net/v/oceans.mp4">http://vjs.zencdn.net/v/oceans.mp4</a></p>
-<p>西瓜视频 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4</a></p>
-<p>大兔子：<br><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/example/html5/mov_bbb.mp4">http://www.w3school.com.cn/example/html5/mov_bbb.mp4</a></p>
-<p>大灰熊：<br><a target="_blank" rel="noopener" href="https://www.w3schools.com/html/movie.mp4">https://www.w3schools.com/html/movie.mp4</a></p>
-<p>冰川：<br><a target="_blank" rel="noopener" href="https://media.w3.org/2010/05/sintel/trailer.mp4">https://media.w3.org/2010/05/sintel/trailer.mp4</a></p>
-<p>新闻视频 1：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209105011F0zPoYzHry.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209105011F0zPoYzHry.mp4</a></p>
-<p>新闻视频 2：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4</a></p>
-<h3 id="M3U8-格式"><a href="#M3U8-格式" class="headerlink" title="M3U8 格式"></a>M3U8 格式</h3><p>西瓜播放器 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8</a></p>
-<p>大白兔：<br><a target="_blank" rel="noopener" href="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -585,6 +658,83 @@
 <h3 id="如果-ios-目录被删除，应该怎么办？"><a href="#如果-ios-目录被删除，应该怎么办？" class="headerlink" title="如果 ios 目录被删除，应该怎么办？"></a>如果 ios 目录被删除，应该怎么办？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create --platform ios .</span><br></pre></td></tr></table></figure>
 
 <p>这样会在当前目录下生成一个新的 ios 目录，其中包含了 Flutter 所需的所有文件和配置。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/20/knows/flutter/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80/" class="post-title-link" itemprop="url">视频播放测试地址</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-20 11:00:27 / 修改时间：18:28:37" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在开发视频播放相关的业务功能，开发测试时，需要涉及到 MP4、M3U8 等视频格式。<br>我每次找测试视频地址时，都要找很久，现在把我在网上收集到的 MP4、M3U8 格式视频地址放在这里，希望帮助到正在进行视频播放开发的你。</p>
+<h3 id="MP4-格式"><a href="#MP4-格式" class="headerlink" title="MP4 格式"></a>MP4 格式</h3><p>海洋：<br><a target="_blank" rel="noopener" href="http://vjs.zencdn.net/v/oceans.mp4">http://vjs.zencdn.net/v/oceans.mp4</a></p>
+<p>西瓜视频 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4</a></p>
+<p>大兔子：<br><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/example/html5/mov_bbb.mp4">http://www.w3school.com.cn/example/html5/mov_bbb.mp4</a></p>
+<p>大灰熊：<br><a target="_blank" rel="noopener" href="https://www.w3schools.com/html/movie.mp4">https://www.w3schools.com/html/movie.mp4</a></p>
+<p>冰川：<br><a target="_blank" rel="noopener" href="https://media.w3.org/2010/05/sintel/trailer.mp4">https://media.w3.org/2010/05/sintel/trailer.mp4</a></p>
+<p>新闻视频 1：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209105011F0zPoYzHry.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209105011F0zPoYzHry.mp4</a></p>
+<p>新闻视频 2：<br><a target="_blank" rel="noopener" href="https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4">https://stream7.iqilu.com/10339/upload_transcode/202002/09/20200209104902N3v5Vpxuvb.mp4</a></p>
+<h3 id="M3U8-格式"><a href="#M3U8-格式" class="headerlink" title="M3U8 格式"></a>M3U8 格式</h3><p>西瓜播放器 Demo：<br><a target="_blank" rel="noopener" href="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8">https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8</a></p>
+<p>大白兔：<br><a target="_blank" rel="noopener" href="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8</a></p>
 
       
     </div>
@@ -910,153 +1060,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/books/zhongyi/%E5%AD%97%E9%87%8C%E8%97%8F%E5%8C%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/13/books/zhongyi/%E5%AD%97%E9%87%8C%E8%97%8F%E5%8C%BB/" class="post-title-link" itemprop="url">字里藏医</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-13 22:33:27" itemprop="dateCreated datePublished" datetime="2025-05-13T22:33:27+08:00">2025-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-14 09:27:06" itemprop="dateModified" datetime="2025-05-14T09:27:06+08:00">2025-05-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E5%8C%BB/" itemprop="url" rel="index"><span itemprop="name">中医</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>《字里藏医》是2007年安徽教育出版社出版的图书，作者是徐文兵。该书深入浅出地介绍了中医词汇的古今之别，以帮助读者了解中医的基本知识。</p>
-</blockquote>
-<h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>几千年来，我们使用的都是同样的文字，但表达的意思可能已经不同了。很多字词已经渐渐失去了它们的原意。在多数情况下，这并不会造成什么困扰，但对中医这门古老学问就不同了，它需要我们唤醒那些沉睡的文字的原意。在现代语境下，在涉外教学看病过程中，徐文兵大夫随时会遭遇熟悉字词的陌生化情形。比如说“思想”，思和想有什么区别？又比如“魂魄”，魂是什么，魄是什么？<br>“肥”与“胖”的区别？“皮”与“肤”是一回事吗？<br>    要研究中医，发皇古意，就必须先从最基本的词汇入手，正义严辞。《字里藏医》就是这样一本以深入浅出的文字厘清中医最基本的词汇，恢复中医本来面目的启蒙书。</p>
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a target="_blank" rel="noopener" href="https://url60.ctfile.com/f/15365260-468202858-445c27?p=5098">字里藏医.txt</a><br> (访问密码: 5098)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/knows/flutter/dart%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/13/knows/flutter/dart%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Dart基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-13 10:50:27 / 修改时间：10:47:32" itemprop="dateCreated datePublished" datetime="2025-05-13T10:50:27+08:00">2025-05-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="变量学习"><a href="#变量学习" class="headerlink" title="变量学习"></a>变量学习</h3><p>1、var 关键字<br>类似于 JavaScript 中的 var，它可以接收任何类型的变量，但最大的不同是 Dart 中 var 变量一旦赋值，类型便会确定，则<strong>不能再改变其类型</strong>，如：</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义变量</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">name = <span class="number">123</span>; <span class="comment">// 报错;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1126,7 +1129,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1137,7 +1140,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
