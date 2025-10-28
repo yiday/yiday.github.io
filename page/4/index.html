@@ -173,6 +173,239 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/16/knows/git/git%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/16/knows/git/git%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="post-title-link" itemprop="url">git问题解决</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-16 08:48:27 / 修改时间：09:27:59" itemprop="dateCreated datePublished" datetime="2025-05-16T08:48:27+08:00">2025-05-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="git-问题解决"><a href="#git-问题解决" class="headerlink" title="git 问题解决"></a>git 问题解决</h3><blockquote>
+<p>git push –set-upstream origin master</p>
+<p>Please contact your system administrator.</p>
+<p>Add correct host key in &#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;known_hosts to get rid of this message.</p>
+<p>Offending RSA key in &#x2F;Users&#x2F;xxx&#x2F;.ssh&#x2F;known_hosts:3</p>
+<p>Host key for github.com has changed and you have requested strict checking.</p>
+<p>Host key verification failed.</p>
+<p>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights</p>
+<p>and the repository exists.</p>
+</blockquote>
+<p>应该怎么处理</p>
+<p>这个问题是在执行 git push 命令时，因远程主机密钥更改导致的主机密钥验证失败。以下是几种处理方法：</p>
+<h4 id="1、手动删除错误密钥"><a href="#1、手动删除错误密钥" class="headerlink" title="1、手动删除错误密钥"></a>1、手动删除错误密钥</h4><p>可以使用以下命令删除 known_hosts 文件中错误的密钥：</p>
+<h4 id="2、使用-ssh-keygen-重新生成密钥-或-将-SSH-密钥添加到-GitHub-账户"><a href="#2、使用-ssh-keygen-重新生成密钥-或-将-SSH-密钥添加到-GitHub-账户" class="headerlink" title="2、使用 ssh-keygen 重新生成密钥 或 将 SSH 密钥添加到 GitHub 账户"></a>2、使用 ssh-keygen 重新生成密钥 或 将 SSH 密钥添加到 GitHub 账户</h4><h5 id="生成新密钥"><a href="#生成新密钥" class="headerlink" title="生成新密钥"></a>生成新密钥</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将-SSH-密钥添加到-GitHub-账户"><a href="#将-SSH-密钥添加到-GitHub-账户" class="headerlink" title="将 SSH 密钥添加到 GitHub 账户"></a>将 SSH 密钥添加到 GitHub 账户</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、测试连接"><a href="#3、测试连接" class="headerlink" title="3、测试连接"></a>3、测试连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/14/knows/python/pyenv%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/14/knows/python/pyenv%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">pyenv 使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-14 09:28:27" itemprop="dateCreated datePublished" datetime="2025-05-14T09:28:27+08:00">2025-05-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-06-11 17:35:57" itemprop="dateModified" datetime="2025-06-11T17:35:57+08:00">2025-06-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="pyenv-使用"><a href="#pyenv-使用" class="headerlink" title="pyenv 使用"></a>pyenv 使用</h3><p>要使用 pyenv 创建一个名为 ai 的新虚拟环境，您可以按照以下步骤操作：</p>
+<ol>
+<li>确保已安装 pyenv 和 pyenv-virtualenv<br>首先，确保您已经在系统中安装了 pyenv 和 pyenv-virtualenv。如果还没有安装，可以参考以下步骤进行安装：<br>安装 pyenv</li>
+</ol>
+<h4 id="使用-Homebrew-安装（适用于-macOS）"><a href="#使用-Homebrew-安装（适用于-macOS）" class="headerlink" title="使用 Homebrew 安装（适用于 macOS）"></a>使用 Homebrew 安装（适用于 macOS）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pyenv</span><br></pre></td></tr></table></figure>
+
+<h4 id="或者使用官方安装脚本"><a href="#或者使用官方安装脚本" class="headerlink" title="或者使用官方安装脚本"></a>或者使用官方安装脚本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://pyenv.run | bash</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，根据提示将以下内容添加到您的 shell 配置文件（如 .bashrc, .zshrc）中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$HOME</span>/.pyenv/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv init --path)</span>&quot;</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv virtualenv-init -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="然后，重新加载配置文件："><a href="#然后，重新加载配置文件：" class="headerlink" title="然后，重新加载配置文件："></a>然后，重新加载配置文件：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc  <span class="comment"># 或者 source ~/.zshrc</span></span><br></pre></td></tr></table></figure>
+
+<p>安装 pyenv-virtualenv<br>如果您使用的是 pyenv 官方安装脚本，pyenv-virtualenv 通常已经包含在内。如果没有，可以通过以下方式安装：</p>
+<h4 id="使用-Homebrew-安装（适用于-macOS）-1"><a href="#使用-Homebrew-安装（适用于-macOS）-1" class="headerlink" title="使用 Homebrew 安装（适用于 macOS）"></a>使用 Homebrew 安装（适用于 macOS）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pyenv-virtualenv</span><br></pre></td></tr></table></figure>
+
+<p>或者通过 PyPI 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 或者通过 PyPI 安装</span></span><br><span class="line">pip install pyenv-virtualenv</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装所需的 Python 版本<br>在创建虚拟环境之前，确保您已经安装了所需的 Python 版本。例如，安装 Python 3.10.0：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv install 3.10.0</span><br></pre></td></tr></table></figure>
+
+<p>您可以通过以下命令查看可用的 Python 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv install --list`</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建虚拟环境<br>使用以下命令创建一个名为 ai 的虚拟环境，并指定 Python 版本（例如 3.10.0）：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv 3.10.0 ai</span><br></pre></td></tr></table></figure>
+
+<p>如果您希望虚拟环境使用系统默认的 Python 版本，可以省略版本号：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv ai</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>激活虚拟环境<br>激活刚刚创建的 ai 虚拟环境：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv activate ai</span><br></pre></td></tr></table></figure>
+
+<p>激活后，您的命令提示符通常会显示当前激活的虚拟环境名称 (ai)。 5. 验证虚拟环境<br>您可以通过以下命令验证当前 Python 版本和虚拟环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<p>输出应类似于：<br>Python 3.10.0</p>
+<ol start="6">
+<li>安装项目依赖<br>在虚拟环境中，您可以像平常一样使用 pip 安装所需的包。例如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy pandas matplotlib</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>退出虚拟环境<br>当您完成工作并希望退出虚拟环境时，可以使用以下命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv deactivate</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>列出所有虚拟环境<br>要查看系统中所有已创建的虚拟环境，可以使用：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenvs</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>删除虚拟环境<br>如果您不再需要某个虚拟环境，可以使用以下命令删除它：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv uninstall ai</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv-delete sla</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h4><p>pyenv: command not found<br>确保已将 pyenv 的路径添加到您的 shell 配置文件中，并重新加载配置。<br>virtualenv: command not found<br>确保已安装 pyenv-virtualenv 并正确初始化。<br>虚拟环境未激活<br>确认使用 pyenv activate ai 激活虚拟环境，并检查命令提示符是否显示 (ai)。</p>
+<p>通过以上步骤，您应该能够成功使用 pyenv 创建和管理名为 ai 的虚拟环境。如果您遇到任何问题，请随时提问！</p>
+<h4 id="environ-库有缓存"><a href="#environ-库有缓存" class="headerlink" title="environ 库有缓存"></a>environ 库有缓存</h4><p>改了环境变量，在本地调试时一定要先清空缓存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> environ</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line">env = environ.Env(DEBUG=(<span class="built_in">bool</span>, <span class="literal">False</span>))</span><br><span class="line">env_file = os.path.join(Path(__file__).resolve().parent.parent, <span class="string">&#x27;.env&#x27;</span>)</span><br><span class="line">env.read_env(env_file, overwrite=<span class="literal">True</span>)  <span class="comment"># 使用 overwrite=True 强制重新读取</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/13/books/zhongyi/%E5%AD%97%E9%87%8C%E8%97%8F%E5%8C%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -907,7 +1140,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -918,7 +1151,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
