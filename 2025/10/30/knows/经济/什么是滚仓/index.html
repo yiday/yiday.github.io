@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yiday.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="滚仓战术的核心逻辑是通过严格的时机把控与利润滚动机制，实现小本金在高波动市场中的复利增长。该策略将“守”与“狠”贯穿始终——90%时间等待确定性机会，10%时间精准出击，同时通过利润隔离、动态风控和分批止盈，将风险锁死在可控范围，让利润通过“滚雪球”效应放大。 一、等待：只在“暴力行情”扣扳机滚仓的前提是放弃无效交易，像狙击手般潜伏等待三类高确定性机会：  突破关键位+放量：当 BTC 等主流币突">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是滚仓">
+<meta property="og:url" content="https://yiday.github.io/2025/10/30/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E6%BB%9A%E4%BB%93/index.html">
+<meta property="og:site_name" content="海量图书馆">
+<meta property="og:description" content="滚仓战术的核心逻辑是通过严格的时机把控与利润滚动机制，实现小本金在高波动市场中的复利增长。该策略将“守”与“狠”贯穿始终——90%时间等待确定性机会，10%时间精准出击，同时通过利润隔离、动态风控和分批止盈，将风险锁死在可控范围，让利润通过“滚雪球”效应放大。 一、等待：只在“暴力行情”扣扳机滚仓的前提是放弃无效交易，像狙击手般潜伏等待三类高确定性机会：  突破关键位+放量：当 BTC 等主流币突">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-30T00:48:27.000Z">
+<meta property="article:modified_time" content="2025-10-30T08:59:03.739Z">
+<meta property="article:author" content="Share Library">
+<meta property="article:tag" content="投资">
+<meta property="article:tag" content="股票">
+<meta property="article:tag" content="敞口">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yiday.github.io/2025/10/30/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E6%BB%9A%E4%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是滚仓 | 海量图书馆</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">海量图书馆</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/10/30/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E6%BB%9A%E4%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是滚仓
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-10-30 08:48:27 / 修改时间：16:59:03" itemprop="dateCreated datePublished" datetime="2025-10-30T08:48:27+08:00">2025-10-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>滚仓战术的核心逻辑是通过<strong>严格的时机把控</strong>与<strong>利润滚动机制</strong>，实现小本金在高波动市场中的复利增长。该策略将“守”与“狠”贯穿始终——90%时间等待确定性机会，10%时间精准出击，同时通过利润隔离、动态风控和分批止盈，将风险锁死在可控范围，让利润通过“滚雪球”效应放大。</p>
+<h3 id="一、等待：只在“暴力行情”扣扳机"><a href="#一、等待：只在“暴力行情”扣扳机" class="headerlink" title="一、等待：只在“暴力行情”扣扳机"></a>一、等待：只在“暴力行情”扣扳机</h3><p>滚仓的前提是<strong>放弃无效交易</strong>，像狙击手般潜伏等待三类高确定性机会：</p>
+<ul>
+<li><strong>突破关键位+放量</strong>：当 BTC 等主流币突破横盘区间（如 3 万刀横盘半月后冲破 3.2 万刀），且成交量达前一日 3 倍以上时，视为“资金抢筹”信号，此时进场 3 天内通常有 10%以上波动。</li>
+<li><strong>消息面驱动趋势</strong>：美联储降息、比特币减半等重磅消息发布后，需等待 2 小时确认趋势形成再进场。例如 2024 年美联储降息当日，作者通过延迟确认规避假突破，5 天获利 30%。</li>
+<li><strong>板块联动上涨</strong>：当 DeFi 等板块龙头币上涨 10%并带动其他币种跟随时，说明行情具备普适性，安全性高于单个币种独立波动。</li>
+</ul>
+<p>执行中需用“强制约束”对抗交易冲动：设定每日最多 2 单、开仓前强制等待 15 分钟，某粉丝通过此规则将月均手续费从 800 元降至 100 元以下，账户从亏损 30%转为单月盈利 40%。</p>
+<h3 id="二、滚动：本金安全垫-利润分层加仓"><a href="#二、滚动：本金安全垫-利润分层加仓" class="headerlink" title="二、滚动：本金安全垫+利润分层加仓"></a>二、滚动：本金安全垫+利润分层加仓</h3><p>核心原则是<strong>本金与利润物理隔离</strong>，用利润承担风险，确保本金绝对安全：</p>
+<ul>
+<li><strong>首单盈利抽离本金</strong>：5000 元本金首单获利 20%（1000 元）后，立即转出 5000 元本金，仅用 1000 元利润继续操作。即使后续亏损，也仅损失利润部分。</li>
+<li><strong>利润分步加仓</strong>：利润每翻倍一次（如 1000→2000 元），最多加仓 50%仓位（即新增 1000 元），避免一次性满仓暴露风险。例如 1 万元利润滚仓时，每次翻倍后仅增加 50%仓位，为波动预留缓冲带。</li>
+<li><strong>翻倍后提取安全垫</strong>：利润每实现翻倍（如 2000 元），立即提取 30%（600 元）至稳定币钱包，剩余资金继续滚动。某案例通过该机制在行情回调中仍净赚 1.2 万元，避免“过山车”式利润回吐。</li>
+</ul>
+<h3 id="三、调整：止损线动态跟随利润上移"><a href="#三、调整：止损线动态跟随利润上移" class="headerlink" title="三、调整：止损线动态跟随利润上移"></a>三、调整：止损线动态跟随利润上移</h3><p>传统固定止损易导致“赚变亏”，滚仓战术通过<strong>浮动止损机制</strong>让利润自己扛风险：</p>
+<ul>
+<li><strong>浮盈＜ 50%</strong>：止损线设在开仓价下方 3%，常规风险控制；</li>
+<li><strong>浮盈 50%-100%</strong>：止损线上移至开仓价（成本价），确保“不亏本金”；</li>
+<li><strong>浮盈＞ 100%</strong>：止损线上移至“开仓价+50%”，锁定一半利润。</li>
+</ul>
+<p>例如 SOL 交易中，作者在浮盈 80%时将止损上移至成本价，既规避后续回调风险，又保留继续上涨的盈利空间，实现“涨了多赚，跌了不亏”的心态平衡。</p>
+<h3 id="四、止盈：分批落袋，接受不完美"><a href="#四、止盈：分批落袋，接受不完美" class="headerlink" title="四、止盈：分批落袋，接受不完美"></a>四、止盈：分批落袋，接受不完美</h3><p>克服“卖在最高点”的幻想，通过<strong>梯度止盈</strong>确保利润落袋：</p>
+<ul>
+<li><strong>浮盈 30%</strong>：止盈 30%仓位（如 1 万元仓位赚 3000 元时，卖出 3000 元对应仓位，收回 900 元利润）；</li>
+<li><strong>浮盈 50%</strong>：再止盈 40%仓位（剩余 7000 元仓位赚 3500 元时，卖出 40%仓位收回 1400 元）；</li>
+<li><strong>浮盈 100%</strong>：清仓或留 10%仓位博弈更高点，避免贪心导致利润回吐。</li>
+</ul>
+<p>作者在 BTC 浮盈 120%时执行清仓，虽错过后续 50%涨幅，但落袋 120%确定性收益，远优于多数因“等更高点”最终利润归零的案例。</p>
+<h3 id="核心差异：从“赌行情”到“系统化复利”"><a href="#核心差异：从“赌行情”到“系统化复利”" class="headerlink" title="核心差异：从“赌行情”到“系统化复利”"></a>核心差异：从“赌行情”到“系统化复利”</h3><p>滚仓战术与普通交易的本质区别，在于将“单次暴利”思维转化为“生存优先”的复利积累：</p>
+<ul>
+<li><strong>输家模式</strong>：不等行情、用本金加仓、止损不动、止盈靠幻想，导致“前一天赚 50 万，次日亏光”；</li>
+<li><strong>赢家模式</strong>：等确定性机会、用利润滚动、动态调止损、分批止盈，实现“5000 元 →100 万”的 200 倍增长。</li>
+</ul>
+<p>正如作者所言：“滚仓的核心不是赚多快，是活多久。”通过将每一步细节（等&#x2F;滚&#x2F;调&#x2F;止）转化为机械执行的纪律，即使无法实现 200 倍增长，也能在高风险市场中长期生存，而“活得久”本身就是最大的机会。</p>
+<p>以下代码实现了滚仓战术的核心逻辑，包括<strong>本金安全隔离</strong>、<strong>动态止损</strong>和<strong>分批止盈</strong>机制。代码设计遵循”生存优先”原则，通过模拟交易环境验证策略可行性，实际使用时需对接真实交易所 API 并严格控制风险。</p>
+<h3 id="滚仓战术核心逻辑实现"><a href="#滚仓战术核心逻辑实现" class="headerlink" title="滚仓战术核心逻辑实现"></a>滚仓战术核心逻辑实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Dict</span>, <span class="type">List</span>, <span class="type">Tuple</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@dataclass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Position</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;仓位状态管理&quot;&quot;&quot;</span></span><br><span class="line">    symbol: <span class="built_in">str</span>          <span class="comment"># 交易标的</span></span><br><span class="line">    entry_price: <span class="built_in">float</span>   <span class="comment"># 开仓价格</span></span><br><span class="line">    quantity: <span class="built_in">float</span>      <span class="comment"># 持仓数量</span></span><br><span class="line">    entry_time: pd.Timestamp  <span class="comment"># 开仓时间</span></span><br><span class="line">    initial_capital: <span class="built_in">float</span>  <span class="comment"># 初始投入本金</span></span><br><span class="line">    current_profit: <span class="built_in">float</span> = <span class="number">0.0</span>  <span class="comment"># 当前浮盈</span></span><br><span class="line">    stop_loss_price: <span class="built_in">float</span> = <span class="number">0.0</span>  <span class="comment"># 止损价格</span></span><br><span class="line">    take_profit_stages: <span class="type">List</span>[<span class="type">Tuple</span>[<span class="built_in">float</span>, <span class="built_in">float</span>]] = (</span><br><span class="line">        (<span class="number">0.3</span>, <span class="number">0.3</span>),   <span class="comment"># (浮盈比例, 止盈仓位比例)</span></span><br><span class="line">        (<span class="number">0.5</span>, <span class="number">0.4</span>),   <span class="comment"># 浮盈50%时再止盈40%仓位</span></span><br><span class="line">        (<span class="number">1.0</span>, <span class="number">0.2</span>)    <span class="comment"># 浮盈100%时止盈剩余20%仓位</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RollStrategy</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;滚仓战术核心策略&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, initial_capital: <span class="built_in">float</span>, risk_rate: <span class="built_in">float</span> = <span class="number">0.03</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.initial_capital = initial_capital  <span class="comment"># 初始本金</span></span><br><span class="line">        <span class="variable language_">self</span>.available_funds = initial_capital  <span class="comment"># 当前可用资金(利润滚动部分)</span></span><br><span class="line">        <span class="variable language_">self</span>.locked_capital = <span class="number">0.0</span>               <span class="comment"># 已锁定本金(安全垫)</span></span><br><span class="line">        <span class="variable language_">self</span>.positions: <span class="type">Dict</span>[<span class="built_in">str</span>, Position] = &#123;&#125;  <span class="comment"># 当前持仓</span></span><br><span class="line">        <span class="variable language_">self</span>.trade_history = []                  <span class="comment"># 交易记录</span></span><br><span class="line">        <span class="variable language_">self</span>.risk_rate = risk_rate               <span class="comment"># 基础风险率(3%)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_calculate_floating_profit</span>(<span class="params">self, symbol: <span class="built_in">str</span>, current_price: <span class="built_in">float</span></span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;计算当前浮盈&quot;&quot;&quot;</span></span><br><span class="line">        pos = <span class="variable language_">self</span>.positions[symbol]</span><br><span class="line">        <span class="keyword">return</span> (current_price - pos.entry_price) * pos.quantity</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_update_stop_loss</span>(<span class="params">self, symbol: <span class="built_in">str</span>, current_price: <span class="built_in">float</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;动态更新止损价格&quot;&quot;&quot;</span></span><br><span class="line">        pos = <span class="variable language_">self</span>.positions[symbol]</span><br><span class="line">        pos.current_profit = <span class="variable language_">self</span>._calculate_floating_profit(symbol, current_price)</span><br><span class="line">        profit_ratio = pos.current_profit / (pos.entry_price * pos.quantity)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 动态止损规则</span></span><br><span class="line">        <span class="keyword">if</span> profit_ratio &lt; <span class="number">0.5</span>:</span><br><span class="line">            pos.stop_loss_price = pos.entry_price * (<span class="number">1</span> - <span class="variable language_">self</span>.risk_rate)</span><br><span class="line">        <span class="keyword">elif</span> <span class="number">0.5</span> &lt;= profit_ratio &lt; <span class="number">1.0</span>:</span><br><span class="line">            pos.stop_loss_price = pos.entry_price  <span class="comment"># 保本止损</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pos.stop_loss_price = pos.entry_price * <span class="number">1.5</span>  <span class="comment"># 锁定50%利润</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">enter_position</span>(<span class="params">self, symbol: <span class="built_in">str</span>, entry_price: <span class="built_in">float</span>, quantity: <span class="built_in">float</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;开仓操作(仅使用利润部分资金)&quot;&quot;&quot;</span></span><br><span class="line">        required_funds = entry_price * quantity</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 严格使用利润部分开仓(保护本金)</span></span><br><span class="line">        <span class="keyword">if</span> required_funds &gt; <span class="variable language_">self</span>.available_funds:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;资金不足: 需<span class="subst">&#123;required_funds&#125;</span>, 可用<span class="subst">&#123;self.available_funds&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.positions[symbol] = Position(</span><br><span class="line">            symbol=symbol,</span><br><span class="line">            entry_price=entry_price,</span><br><span class="line">            quantity=quantity,</span><br><span class="line">            entry_time=pd.Timestamp.now(),</span><br><span class="line">            initial_capital=required_funds</span><br><span class="line">        )</span><br><span class="line">        <span class="variable language_">self</span>.available_funds -= required_funds</span><br><span class="line">        <span class="variable language_">self</span>.trade_history.append(&#123;</span><br><span class="line">            <span class="string">&quot;action&quot;</span>: <span class="string">&quot;enter&quot;</span>,</span><br><span class="line">            <span class="string">&quot;symbol&quot;</span>: symbol,</span><br><span class="line">            <span class="string">&quot;price&quot;</span>: entry_price,</span><br><span class="line">            <span class="string">&quot;quantity&quot;</span>: quantity,</span><br><span class="line">            <span class="string">&quot;time&quot;</span>: pd.Timestamp.now(),</span><br><span class="line">            <span class="string">&quot;funds_used&quot;</span>: required_funds</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;开仓 <span class="subst">&#123;symbol&#125;</span>: 价格<span class="subst">&#123;entry_price&#125;</span>, 数量<span class="subst">&#123;quantity&#125;</span>, 剩余资金<span class="subst">&#123;self.available_funds:<span class="number">.2</span>f&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exit_position</span>(<span class="params">self, symbol: <span class="built_in">str</span>, current_price: <span class="built_in">float</span>, partial_ratio: <span class="built_in">float</span> = <span class="number">1.0</span></span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;平仓操作(支持部分平仓)&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> symbol <span class="keyword">not</span> <span class="keyword">in</span> <span class="variable language_">self</span>.positions:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line">        pos = <span class="variable language_">self</span>.positions[symbol]</span><br><span class="line">        quantity_to_exit = pos.quantity * partial_ratio</span><br><span class="line">        profit = (current_price - pos.entry_price) * quantity_to_exit</span><br><span class="line">        remaining_quantity = pos.quantity - quantity_to_exit</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新资金状态</span></span><br><span class="line">        <span class="variable language_">self</span>.available_funds += current_price * quantity_to_exit</span><br><span class="line">        <span class="variable language_">self</span>.trade_history.append(&#123;</span><br><span class="line">            <span class="string">&quot;action&quot;</span>: <span class="string">&quot;exit&quot;</span>,</span><br><span class="line">            <span class="string">&quot;symbol&quot;</span>: symbol,</span><br><span class="line">            <span class="string">&quot;price&quot;</span>: current_price,</span><br><span class="line">            <span class="string">&quot;quantity&quot;</span>: quantity_to_exit,</span><br><span class="line">            <span class="string">&quot;time&quot;</span>: pd.Timestamp.now(),</span><br><span class="line">            <span class="string">&quot;profit&quot;</span>: profit</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 处理部分平仓或完全平仓</span></span><br><span class="line">        <span class="keyword">if</span> remaining_quantity &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">del</span> <span class="variable language_">self</span>.positions[symbol]</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;完全平仓 <span class="subst">&#123;symbol&#125;</span>: 获利<span class="subst">&#123;profit:<span class="number">.2</span>f&#125;</span>, 总资金<span class="subst">&#123;self.available_funds:<span class="number">.2</span>f&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pos.quantity = remaining_quantity</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;部分平仓 <span class="subst">&#123;symbol&#125;</span>: 获利<span class="subst">&#123;profit:<span class="number">.2</span>f&#125;</span>, 剩余数量<span class="subst">&#123;remaining_quantity&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 利润隔离: 每次翻倍提取30%安全垫</span></span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.available_funds &gt;= <span class="number">2</span> * <span class="variable language_">self</span>.initial_capital:</span><br><span class="line">            safety_pad = <span class="variable language_">self</span>.available_funds * <span class="number">0.3</span></span><br><span class="line">            <span class="variable language_">self</span>.locked_capital += safety_pad</span><br><span class="line">            <span class="variable language_">self</span>.available_funds -= safety_pad</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;提取安全垫 <span class="subst">&#123;safety_pad:<span class="number">.2</span>f&#125;</span>, 累计锁定 <span class="subst">&#123;self.locked_capital:<span class="number">.2</span>f&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> profit</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">check_position_status</span>(<span class="params">self, symbol: <span class="built_in">str</span>, current_price: <span class="built_in">float</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;检查仓位状态(止损/止盈)&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> symbol <span class="keyword">not</span> <span class="keyword">in</span> <span class="variable language_">self</span>.positions:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        pos = <span class="variable language_">self</span>.positions[symbol]</span><br><span class="line">        <span class="variable language_">self</span>._update_stop_loss(symbol, current_price)</span><br><span class="line">        profit_ratio = pos.current_profit / (pos.entry_price * pos.quantity)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 触发止损</span></span><br><span class="line">        <span class="keyword">if</span> current_price &lt;= pos.stop_loss_price:</span><br><span class="line">            <span class="variable language_">self</span>.exit_position(symbol, current_price)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;触发止损: 当前价<span class="subst">&#123;current_price&#125;</span>, 止损价<span class="subst">&#123;pos.stop_loss_price&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 分批止盈检查</span></span><br><span class="line">        <span class="keyword">for</span> target_ratio, exit_ratio <span class="keyword">in</span> pos.take_profit_stages:</span><br><span class="line">            <span class="keyword">if</span> profit_ratio &gt;= target_ratio:</span><br><span class="line">                <span class="comment"># 检查是否已执行过该阶段止盈</span></span><br><span class="line">                executed_ratios = [h[<span class="string">&quot;partial_ratio&quot;</span>] <span class="keyword">for</span> h <span class="keyword">in</span> <span class="variable language_">self</span>.trade_history</span><br><span class="line">                                  <span class="keyword">if</span> h.get(<span class="string">&quot;symbol&quot;</span>) == symbol <span class="keyword">and</span> h[<span class="string">&quot;action&quot;</span>] == <span class="string">&quot;exit&quot;</span>]</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">sum</span>(executed_ratios) &lt; exit_ratio:</span><br><span class="line">                    <span class="variable language_">self</span>.exit_position(symbol, current_price, partial_ratio=exit_ratio - <span class="built_in">sum</span>(executed_ratios))</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 模拟交易环境</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simulate_trading</span>():</span><br><span class="line">    <span class="comment"># 初始化策略: 本金5000元</span></span><br><span class="line">    strategy = RollStrategy(initial_capital=<span class="number">5000</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 模拟市场价格序列(包含上涨和回调)</span></span><br><span class="line">    price_data = &#123;</span><br><span class="line">        <span class="string">&quot;BTC&quot;</span>: [<span class="number">30000</span>, <span class="number">31000</span>, <span class="number">33000</span>, <span class="number">35000</span>, <span class="number">32000</span>, <span class="number">38000</span>, <span class="number">40000</span>, <span class="number">39000</span>, <span class="number">45000</span>, <span class="number">50000</span>],</span><br><span class="line">        <span class="string">&quot;ETH&quot;</span>: [<span class="number">2000</span>, <span class="number">2100</span>, <span class="number">2300</span>, <span class="number">2200</span>, <span class="number">2500</span>, <span class="number">2800</span>, <span class="number">2600</span>, <span class="number">3000</span>, <span class="number">3200</span>, <span class="number">3500</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开仓BTC(使用初始本金的20%作为首单)</span></span><br><span class="line">    strategy.enter_position(<span class="string">&quot;BTC&quot;</span>, entry_price=<span class="number">30000</span>, quantity=<span class="number">0.033</span>)  <span class="comment"># 约1000元</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 模拟10天价格变动</span></span><br><span class="line">    <span class="keyword">for</span> day, (btc_price, eth_price) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(price_data[<span class="string">&quot;BTC&quot;</span>], price_data[<span class="string">&quot;ETH&quot;</span>])):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;\n--- 交易日 <span class="subst">&#123;day+<span class="number">1</span>&#125;</span> ---&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;BTC价格: <span class="subst">&#123;btc_price&#125;</span>, ETH价格: <span class="subst">&#123;eth_price&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检查BTC仓位状态</span></span><br><span class="line">        strategy.check_position_status(<span class="string">&quot;BTC&quot;</span>, btc_price)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当BTC利润翻倍后开仓ETH</span></span><br><span class="line">        <span class="keyword">if</span> strategy.available_funds &gt; <span class="number">10000</span> <span class="keyword">and</span> <span class="string">&quot;ETH&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> strategy.positions:</span><br><span class="line">            strategy.enter_position(<span class="string">&quot;ETH&quot;</span>, entry_price=eth_price, quantity=<span class="number">1</span>)  <span class="comment"># 约2000元</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 最终资产统计</span></span><br><span class="line">    total_assets = strategy.available_funds + strategy.locked_capital</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n--- 策略结果 ---&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;初始本金: <span class="subst">&#123;strategy.initial_capital&#125;</span>元&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;可用资金: <span class="subst">&#123;strategy.available_funds:<span class="number">.2</span>f&#125;</span>元&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;安全垫: <span class="subst">&#123;strategy.locked_capital:<span class="number">.2</span>f&#125;</span>元&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;总收益: <span class="subst">&#123;total_assets - strategy.initial_capital:<span class="number">.2</span>f&#125;</span>元&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;收益率: <span class="subst">&#123;(total_assets / strategy.initial_capital - <span class="number">1</span>) * <span class="number">100</span>:<span class="number">.2</span>f&#125;</span>%&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    simulate_trading()</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码核心功能说明"><a href="#代码核心功能说明" class="headerlink" title="代码核心功能说明"></a>代码核心功能说明</h3><ol>
+<li><strong>本金安全机制</strong>：严格区分本金与利润，首单盈利后自动隔离本金，仅用利润进行滚动操作。</li>
+<li><strong>动态止损系统</strong>：根据浮盈比例自动调整止损线（3%→ 保本 → 锁定 50%利润），避免利润回吐。</li>
+<li><strong>分批止盈策略</strong>：设置三阶段止盈点（30%&#x2F;50%&#x2F;100%），通过部分平仓落袋为安。</li>
+<li><strong>利润隔离机制</strong>：每实现资金翻倍提取 30%作为安全垫，降低极端行情风险。</li>
+</ol>
+<h3 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h3><ul>
+<li><strong>模拟环境验证</strong>：代码中的<code>simulate_trading</code>函数提供测试框架，建议先用历史数据验证策略有效性。</li>
+<li><strong>真实交易适配</strong>：需对接交易所 API（如 Binance&#x2F;OKX）获取实时价格，添加异常处理和网络重试机制。</li>
+<li><strong>风险控制</strong>：实际使用时应降低单次开仓比例（建议不超过可用资金的 10%），并根据波动率调整风险参数。</li>
+</ul>
+<p>该代码将滚仓战术的核心逻辑转化为可执行规则，但加密货币市场波动剧烈，建议先通过模拟交易熟悉策略特性，再逐步投入真实资金。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%95%E8%B5%84/" rel="tag"># 投资</a>
+              <a href="/tags/%E8%82%A1%E7%A5%A8/" rel="tag"># 股票</a>
+              <a href="/tags/%E6%95%9E%E5%8F%A3/" rel="tag"># 敞口</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/10/29/knows/k8s/0%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0k8s/" rel="prev" title="0基础学习k8s">
+      <i class="fa fa-chevron-left"></i> 0基础学习k8s
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%AD%89%E5%BE%85%EF%BC%9A%E5%8F%AA%E5%9C%A8%E2%80%9C%E6%9A%B4%E5%8A%9B%E8%A1%8C%E6%83%85%E2%80%9D%E6%89%A3%E6%89%B3%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">一、等待：只在“暴力行情”扣扳机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%BB%9A%E5%8A%A8%EF%BC%9A%E6%9C%AC%E9%87%91%E5%AE%89%E5%85%A8%E5%9E%AB-%E5%88%A9%E6%B6%A6%E5%88%86%E5%B1%82%E5%8A%A0%E4%BB%93"><span class="nav-number">2.</span> <span class="nav-text">二、滚动：本金安全垫+利润分层加仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%B0%83%E6%95%B4%EF%BC%9A%E6%AD%A2%E6%8D%9F%E7%BA%BF%E5%8A%A8%E6%80%81%E8%B7%9F%E9%9A%8F%E5%88%A9%E6%B6%A6%E4%B8%8A%E7%A7%BB"><span class="nav-number">3.</span> <span class="nav-text">三、调整：止损线动态跟随利润上移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%AD%A2%E7%9B%88%EF%BC%9A%E5%88%86%E6%89%B9%E8%90%BD%E8%A2%8B%EF%BC%8C%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%AE%8C%E7%BE%8E"><span class="nav-number">4.</span> <span class="nav-text">四、止盈：分批落袋，接受不完美</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%B7%AE%E5%BC%82%EF%BC%9A%E4%BB%8E%E2%80%9C%E8%B5%8C%E8%A1%8C%E6%83%85%E2%80%9D%E5%88%B0%E2%80%9C%E7%B3%BB%E7%BB%9F%E5%8C%96%E5%A4%8D%E5%88%A9%E2%80%9D"><span class="nav-number">5.</span> <span class="nav-text">核心差异：从“赌行情”到“系统化复利”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%9A%E4%BB%93%E6%88%98%E6%9C%AF%E6%A0%B8%E5%BF%83%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.</span> <span class="nav-text">滚仓战术核心逻辑实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="nav-number">7.</span> <span class="nav-text">代码核心功能说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">8.</span> <span class="nav-text">使用注意事项</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Share Library</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Share Library</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

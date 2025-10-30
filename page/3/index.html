@@ -173,6 +173,181 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/07/23/knows/git/git%E5%BF%85%E5%AD%A6%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/07/23/knows/git/git%E5%BF%85%E5%AD%A6%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">git必学命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-07-23 08:48:27 / 修改时间：11:02:06" itemprop="dateCreated datePublished" datetime="2025-07-23T08:48:27+08:00">2025-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="git-必学命令"><a href="#git-必学命令" class="headerlink" title="git 必学命令"></a>git 必学命令</h3><p>git reset –hard<br>git reset –hard 是 Git 中一个非常强大但也需要谨慎使用的命令。它用于将工作目录和暂存区（index）都重置到某个提交（commit）的状态，丢弃所有未提交的更改。</p>
+<p>🚨 使用前请注意：<br>–hard 选项会永久删除当前工作目录中未提交的修改！<br>所以在使用这个命令之前，请确保你已经保存了重要的更改，或者确认这些更改可以被丢弃。<br>✅ 命令格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [commit]</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：<br>参数 含义<br>–hard 将工作目录、暂存区、HEAD 都重置为指定 commit 的状态<br>[commit] 指定要回退到的提交，如 HEAD~1、abc1234 等。如果省略，默认是 HEAD<br>✅ 示例用法</p>
+<ol>
+<li>回退到最后一次提交（放弃所有本地修改）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD</span><br></pre></td></tr></table></figure>
+
+<p>作用：丢弃所有未提交的更改（包括暂存区和工作区），回到上一次提交的状态。</p>
+<ol start="2">
+<li>回退到上一个提交（撤销最后一次提交）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
+
+<p>作用：将分支指针移动到上一个提交，并清空工作区和暂存区的内容。</p>
+<ol start="3">
+<li>回退到某个具体的提交哈希值</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard abc1234567890abcdef</span><br></pre></td></tr></table></figure>
+
+<p>作用：将工作目录恢复到 abc1234… 提交时的状态。</p>
+<p>🔄 git reset 的三种模式对比<br>全屏<br>复制<br>模式 作用<br>–soft 仅移动 HEAD 指针，保留暂存区和工作区的更改<br>–mixed（默认） 移动 HEAD 和暂存区，但保留工作区的更改（适合撤销 add 但保留修改）<br>–hard 移动 HEAD、暂存区、工作区，完全丢弃未提交的更改（最彻底的回退）<br>🛠️ 实际应用场景<br>全屏<br>复制<br>场景 推荐命令<br>撤销最近一次提交 git reset –hard HEAD~1<br>弃掉本地所有未提交的修改 git reset –hard HEAD<br>从远程拉取后强制同步 git fetch origin &amp;&amp; git reset –hard origin&#x2F;branch-name<br>⚠️ 注意事项<br>如果你正在开发中，且有未提交的代码，执行 git reset –hard 会永久丢失这些更改。<br>如果你想保留修改但不想提交，可以使用 git stash 来临时保存。<br>🧩 补充：查看历史提交<br>如果你不确定要回退到哪个提交，可以先查看提交历史：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
+
+<p>输出示例：</p>
+<p>abc1234 (HEAD -&gt; main) Add new feature<br>def5678 Fix bug in login<br>ghi90ab Initial commit<br>你可以选择其中一个 commit 哈希来执行 reset。</p>
+<p>✅ 总结<br>命令 效果<br>git reset –hard 弃掉所有未提交的更改，回到上次提交的状态<br>git reset –hard HEAD~1 撤销最后一次提交，并清除所有修改<br>git reset –hard <commit> 将工作目录恢复到指定提交的状态<br>如果你还有关于 git revert 或 git checkout 的问题，也可以问我 😊</p>
+<h3 id="reset-命令"><a href="#reset-命令" class="headerlink" title="reset 命令"></a>reset 命令</h3><p>命令 描述<br>git reset –soft HEAD<del>1 撤销最后一次提交，保留修改在暂存区<br>git reset –mixed HEAD</del>1 撤销最后一次提交，保留修改在工作区（默认）<br>git reset –hard HEAD~1 彻底回退到上一次提交，丢弃所有未提交的更改<br>git stash 暂存当前工作区的更改<br>git stash apply 应用最近一次暂存的更改<br>git revert [commit] 反向提交，安全地撤销某次提交（不会丢失历史）</p>
+<h3 id="日常开发常用组合"><a href="#日常开发常用组合" class="headerlink" title="日常开发常用组合"></a>日常开发常用组合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b feature/new-feature       <span class="comment"># 创建并切换分支</span></span><br><span class="line"><span class="comment"># 修改代码...</span></span><br><span class="line">git add .                                  <span class="comment"># 添加更改</span></span><br><span class="line">git commit -m <span class="string">&quot;Add new feature&quot;</span>            <span class="comment"># 提交更改</span></span><br><span class="line">git push origin feature/new-feature        <span class="comment"># 推送到远程</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="git-push-–set-upstream-origin-xxx-的意思"><a href="#git-push-–set-upstream-origin-xxx-的意思" class="headerlink" title="git push –set-upstream origin xxx 的意思"></a>git push –set-upstream origin xxx 的意思</h3><p>这个–set-upstream 表示设置当前分支的远程分支，指定关联，以后每次 git push 的时候，会自动推送到远程这个 xxx 分支<br>否则要指定 git push origin xxx</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/07/02/knows/node&js/npm%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/07/02/knows/node&js/npm%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">npm相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-07-02 16:00:27 / 修改时间：16:50:03" itemprop="dateCreated datePublished" datetime="2025-07-02T16:00:27+08:00">2025-07-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="项目运行在-node-18-下出错"><a href="#项目运行在-node-18-下出错" class="headerlink" title="项目运行在 node 18 下出错"></a>项目运行在 node 18 下出错</h3><p>16 下正常，但 18 下出错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">用18会提示node:internal/crypto/hash:67</span><br><span class="line">this[kHandle] = new _Hash(algorithm, xofLen);</span><br><span class="line">^</span><br><span class="line"></span><br><span class="line">Error: error:0308010C:digital envelope routines::unsupported</span><br><span class="line">at new Hash (node:internal/crypto/hash:67:19)</span><br><span class="line">at Object.createHash (node:crypto:133:10)</span><br><span class="line">at BulkUpdateDecorator.hashFactory (/Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:184161:18)</span><br><span class="line">at BulkUpdateDecorator.update (/Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:184062:50)</span><br><span class="line">at /Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:107101:9</span><br><span class="line">at /Users/lyq89566/prod/prodweb/ucaptain-fe/node_modules/@umijs/deps/compiled/webpack/5/bundle5.js:33829:16</span><br><span class="line">at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) &#123;</span><br><span class="line">opensslErrorStack: [ <span class="string">&#x27;error:03000086:digital envelope routines::initialization error&#x27;</span> ],</span><br><span class="line">library: <span class="string">&#x27;digital envelope routines&#x27;</span>,</span><br><span class="line">reason: <span class="string">&#x27;unsupported&#x27;</span>,</span><br><span class="line">code: <span class="string">&#x27;ERR_OSSL_EVP_UNSUPPORTED&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Node.js v18.0.0</span><br></pre></td></tr></table></figure>
+
+<p>可以在命令行下直接运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_OPTIONS=<span class="string">&quot;--openssl-legacy-provider --max-old-space-size=8192&quot;</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>在.env.local 下运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NODE_OPTIONS=--openssl-legacy-provider --max-old-space-size=8192</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/07/02/knows/flutter/%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -334,78 +509,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/" class="post-title-link" itemprop="url">Flutter基础组件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-30 14:00:27 / 修改时间：14:04:01" itemprop="dateCreated datePublished" datetime="2025-05-30T14:00:27+08:00">2025-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Completer"><a href="#Completer" class="headerlink" title="Completer"></a>Completer</h3><p>其作用是创建 Future 对象，并且能手动控制该对象的完成状态 1 。借助 Completer，开发者能够在异步操作完成后，将结果传递给对应的 Future 对象，这样依赖该 Future 的代码就可以继续执行。</p>
-<p>下面是一个简单的示例代码，展示了如何使用 Completer：</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:async&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="comment">// 创建一个 Completer 对象</span></span><br><span class="line">  Completer&lt;<span class="built_in">String</span>&gt; completer = Completer&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取 Completer 关联的 Future 对象</span></span><br><span class="line">  Future&lt;<span class="built_in">String</span>&gt; future = completer.future;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 为 Future 对象添加回调函数</span></span><br><span class="line">  future.then((value) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Future 完成，结果是: <span class="subst">$value</span>&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模拟异步操作</span></span><br><span class="line">  Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">2</span>), () &#123;</span><br><span class="line">    <span class="comment">// 完成 Completer，并传递结果</span></span><br><span class="line">    completer.complete(<span class="string">&#x27;操作完成&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个示例中，我们创建了一个 Completer 对象，获取其关联的 Future 对象，并为该 Future 添加了一个回调函数。接着模拟了一个异步操作，在操作完成后调用 completer.complete 方法，将结果传递给 Future ，触发回调函数的执行。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B8%E5%85%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -465,6 +568,78 @@
 <h4 id="2-启动虚拟机"><a href="#2-启动虚拟机" class="headerlink" title="2. 启动虚拟机"></a>2. 启动虚拟机</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本启动</span></span><br><span class="line">emulator -avd [AVD名称]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后台启动（不阻塞命令行）</span></span><br><span class="line">emulator -avd [AVD名称] &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Windows 后台启动</span></span><br><span class="line">start emulator -avd [AVD名称]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定分辨率启动</span></span><br><span class="line">emulator -avd [AVD名称] -skin 1080x1920</span><br><span class="line"></span><br><span class="line"><span class="comment"># 冷启动（清除状态）</span></span><br><span class="line">emulator -avd [AVD名称] -wipe-data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 无声启动</span></span><br><span class="line">emulator -avd [AVD名称] -no-audio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示详细日志</span></span><br><span class="line">emulator -avd [AVD名称] -verbose</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-性能相关"><a href="#3-性能相关" class="headerlink" title="3.性能相关"></a>3.性能相关</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用硬件加速</span></span><br><span class="line">emulator -avd [AVD名称] -gpu host</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分配更多内存</span></span><br><span class="line">emulator -avd [AVD名称] -memory 2048</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用多核支持</span></span><br><span class="line">emulator -avd [AVD名称] -cores 4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用快速启动</span></span><br><span class="line">emulator -avd [AVD名称] -no-snapshot-save</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/05/30/knows/flutter/%E5%B8%B8%E7%94%A8%E7%B1%BB/" class="post-title-link" itemprop="url">Flutter基础组件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-05-30 14:00:27 / 修改时间：14:04:01" itemprop="dateCreated datePublished" datetime="2025-05-30T14:00:27+08:00">2025-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Completer"><a href="#Completer" class="headerlink" title="Completer"></a>Completer</h3><p>其作用是创建 Future 对象，并且能手动控制该对象的完成状态 1 。借助 Completer，开发者能够在异步操作完成后，将结果传递给对应的 Future 对象，这样依赖该 Future 的代码就可以继续执行。</p>
+<p>下面是一个简单的示例代码，展示了如何使用 Completer：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:async&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="comment">// 创建一个 Completer 对象</span></span><br><span class="line">  Completer&lt;<span class="built_in">String</span>&gt; completer = Completer&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取 Completer 关联的 Future 对象</span></span><br><span class="line">  Future&lt;<span class="built_in">String</span>&gt; future = completer.future;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 为 Future 对象添加回调函数</span></span><br><span class="line">  future.then((value) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Future 完成，结果是: <span class="subst">$value</span>&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模拟异步操作</span></span><br><span class="line">  Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">2</span>), () &#123;</span><br><span class="line">    <span class="comment">// 完成 Completer，并传递结果</span></span><br><span class="line">    completer.complete(<span class="string">&#x27;操作完成&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们创建了一个 Completer 对象，获取其关联的 Future 对象，并为该 Future 添加了一个回调函数。接着模拟了一个异步操作，在操作完成后调用 completer.complete 方法，将结果传递给 Future ，触发回调函数的执行。</p>
 
       
     </div>
@@ -795,203 +970,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/20/knows/flutter/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">Flutter配置相关</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-20 11:00:27" itemprop="dateCreated datePublished" datetime="2025-05-20T11:00:27+08:00">2025-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-27 09:53:23" itemprop="dateModified" datetime="2025-05-27T09:53:23+08:00">2025-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="配置-Java-环境"><a href="#配置-Java-环境" class="headerlink" title="配置 Java 环境"></a>配置 Java 环境</h3><p>1、安装 Java</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install openjdk@21</span><br></pre></td></tr></table></figure>
-
-<p>2、配置环境变量<br>写进.bash_profile</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/opt/homebrew/opt/openjdk@21</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-
-<p>3、验证</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
-<p>注意：gradle 版本与 java 版本要匹配<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/compatibility.html#java">https://docs.gradle.org/current/userguide/compatibility.html#java</a></p>
-<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>build.gradle.kts</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">        maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>settings.gradle.kts</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>build.gradle.kts 文件中的仓库配置是用于项目所有模块的全局配置，而 settings.gradle.kts 中的配置是用于插件管理的。在 Gradle 项目中，通常需要在这两个地方都配置仓库地址，以确保所有依赖项都能正确下载。建议将 build.gradle.kts 中的仓库配置也替换为阿里云镜像源，以保持一致性并提高构建速度。</p>
-<h4 id="出错"><a href="#出错" class="headerlink" title="出错"></a>出错</h4><ul>
-<li>What went wrong:<br>Plugin [id: ‘com.android.application’, version: ‘8.7.0’, apply: false] was not found in any of the following sources:</li>
-</ul>
-<ul>
-<li>Gradle Core Plugins (plugin is not in ‘org.gradle’ namespace)</li>
-<li>Included Builds (No included builds contain this plugin)</li>
-<li>Plugin Repositories (could not resolve plugin artifact ‘com.android.application:com.android.application.gradle.plugin:8.7.0’)<br>Searched in the following repositories:<br>maven(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/public">https://maven.aliyun.com/repository/public</a>)<br>maven2(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/google">https://maven.aliyun.com/repository/google</a>)<br>maven3(<a target="_blank" rel="noopener" href="https://maven.aliyun.com/repository/gradle-plugin">https://maven.aliyun.com/repository/gradle-plugin</a>)</li>
-</ul>
-<p>错误信息显示无法找到 com.android.application 插件，这是因为阿里云镜像可能没有完全同步 Google 的仓库内容。建议在 settings.gradle.kts 中保留 Google 的官方仓库，同时使用阿里云镜像。以下是修改后的配置：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/public&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/google&quot;</span>) &#125;</span><br><span class="line">    maven &#123; setUrl(<span class="string">&quot;https://maven.aliyun.com/repository/gradle-plugin&quot;</span>) &#125;</span><br><span class="line">    google()</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看-Android-模拟器版本号的两种方法："><a href="#查看-Android-模拟器版本号的两种方法：" class="headerlink" title="查看 Android 模拟器版本号的两种方法："></a>查看 Android 模拟器版本号的两种方法：</h3><p>1、ADB 查看</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.version.release</span><br><span class="line">adb shell getprop ro.build.version.sdk</span><br></pre></td></tr></table></figure>
-
-<p>第一条命令输出 Android 系统版本（如 13），第二条输出 API 级别（如 33）</p>
-<p>2、在模拟器界面查看</p>
-<ul>
-<li>打开模拟器</li>
-<li>进入 Settings → System → About phone → Android version</li>
-<li>连续点击 “Build number” 7 次可解锁开发者选项</li>
-</ul>
-<h3 id="Android-存储权限变更"><a href="#Android-存储权限变更" class="headerlink" title="Android 存储权限变更"></a>Android 存储权限变更</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.MANAGE_EXTERNAL_STORAGE&quot;/&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_IMAGES&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_VIDEO&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_MEDIA_AUDIO&quot; /&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="如果-ios-目录被删除，应该怎么办？"><a href="#如果-ios-目录被删除，应该怎么办？" class="headerlink" title="如果 ios 目录被删除，应该怎么办？"></a>如果 ios 目录被删除，应该怎么办？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create --platform ios .</span><br></pre></td></tr></table></figure>
-
-<p>这样会在当前目录下生成一个新的 ios 目录，其中包含了 Flutter 所需的所有文件和配置。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/05/16/knows/git/%E8%AF%AF%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Share Library">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海量图书馆">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/16/knows/git/%E8%AF%AF%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">误添加的文件，怎么删除</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-16 14:28:27 / 修改时间：14:38:26" itemprop="dateCreated datePublished" datetime="2025-05-16T14:28:27+08:00">2025-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="误添加的文件，怎么删除"><a href="#误添加的文件，怎么删除" class="headerlink" title="误添加的文件，怎么删除"></a>误添加的文件，怎么删除</h3><p>将 .env 配置文件添加到了 git 仓库上，因为里面有重要的配置信息，所以需要删除。</p>
-<ol>
-<li>先将.env 文件从 git 仓库中删除</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached .<span class="built_in">env</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>推送一次</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;Remove .env file from repository&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1057,7 +1039,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1068,7 +1050,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
