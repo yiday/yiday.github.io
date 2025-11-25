@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yiday.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="TypeScript Type 关键词详解什么是 Type？type 是 TypeScript 的类型别名，用于定义自定义类型。 1234567&#x2F;&#x2F; 定义一个类型别名type MyBool &#x3D; true | false&#x2F;&#x2F; 使用这个类型let value: MyBool &#x3D; true  &#x2F;&#x2F; ✅ 正确let value2: MyBool &#x3D; false &#x2F;&#x2F; ✅ 正确let value3: MyB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ts的type 和 interface">
+<meta property="og:url" content="https://yiday.github.io/2025/11/24/knows/node&js/ts%E7%9A%84type%E5%92%8Cinterface/index.html">
+<meta property="og:site_name" content="海量图书馆">
+<meta property="og:description" content="TypeScript Type 关键词详解什么是 Type？type 是 TypeScript 的类型别名，用于定义自定义类型。 1234567&#x2F;&#x2F; 定义一个类型别名type MyBool &#x3D; true | false&#x2F;&#x2F; 使用这个类型let value: MyBool &#x3D; true  &#x2F;&#x2F; ✅ 正确let value2: MyBool &#x3D; false &#x2F;&#x2F; ✅ 正确let value3: MyB">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-24T08:00:27.000Z">
+<meta property="article:modified_time" content="2025-11-25T02:58:26.162Z">
+<meta property="article:author" content="Share Library">
+<meta property="article:tag" content="typescript">
+<meta property="article:tag" content="type">
+<meta property="article:tag" content="interface">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yiday.github.io/2025/11/24/knows/node&js/ts%E7%9A%84type%E5%92%8Cinterface/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ts的type 和 interface | 海量图书馆</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">海量图书馆</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/11/24/knows/node&js/ts%E7%9A%84type%E5%92%8Cinterface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ts的type 和 interface
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-24 16:00:27" itemprop="dateCreated datePublished" datetime="2025-11-24T16:00:27+08:00">2025-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-25 10:58:26" itemprop="dateModified" datetime="2025-11-25T10:58:26+08:00">2025-11-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="TypeScript-Type-关键词详解"><a href="#TypeScript-Type-关键词详解" class="headerlink" title="TypeScript Type 关键词详解"></a>TypeScript Type 关键词详解</h1><h2 id="什么是-Type？"><a href="#什么是-Type？" class="headerlink" title="什么是 Type？"></a>什么是 Type？</h2><p><code>type</code> 是 <strong>TypeScript 的类型别名</strong>，用于定义自定义类型。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个类型别名</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyBool</span> = <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用这个类型</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">value</span>: <span class="title class_">MyBool</span> = <span class="literal">true</span>  <span class="comment">// ✅ 正确</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">value2</span>: <span class="title class_">MyBool</span> = <span class="literal">false</span> <span class="comment">// ✅ 正确</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">value3</span>: <span class="title class_">MyBool</span> = <span class="string">&quot;yes&quot;</span> <span class="comment">// ❌ 错误</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Type-的主要用途"><a href="#Type-的主要用途" class="headerlink" title="Type 的主要用途"></a>Type 的主要用途</h2><h3 id="1-联合类型（Union-Types）"><a href="#1-联合类型（Union-Types）" class="headerlink" title="1. 联合类型（Union Types）"></a>1. 联合类型（Union Types）</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个类型，可以是多个值之一</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Status</span> = <span class="string">&quot;pending&quot;</span> | <span class="string">&quot;success&quot;</span> | <span class="string">&quot;error&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">status</span>: <span class="title class_">Status</span> = <span class="string">&quot;pending&quot;</span> <span class="comment">// ✅</span></span><br><span class="line">status = <span class="string">&quot;success&quot;</span>             <span class="comment">// ✅</span></span><br><span class="line">status = <span class="string">&quot;loading&quot;</span>             <span class="comment">// ❌ 错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字面量类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">HttpMethod</span> = <span class="string">&quot;GET&quot;</span> | <span class="string">&quot;POST&quot;</span> | <span class="string">&quot;PUT&quot;</span> | <span class="string">&quot;DELETE&quot;</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">method</span>: <span class="title class_">HttpMethod</span> = <span class="string">&quot;GET&quot;</span> <span class="comment">// ✅</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-对象类型"><a href="#2-对象类型" class="headerlink" title="2. 对象类型"></a>2. 对象类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义对象结构</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="attr">email</span>?: <span class="built_in">string</span>  <span class="comment">// 可选属性</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">user</span>: <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-函数类型"><a href="#3-函数类型" class="headerlink" title="3. 函数类型"></a>3. 函数类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义函数签名</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Callback</span> = <span class="function">(<span class="params"><span class="attr">data</span>: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">myCallback</span>: <span class="title class_">Callback</span> = <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">myCallback</span>(<span class="string">&quot;hello&quot;</span>) <span class="comment">// ✅</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-元组类型"><a href="#4-元组类型" class="headerlink" title="4. 元组类型"></a>4. 元组类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义固定长度和类型的数组</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Tuple</span> = [<span class="built_in">string</span>, <span class="built_in">number</span>, <span class="built_in">boolean</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">tuple</span>: <span class="title class_">Tuple</span> = [<span class="string">&quot;test&quot;</span>, <span class="number">123</span>, <span class="literal">true</span>] <span class="comment">// ✅</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">tuple2</span>: <span class="title class_">Tuple</span> = [<span class="string">&quot;test&quot;</span>, <span class="string">&quot;123&quot;</span>, <span class="literal">true</span>] <span class="comment">// ❌ 错误</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-交叉类型（Intersection-Types）"><a href="#5-交叉类型（Intersection-Types）" class="headerlink" title="5. 交叉类型（Intersection Types）"></a>5. 交叉类型（Intersection Types）</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结合多个类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Admin</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">permissions</span>: <span class="built_in">string</span>[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">email</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同时具有 Admin 和 User 的属性</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AdminUser</span> = <span class="title class_">Admin</span> &amp; <span class="title class_">User</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">admin</span>: <span class="title class_">AdminUser</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;管理员&quot;</span>,</span><br><span class="line">  <span class="attr">permissions</span>: [<span class="string">&quot;read&quot;</span>, <span class="string">&quot;write&quot;</span>],</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&quot;admin@example.com&quot;</span></span><br><span class="line">&#125; <span class="comment">// ✅</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Type-vs-Interface（重要区别）"><a href="#Type-vs-Interface（重要区别）" class="headerlink" title="Type vs Interface（重要区别）"></a>Type vs Interface（重要区别）</h2><h3 id="相似点"><a href="#相似点" class="headerlink" title="相似点"></a>相似点</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserType</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Interface</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">UserInterface</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 两者都可以这样使用</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">user1</span>: <span class="title class_">UserType</span> = &#123; <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">user2</span>: <span class="title class_">UserInterface</span> = &#123; <span class="attr">name</span>: <span class="string">&quot;李四&quot;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Type</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>声明合并</strong></td>
+<td>❌ 不支持</td>
+<td>✅ 支持</td>
+</tr>
+<tr>
+<td><strong>联合类型</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td><strong>元组</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td><strong>基本类型</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td><strong>映射类型</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td><strong>条件类型</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="具体对比示例"><a href="#具体对比示例" class="headerlink" title="具体对比示例"></a>具体对比示例</h2><h3 id="Type-支持，Interface-不支持"><a href="#Type-支持，Interface-不支持" class="headerlink" title="Type 支持，Interface 不支持"></a>Type 支持，Interface 不支持</h3><h4 id="1-联合类型"><a href="#1-联合类型" class="headerlink" title="1. 联合类型"></a>1. 联合类型</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type ✅</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Status</span> = <span class="string">&quot;pending&quot;</span> | <span class="string">&quot;success&quot;</span> | <span class="string">&quot;error&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Interface ❌</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Status</span> = &quot;pending&quot; | &quot;success&quot; | &quot;error&quot;  // 错误！</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-基本类型"><a href="#2-基本类型" class="headerlink" title="2. 基本类型"></a>2. 基本类型</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type ✅</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyString</span> = <span class="built_in">string</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyNumber</span> = <span class="built_in">number</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyBool</span> = <span class="built_in">boolean</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Interface ❌</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">MyString</span> <span class="keyword">extends</span> <span class="built_in">string</span> &#123;&#125;  <span class="comment">// 不推荐</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-元组"><a href="#3-元组" class="headerlink" title="3. 元组"></a>3. 元组</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type ✅</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Tuple</span> = [<span class="built_in">string</span>, <span class="built_in">number</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// Interface ❌</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Tuple</span> &#123;</span><br><span class="line">  <span class="number">0</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="number">1</span>: <span class="built_in">number</span></span><br><span class="line">&#125;  <span class="comment">// 很复杂，不推荐</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Interface-支持，Type-不支持"><a href="#Interface-支持，Type-不支持" class="headerlink" title="Interface 支持，Type 不支持"></a>Interface 支持，Type 不支持</h3><h4 id="声明合并"><a href="#声明合并" class="headerlink" title="声明合并"></a>声明合并</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Interface ✅ 自动合并</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">user</span>: <span class="title class_">User</span> = &#123; <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125; <span class="comment">// ✅</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Type ❌ 不支持合并</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;  <span class="comment">// ❌ 错误：重复声明</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="实际使用示例"><a href="#实际使用示例" class="headerlink" title="实际使用示例"></a>实际使用示例</h2><h3 id="你的例子：type-MyBool-true-false"><a href="#你的例子：type-MyBool-true-false" class="headerlink" title="你的例子：type MyBool = true | false"></a>你的例子：<code>type MyBool = true | false</code></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个布尔类型，只能是 true 或 false</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyBool</span> = <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyBool</span> = <span class="built_in">boolean</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">isActive</span>: <span class="title class_">MyBool</span> = <span class="literal">true</span>   <span class="comment">// ✅</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">isDeleted</span>: <span class="title class_">MyBool</span> = <span class="literal">false</span> <span class="comment">// ✅</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">value</span>: <span class="title class_">MyBool</span> = <span class="literal">null</span>      <span class="comment">// ❌ 错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实际应用：更严格的类型定义</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Permission</span> = <span class="literal">true</span> | <span class="literal">false</span>  <span class="comment">// 明确表示权限状态</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="完整的应用示例"><a href="#完整的应用示例" class="headerlink" title="完整的应用示例"></a>完整的应用示例</h2><h3 id="React-组件中的-Type"><a href="#React-组件中的-Type" class="headerlink" title="React 组件中的 Type"></a>React 组件中的 Type</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义组件 Props 类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">ButtonProps</span> = &#123;</span><br><span class="line">  <span class="attr">label</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">onClick</span>: <span class="function">(<span class="params"><span class="attr">e</span>: <span class="title class_">React</span>.<span class="title class_">MouseEvent</span></span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line">  <span class="attr">variant</span>?: <span class="string">&quot;primary&quot;</span> | <span class="string">&quot;secondary&quot;</span> | <span class="string">&quot;danger&quot;</span></span><br><span class="line">  <span class="attr">size</span>?: <span class="string">&quot;sm&quot;</span> | <span class="string">&quot;md&quot;</span> | <span class="string">&quot;lg&quot;</span></span><br><span class="line">  <span class="attr">disabled</span>?: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">MyButton</span> &#123;</span><br><span class="line">  <span class="attr">props</span>: <span class="title class_">ButtonProps</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyButton</span>: <span class="title class_">React</span>.<span class="property">FC</span>&lt;<span class="title class_">ButtonProps</span>&gt; = <span class="function">(<span class="params">&#123;</span></span></span><br><span class="line"><span class="params"><span class="function">  label,</span></span></span><br><span class="line"><span class="params"><span class="function">  onClick,</span></span></span><br><span class="line"><span class="params"><span class="function">  variant = <span class="string">&quot;primary&quot;</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">  size = <span class="string">&quot;md&quot;</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">  disabled = <span class="literal">false</span></span></span></span><br><span class="line"><span class="params"><span class="function">&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">onClick</span>=<span class="string">&#123;onClick&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">disabled</span>=<span class="string">&#123;disabled&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">className</span>=<span class="string">&#123;</span>`<span class="attr">btn-</span>$&#123;<span class="attr">variant</span>&#125; <span class="attr">btn-</span>$&#123;<span class="attr">size</span>&#125;`&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    &gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;label&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用组件</span></span><br><span class="line">&lt;<span class="title class_">MyButton</span> </span><br><span class="line">  label=<span class="string">&quot;提交&quot;</span></span><br><span class="line">  variant=<span class="string">&quot;primary&quot;</span></span><br><span class="line">  onClick=&#123;<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;clicked&quot;</span>)&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="API-响应类型"><a href="#API-响应类型" class="headerlink" title="API 响应类型"></a>API 响应类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义 API 响应结构</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">ApiResponse</span>&lt;T&gt; = &#123;</span><br><span class="line">  <span class="attr">code</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="attr">message</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">data</span>: T</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义用户类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">email</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserResponse</span> = <span class="title class_">ApiResponse</span>&lt;<span class="title class_">User</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实际使用</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getUser</span>(<span class="params"></span>): <span class="title class_">Promise</span>&lt;<span class="title class_">UserResponse</span>&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;/api/user&#x27;</span>)</span><br><span class="line">  <span class="keyword">return</span> response.<span class="title function_">json</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者用于数组</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UsersResponse</span> = <span class="title class_">ApiResponse</span>&lt;<span class="title class_">User</span>[]&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更复杂的例子"><a href="#更复杂的例子" class="headerlink" title="更复杂的例子"></a>更复杂的例子</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义状态类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">LoadingState</span> = &#123;</span><br><span class="line">  <span class="attr">status</span>: <span class="string">&quot;loading&quot;</span></span><br><span class="line">  <span class="attr">progress</span>?: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">SuccessState</span>&lt;T&gt; = &#123;</span><br><span class="line">  <span class="attr">status</span>: <span class="string">&quot;success&quot;</span></span><br><span class="line">  <span class="attr">data</span>: T</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">ErrorState</span> = &#123;</span><br><span class="line">  <span class="attr">status</span>: <span class="string">&quot;error&quot;</span></span><br><span class="line">  <span class="attr">error</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 联合类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AsyncState</span>&lt;T&gt; = <span class="title class_">LoadingState</span> | <span class="title class_">SuccessState</span>&lt;T&gt; | <span class="title class_">ErrorState</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserState</span> = <span class="title class_">AsyncState</span>&lt;<span class="title class_">User</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleUserState</span>(<span class="params"><span class="attr">state</span>: <span class="title class_">UserState</span></span>) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (state.<span class="property">status</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;loading&quot;</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Spinner</span> <span class="attr">progress</span>=<span class="string">&#123;state.progress&#125;</span> /&gt;</span></span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;success&quot;</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">UserCard</span> <span class="attr">user</span>=<span class="string">&#123;state.data&#125;</span> /&gt;</span></span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;error&quot;</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Error</span> <span class="attr">message</span>=<span class="string">&#123;state.error&#125;</span> /&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Type-vs-普通变量"><a href="#Type-vs-普通变量" class="headerlink" title="Type vs 普通变量"></a>Type vs 普通变量</h2><h3 id="重要区别"><a href="#重要区别" class="headerlink" title="重要区别"></a>重要区别</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是一个 Type（类型别名）</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyBool</span> = <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 可以用于类型注解</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">value</span>: <span class="title class_">MyBool</span> = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ❌ 不能作为值使用</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="title class_">MyBool</span>  <span class="comment">// 错误！MyBool 不是值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是一个普通变量</span></span><br><span class="line"><span class="keyword">const</span> myBool = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以作为值使用</span></span><br><span class="line"><span class="keyword">const</span> x = myBool <span class="comment">// ✅</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x)   <span class="comment">// 输出：true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不能用于类型注解</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">y</span>: myBool = <span class="literal">true</span>  <span class="comment">// ❌ 错误</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="何时用-Type-何时用-Interface"><a href="#何时用-Type-何时用-Interface" class="headerlink" title="何时用 Type 何时用 Interface"></a>何时用 Type 何时用 Interface</h2><h3 id="使用-Type-的场景"><a href="#使用-Type-的场景" class="headerlink" title="使用 Type 的场景"></a>使用 Type 的场景</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ✅ 联合类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Status</span> = <span class="string">&quot;pending&quot;</span> | <span class="string">&quot;success&quot;</span> | <span class="string">&quot;error&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 基本类型别名</span></span><br><span class="line"><span class="keyword">type</span> <span class="variable constant_">ID</span> = <span class="built_in">string</span> | <span class="built_in">number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 元组</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Coordinate</span> = [<span class="built_in">number</span>, <span class="built_in">number</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 函数类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Validator</span> = <span class="function">(<span class="params"><span class="attr">value</span>: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">boolean</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 交叉类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AdminUser</span> = <span class="title class_">User</span> &amp; <span class="title class_">Admin</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 映射类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">ReadOnly</span>&lt;T&gt; = &#123;</span><br><span class="line">  <span class="keyword">readonly</span> [K <span class="keyword">in</span> keyof T]: T[K]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-Interface-的场景"><a href="#使用-Interface-的场景" class="headerlink" title="使用 Interface 的场景"></a>使用 Interface 的场景</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ✅ 对象结构（对象为主）</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 需要声明合并</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Window</span> &#123;</span><br><span class="line">  <span class="attr">myCustomProp</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 类实现接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="title function_">eat</span>(): <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">implements</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">  name = <span class="string">&quot;汪汪&quot;</span></span><br><span class="line">  <span class="title function_">eat</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;eat&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结对比"><a href="#总结对比" class="headerlink" title="总结对比"></a>总结对比</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ============ Type 示例 ============</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 联合类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Color</span> = <span class="string">&quot;red&quot;</span> | <span class="string">&quot;green&quot;</span> | <span class="string">&quot;blue&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 基本类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyString</span> = <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 对象类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 函数类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Callback</span> = <span class="function">(<span class="params"><span class="attr">data</span>: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 元组</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Point</span> = [<span class="built_in">number</span>, <span class="built_in">number</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6. 交叉类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Combined</span> = <span class="title class_">User</span> &amp; <span class="title class_">Admin</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ============ Interface 示例 ============</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 对象结构</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 继承</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Admin</span> <span class="keyword">extends</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">permissions</span>: <span class="built_in">string</span>[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 可选属性</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Config</span> &#123;</span><br><span class="line">  <span class="attr">apiUrl</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">timeout</span>?: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 只读属性</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">ReadOnlyUser</span> &#123;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="attr">id</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="keyword">readonly</span> <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 声明合并</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="attr">email</span>: <span class="built_in">string</span>  <span class="comment">// 自动合并到之前的 User</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="你的具体例子分析"><a href="#你的具体例子分析" class="headerlink" title="你的具体例子分析"></a>你的具体例子分析</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">MyBool</span> = <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这定义了一个类型，表示：</span></span><br><span class="line"><span class="comment">// - MyBool 只能是 true 或 false</span></span><br><span class="line"><span class="comment">// - 实际上等同于 boolean 类型</span></span><br><span class="line"><span class="comment">// - 但更明确地表达了意图</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">value</span>: <span class="title class_">MyBool</span> = <span class="literal">true</span>   <span class="comment">// ✅</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">value2</span>: <span class="title class_">MyBool</span> = <span class="literal">false</span> <span class="comment">// ✅</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">value3</span>: <span class="title class_">MyBool</span> = <span class="literal">null</span>  <span class="comment">// ❌</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 为什么不直接用 boolean？</span></span><br><span class="line"><span class="comment">// 因为 type 允许更细粒度的控制</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AdminStatus</span> = <span class="literal">true</span> | <span class="literal">false</span>  <span class="comment">// 清晰表达：只有两种状态</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">DebugMode</span> = <span class="literal">true</span> | <span class="literal">false</span>    <span class="comment">// 明确的含义</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Type</strong></td>
+<td>TypeScript 类型别名，定义自定义类型</td>
+</tr>
+<tr>
+<td><strong>用途</strong></td>
+<td>简化复杂类型、提高代码可读性</td>
+</tr>
+<tr>
+<td><strong>特点</strong></td>
+<td>支持联合、交叉、映射等高级特性</td>
+</tr>
+<tr>
+<td><strong>vs Interface</strong></td>
+<td>Type 更灵活，Interface 更适合对象</td>
+</tr>
+<tr>
+<td><strong>编译后</strong></td>
+<td>Type 在编译后被完全删除，只在开发时存在</td>
+</tr>
+</tbody></table>
+<p><strong>Type 是纯开发时的类型定义，运行时不存在。</strong> 🚀</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/typescript/" rel="tag"># typescript</a>
+              <a href="/tags/type/" rel="tag"># type</a>
+              <a href="/tags/interface/" rel="tag"># interface</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/11/19/knows/uniapp&vue3/onload&onShow&onReady%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="prev" title="onLoad、onReady、onShow生命周期?">
+      <i class="fa fa-chevron-left"></i> onLoad、onReady、onShow生命周期?
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/11/25/knows/node&js/ts%E7%9A%84T%E6%B3%9B%E5%9E%8B%E7%94%A8%E6%B3%95/" rel="next" title="ts的T泛型用法">
+      ts的T泛型用法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeScript-Type-%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AF%A6%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">TypeScript Type 关键词详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Type%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 Type？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-%E7%9A%84%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94"><span class="nav-number">1.2.</span> <span class="nav-text">Type 的主要用途</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%88Union-Types%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 联合类型（Union Types）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 对象类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 函数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%85%83%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 元组类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BA%A4%E5%8F%89%E7%B1%BB%E5%9E%8B%EF%BC%88Intersection-Types%EF%BC%89"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. 交叉类型（Intersection Types）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-vs-Interface%EF%BC%88%E9%87%8D%E8%A6%81%E5%8C%BA%E5%88%AB%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">Type vs Interface（重要区别）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E7%82%B9"><span class="nav-number">1.3.1.</span> <span class="nav-text">相似点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.2.</span> <span class="nav-text">区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AF%B9%E6%AF%94%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.4.</span> <span class="nav-text">具体对比示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-%E6%94%AF%E6%8C%81%EF%BC%8CInterface-%E4%B8%8D%E6%94%AF%E6%8C%81"><span class="nav-number">1.4.1.</span> <span class="nav-text">Type 支持，Interface 不支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">1. 联合类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">2. 基本类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%85%83%E7%BB%84"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">3. 元组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interface-%E6%94%AF%E6%8C%81%EF%BC%8CType-%E4%B8%8D%E6%94%AF%E6%8C%81"><span class="nav-number">1.4.2.</span> <span class="nav-text">Interface 支持，Type 不支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%90%88%E5%B9%B6"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">声明合并</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.5.</span> <span class="nav-text">实际使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%9Atype-MyBool-true-false"><span class="nav-number">1.5.1.</span> <span class="nav-text">你的例子：type MyBool &#x3D; true | false</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.6.</span> <span class="nav-text">完整的应用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84-Type"><span class="nav-number">1.6.1.</span> <span class="nav-text">React 组件中的 Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API-%E5%93%8D%E5%BA%94%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.6.2.</span> <span class="nav-text">API 响应类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">1.6.3.</span> <span class="nav-text">更复杂的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-vs-%E6%99%AE%E9%80%9A%E5%8F%98%E9%87%8F"><span class="nav-number">1.7.</span> <span class="nav-text">Type vs 普通变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="nav-number">1.7.1.</span> <span class="nav-text">重要区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E6%97%B6%E7%94%A8-Type-%E4%BD%95%E6%97%B6%E7%94%A8-Interface"><span class="nav-number">1.8.</span> <span class="nav-text">何时用 Type 何时用 Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Type-%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">1.8.1.</span> <span class="nav-text">使用 Type 的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Interface-%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">1.8.2.</span> <span class="nav-text">使用 Interface 的场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E5%AF%B9%E6%AF%94"><span class="nav-number">1.9.</span> <span class="nav-text">总结对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E5%85%B7%E4%BD%93%E4%BE%8B%E5%AD%90%E5%88%86%E6%9E%90"><span class="nav-number">1.10.</span> <span class="nav-text">你的具体例子分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.11.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Share Library</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Share Library</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

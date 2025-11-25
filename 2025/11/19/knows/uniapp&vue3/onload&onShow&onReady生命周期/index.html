@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yiday.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="介绍 onLoad、onReady、onShow 的先后关系，页面加载的详细流程。 uni-app 框架，首先根据 pages.json 的配置，创建页面所以原生导航栏是最快显示的。页面背景色也应该在这里配置。 根据页面 template 里的组件，创建 dom。这里的 dom 创建仅包含第一批处理的静态 dom。对于通过 js&#x2F;uts 更新 data 然后通过 v-for 再创建的列表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onLoad、onReady、onShow生命周期?">
+<meta property="og:url" content="https://yiday.github.io/2025/11/19/knows/uniapp&vue3/onload&onShow&onReady%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
+<meta property="og:site_name" content="海量图书馆">
+<meta property="og:description" content="介绍 onLoad、onReady、onShow 的先后关系，页面加载的详细流程。 uni-app 框架，首先根据 pages.json 的配置，创建页面所以原生导航栏是最快显示的。页面背景色也应该在这里配置。 根据页面 template 里的组件，创建 dom。这里的 dom 创建仅包含第一批处理的静态 dom。对于通过 js&#x2F;uts 更新 data 然后通过 v-for 再创建的列表">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-19T01:28:27.000Z">
+<meta property="article:modified_time" content="2025-11-19T07:39:44.207Z">
+<meta property="article:author" content="Share Library">
+<meta property="article:tag" content="vue3">
+<meta property="article:tag" content="onLoad">
+<meta property="article:tag" content="onReady">
+<meta property="article:tag" content="onShow">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yiday.github.io/2025/11/19/knows/uniapp&vue3/onload&onShow&onReady%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>onLoad、onReady、onShow生命周期? | 海量图书馆</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">海量图书馆</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/11/19/knows/uniapp&vue3/onload&onShow&onReady%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          onLoad、onReady、onShow生命周期?
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-19 09:28:27 / 修改时间：15:39:44" itemprop="dateCreated datePublished" datetime="2025-11-19T09:28:27+08:00">2025-11-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍 onLoad、onReady、onShow 的先后关系，页面加载的详细流程。</p>
+<p>uni-app 框架，首先根据 pages.json 的配置，创建页面<br>所以原生导航栏是最快显示的。页面背景色也应该在这里配置。</p>
+<p>根据页面 template 里的组件，创建 dom。<br>这里的 dom 创建仅包含第一批处理的静态 dom。对于通过 js&#x2F;uts 更新 data 然后通过 v-for 再创建的列表数据，不在第一批处理。</p>
+<p>要注意一个页面静态 dom 元素过多，会影响页面加载速度。在 uni-app x Android 版本上，可能会阻碍页面进入的转场动画。 因为此时，页面转场动画还没有启动。</p>
+<p>触发 onLoad<br>此时页面还未显示，没有开始进入的转场动画，页面 dom 还不存在。</p>
+<p>所以这里不能直接操作 dom（可以修改 data，因为 vue 框架会等待 dom 准备后再更新界面）；在 app-uvue 中获取当前的 activity 拿到的是老页面的 activity，只能通过页面栈获取 activity。</p>
+<p>onLoad 比较适合的操作是：接受上页的参数，联网取数据，更新 data。</p>
+<p>手机都是多核的，uni.request 或云开发联网，在子线程运行，不会干扰 UI 线程的入场动画，并行处理可以更快的拿到数据、渲染界面。</p>
+<p>但 onLoad 里不适合进行大量同步耗时运算，因为此时转场动画还没开始。</p>
+<p>尤其 uni-app x 在 Android 上，onLoad 里的代码（除了联网和加载图片）默认是在 UI 线程运行的，大量同步耗时计算很容易卡住页面动画不启动。除非开发者显式指定在其他线程运行。</p>
+<p>转场动画开始<br>新页面开始进入的转场动画，动画默认耗时 300ms，可以在路由 API 中调节时长。</p>
+<p>页面 onReady<br>第 2 步创建 dom 是虚拟 dom，dom 创建后需要经历一段时间，UI 层才能完成了页面上真实元素的创建，即触发了 onReady。</p>
+<p>onReady 后，页面元素就可以自由操作了，比如 ref 获取节点。同时首批界面也渲染了。</p>
+<p>注意：onReady 和转场动画开始、结束之间，没有必然的先后顺序，完全取决于 dom 的数量和复杂度。</p>
+<p>如果元素排版和渲染够快，转场动画刚开始就渲染好了；</p>
+<p>大多情况下，转场动画走几格就看到了首批渲染内容；</p>
+<p>如果元素排版和渲染过慢，转场动画结束都没有内容，就会造成白屏。</p>
+<p>联网进程从 onLoad 起就在异步获取数据更新 data，如果服务器速度够快，第二批数据也可能在转场动画结束前渲染。</p>
+<p>转场动画结束<br>再次强调，5 和 6 的先后顺序不一定，取决于首批 dom 渲染的速度。</p>
+<p>页面加载常见问题<br>了解了页面加载时序原理，我们就知道如何避免页面加载常见的问题：</p>
+<p>优化白屏的方法：<br>页面 dom 太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少 dom 数量的策略，详见<br>联网不要在 onReady 里，那样太慢了，在 onLoad 里早点联网<br>在 pages.json 里配置原生导航栏和背景色<br>有的页面 template 内容非常少，整页就是一个需要联网加载的列表，这会造成虽然首批 dom 飞快渲染了，但页面其实还是白的，联网后才能显示字和图。 此时需要在 template 里做一些简单占位组件，比如 loading 组件、骨架屏，让本地先显示一些内容。<br>卡住动画不启动的原因：<br>页面 dom 太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少 dom 数量的策略，详见<br>onLoad 里执行了耗时的同步计算<br>onShow 和 onHide<br>注意页面显示，是一个会重复触发的事件。</p>
+<p>a 页面刚进入时，会触发 a 页面的 onShow。</p>
+<p>当 a 跳转到 b 页面时，a 会触发 onHide，而 b 会触发 onShow。</p>
+<p>但当 b 被关闭时，b 会触发 onUnload，此时 a 再次显示出现，会再次触发 onShow。</p>
+<p>在 tabbar 页面（指 pages.json 里配置的 tabbar），不同 tab 页面互相切换时，会触发各自的 onShow 和 onHide。</p>
+<p>onInit<br>注意</p>
+<p>仅百度小程序基础库 3.260 以上支持 onInit 生命周期<br>其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑<br>不依赖页面传参的逻辑可以直接使用 created 生命周期替代</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vue3/" rel="tag"># vue3</a>
+              <a href="/tags/onLoad/" rel="tag"># onLoad</a>
+              <a href="/tags/onReady/" rel="tag"># onReady</a>
+              <a href="/tags/onShow/" rel="tag"># onShow</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/11/13/knows/uniapp&vue3/%E4%BB%80%E4%B9%88%E6%98%AFref/" rel="prev" title="什么是ref?">
+      <i class="fa fa-chevron-left"></i> 什么是ref?
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/11/24/knows/node&js/ts%E7%9A%84type%E5%92%8Cinterface/" rel="next" title="ts的type 和 interface">
+      ts的type 和 interface <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Share Library</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Share Library</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

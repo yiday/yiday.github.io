@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yiday.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="这行代码是 Vue 3 Composition API 中非常基础且核心的用法，用于创建一个响应式的数据引用（reactive reference）。 我们来逐部分解释：  ✅ 代码：12import &#123; ref &#125; from &quot;vue&quot;;const title &#x3D; ref(&quot;Hello&quot;);   🔍 分解说明：1. import &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是ref?">
+<meta property="og:url" content="https://yiday.github.io/2025/11/13/knows/uniapp&vue3/%E4%BB%80%E4%B9%88%E6%98%AFref/index.html">
+<meta property="og:site_name" content="海量图书馆">
+<meta property="og:description" content="这行代码是 Vue 3 Composition API 中非常基础且核心的用法，用于创建一个响应式的数据引用（reactive reference）。 我们来逐部分解释：  ✅ 代码：12import &#123; ref &#125; from &quot;vue&quot;;const title &#x3D; ref(&quot;Hello&quot;);   🔍 分解说明：1. import &amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-13T01:28:27.000Z">
+<meta property="article:modified_time" content="2025-11-13T01:56:32.690Z">
+<meta property="article:author" content="Share Library">
+<meta property="article:tag" content="vue3">
+<meta property="article:tag" content="ref">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yiday.github.io/2025/11/13/knows/uniapp&vue3/%E4%BB%80%E4%B9%88%E6%98%AFref/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是ref? | 海量图书馆</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">海量图书馆</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yiday.github.io/2025/11/13/knows/uniapp&vue3/%E4%BB%80%E4%B9%88%E6%98%AFref/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Share Library">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海量图书馆">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是ref?
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-13 09:28:27 / 修改时间：09:56:32" itemprop="dateCreated datePublished" datetime="2025-11-13T09:28:27+08:00">2025-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">知识库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这行代码是 <strong>Vue 3 Composition API</strong> 中非常基础且核心的用法，用于创建一个<strong>响应式的数据引用（reactive reference）</strong>。</p>
+<p>我们来逐部分解释：</p>
+<hr>
+<h3 id="✅-代码："><a href="#✅-代码：" class="headerlink" title="✅ 代码："></a>✅ 代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> title = <span class="title function_">ref</span>(<span class="string">&quot;Hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="🔍-分解说明："><a href="#🔍-分解说明：" class="headerlink" title="🔍 分解说明："></a>🔍 分解说明：</h3><h4 id="1-import-ref-from-vue"><a href="#1-import-ref-from-vue" class="headerlink" title="1. import { ref } from &#39;vue&#39;"></a>1. <code>import &#123; ref &#125; from &#39;vue&#39;</code></h4><ul>
+<li>从 Vue 3 的包中导入 <code>ref</code> 函数。</li>
+<li><code>ref</code> 是 <strong>Composition API</strong> 的核心函数之一，用于创建<strong>响应式变量</strong>。</li>
+</ul>
+<h4 id="2-ref-Hello"><a href="#2-ref-Hello" class="headerlink" title="2. ref(&#39;Hello&#39;)"></a>2. <code>ref(&#39;Hello&#39;)</code></h4><ul>
+<li>调用 <code>ref</code>，传入初始值 <code>&#39;Hello&#39;</code>（一个字符串）。</li>
+<li><code>ref</code> 会返回一个<strong>响应式对象</strong>，这个对象有一个 <code>.value</code> 属性，里面存着你传入的值。</li>
+</ul>
+<p>所以实际上：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> title = <span class="title function_">ref</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(title); <span class="comment">// → &#123; value: &#x27;Hello&#x27; &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(title.<span class="property">value</span>); <span class="comment">// → &#x27;Hello&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-为什么需要-value？"><a href="#3-为什么需要-value？" class="headerlink" title="3. 为什么需要 .value？"></a>3. 为什么需要 <code>.value</code>？</h4><ul>
+<li>在 <strong>JavaScript 逻辑中</strong>（如 setup()、方法、计算等），你必须通过 <code>title.value</code> 来读取或修改它的值。</li>
+<li>但在 <strong>模板（template）中</strong>，Vue 会自动“解包”（unwrap）<code>ref</code>，你直接写 <code>&#123;&#123; title &#125;&#125;</code> 就行，不用 <code>.value</code>。</li>
+</ul>
+<hr>
+<h3 id="🌰-完整示例："><a href="#🌰-完整示例：" class="headerlink" title="🌰 完整示例："></a>🌰 完整示例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;h1&gt;&#123;&#123; title &#125;&#125;&lt;/h1&gt;</span><br><span class="line">		&lt;!-- 自动解包，显示 &quot;Hello&quot; --&gt;</span><br><span class="line">		&lt;button @click=&quot;changeTitle&quot;&gt;Change Title&lt;/button&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;;</span><br><span class="line"></span><br><span class="line">const title = ref(&quot;Hello&quot;);</span><br><span class="line"></span><br><span class="line">function changeTitle() &#123;</span><br><span class="line">	title.value = &quot;Hi Vue!&quot;; // 注意：在 JS 中要加 .value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="❓-为什么不用-let-title-Hello-？"><a href="#❓-为什么不用-let-title-Hello-？" class="headerlink" title="❓ 为什么不用 let title = &#39;Hello&#39;？"></a>❓ 为什么不用 <code>let title = &#39;Hello&#39;</code>？</h3><p>因为普通变量<strong>不是响应式的</strong>。如果你这样写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> title = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="comment">// 后面改成 title = &#x27;Hi&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>Vue <strong>无法检测到变化</strong>，页面不会更新。</p>
+<p>而 <code>ref</code> 创建的是<strong>响应式引用</strong>，当 <code>title.value</code> 改变时，Vue 会自动重新渲染使用了 <code>title</code> 的模板部分。</p>
+<hr>
+<h3 id="📌-总结："><a href="#📌-总结：" class="headerlink" title="📌 总结："></a>📌 总结：</h3><table>
+<thead>
+<tr>
+<th>写法</th>
+<th>类型</th>
+<th>是否响应式</th>
+<th>在 JS 中访问</th>
+<th>在模板中访问</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>const title = &#39;Hello&#39;</code></td>
+<td>普通字符串</td>
+<td>❌ 否</td>
+<td><code>title</code></td>
+<td><code>&#123;&#123; title &#125;&#125;</code>（但不会响应变化）</td>
+</tr>
+<tr>
+<td><code>const title = ref(&#39;Hello&#39;)</code></td>
+<td>Ref 对象</td>
+<td>✅ 是</td>
+<td><code>title.value</code></td>
+<td><code>&#123;&#123; title &#125;&#125;</code>（自动解包）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>✅ <strong><code>ref</code> 是 Vue 3 中让基本类型（string, number, boolean 等）具备响应能力的标准方式。</strong></p>
+</blockquote>
+<hr>
+<h3 id="💡-小贴士："><a href="#💡-小贴士：" class="headerlink" title="💡 小贴士："></a>💡 小贴士：</h3><ul>
+<li>对于<strong>对象或数组</strong>，通常用 <code>reactive()</code> 更方便（不需要 <code>.value</code>）。</li>
+<li>但对于<strong>简单值</strong>（如字符串、数字），<code>ref</code> 是首选。</li>
+<li>所有 <code>ref</code> 在模板中都会自动 <code>.value</code> 解包，放心使用！</li>
+</ul>
+<p>当然！在 Vue 3 的 <strong>Composition API</strong> 中，更新<strong>对象</strong>和<strong>数组</strong>的响应式数据有几种方式。下面分别给出清晰、实用的例子。</p>
+<hr>
+<h2 id="✅-场景说明"><a href="#✅-场景说明" class="headerlink" title="✅ 场景说明"></a>✅ 场景说明</h2><p>我们使用 <code>&lt;script setup&gt;</code> 语法（Vue 3 推荐），并展示：</p>
+<ul>
+<li>如何定义响应式对象&#x2F;数组</li>
+<li>如何正确更新它们（确保响应式生效）</li>
+<li>模板中如何使用</li>
+</ul>
+<hr>
+<h2 id="📌-1-更新-响应式对象（Object）"><a href="#📌-1-更新-响应式对象（Object）" class="headerlink" title="📌 1. 更新 响应式对象（Object）"></a>📌 1. 更新 <strong>响应式对象（Object）</strong></h2><h3 id="✅-推荐方式：使用-reactive-（适合对象）"><a href="#✅-推荐方式：使用-reactive-（适合对象）" class="headerlink" title="✅ 推荐方式：使用 reactive()（适合对象）"></a>✅ 推荐方式：使用 <code>reactive()</code>（适合对象）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;p&gt;姓名: &#123;&#123; user.name &#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;年龄: &#123;&#123; user.age &#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;button @click=&quot;updateName&quot;&gt;改名&lt;/button&gt;</span><br><span class="line">		&lt;button @click=&quot;addProperty&quot;&gt;添加城市&lt;/button&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive &#125; from &quot;vue&quot;;</span><br><span class="line"></span><br><span class="line">// 创建响应式对象</span><br><span class="line">const user = reactive(&#123;</span><br><span class="line">	name: &quot;Alice&quot;,</span><br><span class="line">	age: 25,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// ✅ 正确更新已有属性（响应式）</span><br><span class="line">function updateName() &#123;</span><br><span class="line">	user.name = &quot;Bob&quot;; // 直接赋值，Vue 能检测到</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ✅ 添加新属性（也是响应式的！）</span><br><span class="line">function addProperty() &#123;</span><br><span class="line">	user.city = &quot;Shanghai&quot;; // reactive 会自动追踪新属性</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 <code>reactive()</code> 返回的是一个<strong>代理对象（Proxy）</strong>，对它的任何修改（包括新增属性）都是响应式的。</p>
+</blockquote>
+<hr>
+<h2 id="📌-2-更新-响应式数组（Array）"><a href="#📌-2-更新-响应式数组（Array）" class="headerlink" title="📌 2. 更新 响应式数组（Array）"></a>📌 2. 更新 <strong>响应式数组（Array）</strong></h2><h3 id="✅-推荐方式：使用-ref-或-reactive-都可以，但操作要规范"><a href="#✅-推荐方式：使用-ref-或-reactive-都可以，但操作要规范" class="headerlink" title="✅ 推荐方式：使用 ref() 或 reactive() 都可以，但操作要规范"></a>✅ 推荐方式：使用 <code>ref()</code> 或 <code>reactive()</code> 都可以，但操作要规范</h3><h4 id="方式-A：用-ref-包裹数组（更常见）"><a href="#方式-A：用-ref-包裹数组（更常见）" class="headerlink" title="方式 A：用 ref() 包裹数组（更常见）"></a>方式 A：用 <code>ref()</code> 包裹数组（更常见）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li v-for=&quot;(item, index) in list&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">				&#123;&#123; item &#125;&#125;</span><br><span class="line">			&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">		&lt;button @click=&quot;addItem&quot;&gt;添加项&lt;/button&gt;</span><br><span class="line">		&lt;button @click=&quot;removeLast&quot;&gt;删除最后一项&lt;/button&gt;</span><br><span class="line">		&lt;button @click=&quot;updateFirst&quot;&gt;修改第一项&lt;/button&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;;</span><br><span class="line"></span><br><span class="line">// 使用 ref 创建响应式数组</span><br><span class="line">const list = ref([&quot;苹果&quot;, &quot;香蕉&quot;]);</span><br><span class="line"></span><br><span class="line">// ✅ 添加元素（响应式）</span><br><span class="line">function addItem() &#123;</span><br><span class="line">	list.value.push(&quot;橙子&quot;); // 注意：要用 .value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ✅ 删除元素（响应式）</span><br><span class="line">function removeLast() &#123;</span><br><span class="line">	list.value.pop();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ✅ 修改某个元素（响应式）</span><br><span class="line">function updateFirst() &#123;</span><br><span class="line">	list.value[0] = &quot;草莓&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方式-B：用-reactive-包裹数组（较少用，但可行）"><a href="#方式-B：用-reactive-包裹数组（较少用，但可行）" class="headerlink" title="方式 B：用 reactive() 包裹数组（较少用，但可行）"></a>方式 B：用 <code>reactive()</code> 包裹数组（较少用，但可行）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = <span class="title function_">reactive</span>([<span class="string">&quot;苹果&quot;</span>, <span class="string">&quot;香蕉&quot;</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作时不需要 .value</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">addItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">	list.<span class="title function_">push</span>(<span class="string">&quot;橙子&quot;</span>); <span class="comment">// 直接调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⚠️ 注意：<strong>不要直接替换整个数组或对象引用</strong>（除非你用 <code>ref</code> 并赋值给 <code>.value</code>）。</p>
+</blockquote>
+<hr>
+<h2 id="❌-错误示例（会导致失去响应式）"><a href="#❌-错误示例（会导致失去响应式）" class="headerlink" title="❌ 错误示例（会导致失去响应式）"></a>❌ 错误示例（会导致失去响应式）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ❌ 错误：直接替换 ref 的值而不通过 .value</span></span><br><span class="line">list = [<span class="string">&quot;new&quot;</span>]; <span class="comment">// 报错或失去响应式！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 正确（ref）：</span></span><br><span class="line">list.<span class="property">value</span> = [<span class="string">&quot;new&quot;</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ❌ 错误：用 Object.assign 或展开运算符替换 reactive 对象</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(user, &#123; <span class="attr">name</span>: <span class="string">&quot;New&quot;</span> &#125;); <span class="comment">// 可能失效（虽然有时能 work，但不推荐）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 正确（reactive）：</span></span><br><span class="line">user.<span class="property">name</span> = <span class="string">&quot;New&quot;</span>; <span class="comment">// 直接修改属性</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🔁-如果你坚持用-ref-包裹对象（也可以）"><a href="#🔁-如果你坚持用-ref-包裹对象（也可以）" class="headerlink" title="🔁 如果你坚持用 ref() 包裹对象（也可以）"></a>🔁 如果你坚持用 <code>ref()</code> 包裹对象（也可以）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="title function_">ref</span>(&#123; <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新时必须用 .value</span></span><br><span class="line">user.<span class="property">value</span>.<span class="property">name</span> = <span class="string">&quot;Bob&quot;</span>;</span><br><span class="line">user.<span class="property">value</span>.<span class="property">city</span> = <span class="string">&quot;Beijing&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 选择建议：</p>
+<ul>
+<li><strong>简单值（string&#x2F;number&#x2F;boolean&#x2F;array）</strong> → 用 <code>ref</code></li>
+<li><strong>复杂对象（含嵌套）</strong> → 用 <code>reactive</code></li>
+<li>团队协作时，<strong>统一风格更重要</strong></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="✅-总结：如何安全更新？"><a href="#✅-总结：如何安全更新？" class="headerlink" title="✅ 总结：如何安全更新？"></a>✅ 总结：如何安全更新？</h2><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>推荐 API</th>
+<th>更新方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对象</td>
+<td><code>reactive()</code></td>
+<td><code>obj.prop = newValue</code></td>
+</tr>
+<tr>
+<td>数组</td>
+<td><code>ref()</code></td>
+<td><code>arr.value.push(...)</code></td>
+</tr>
+<tr>
+<td>基本类型</td>
+<td><code>ref()</code></td>
+<td><code>count.value = 10</code></td>
+</tr>
+</tbody></table>
+<p>只要遵循这些规则，Vue 3 就能<strong>自动追踪变化并更新视图</strong>。</p>
+<p>需要我演示“替换整个对象”或“深度更新嵌套对象”的例子吗？</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vue3/" rel="tag"># vue3</a>
+              <a href="/tags/ref/" rel="tag"># ref</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/10/30/knows/%E7%BB%8F%E6%B5%8E/%E4%BB%80%E4%B9%88%E6%98%AF%E6%BB%9A%E4%BB%93/" rel="prev" title="什么是滚仓">
+      <i class="fa fa-chevron-left"></i> 什么是滚仓
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/11/19/knows/uniapp&vue3/onload&onShow&onReady%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="next" title="onLoad、onReady、onShow生命周期?">
+      onLoad、onReady、onShow生命周期? <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">✅ 代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%8D-%E5%88%86%E8%A7%A3%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">🔍 分解说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-import-ref-from-vue"><span class="nav-number">2.1.</span> <span class="nav-text">1. import { ref } from &#39;vue&#39;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ref-Hello"><span class="nav-number">2.2.</span> <span class="nav-text">2. ref(&#39;Hello&#39;)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-value%EF%BC%9F"><span class="nav-number">2.3.</span> <span class="nav-text">3. 为什么需要 .value？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8C%B0-%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">🌰 完整示例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%93-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8-let-title-Hello-%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">❓ 为什么不用 let title &#x3D; &#39;Hello&#39;？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%8C-%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">📌 总结：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%92%A1-%E5%B0%8F%E8%B4%B4%E5%A3%AB%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">💡 小贴士：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-%E5%9C%BA%E6%99%AF%E8%AF%B4%E6%98%8E"><span class="nav-number"></span> <span class="nav-text">✅ 场景说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-1-%E6%9B%B4%E6%96%B0-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%AF%B9%E8%B1%A1%EF%BC%88Object%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">📌 1. 更新 响应式对象（Object）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E6%8E%A8%E8%8D%90%E6%96%B9%E5%BC%8F%EF%BC%9A%E4%BD%BF%E7%94%A8-reactive-%EF%BC%88%E9%80%82%E5%90%88%E5%AF%B9%E8%B1%A1%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">✅ 推荐方式：使用 reactive()（适合对象）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-2-%E6%9B%B4%E6%96%B0-%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E7%BB%84%EF%BC%88Array%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">📌 2. 更新 响应式数组（Array）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E6%8E%A8%E8%8D%90%E6%96%B9%E5%BC%8F%EF%BC%9A%E4%BD%BF%E7%94%A8-ref-%E6%88%96-reactive-%E9%83%BD%E5%8F%AF%E4%BB%A5%EF%BC%8C%E4%BD%86%E6%93%8D%E4%BD%9C%E8%A6%81%E8%A7%84%E8%8C%83"><span class="nav-number">1.</span> <span class="nav-text">✅ 推荐方式：使用 ref() 或 reactive() 都可以，但操作要规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F-A%EF%BC%9A%E7%94%A8-ref-%E5%8C%85%E8%A3%B9%E6%95%B0%E7%BB%84%EF%BC%88%E6%9B%B4%E5%B8%B8%E8%A7%81%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">方式 A：用 ref() 包裹数组（更常见）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F-B%EF%BC%9A%E7%94%A8-reactive-%E5%8C%85%E8%A3%B9%E6%95%B0%E7%BB%84%EF%BC%88%E8%BE%83%E5%B0%91%E7%94%A8%EF%BC%8C%E4%BD%86%E5%8F%AF%E8%A1%8C%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">方式 B：用 reactive() 包裹数组（较少用，但可行）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9D%8C-%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B%EF%BC%88%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%A4%B1%E5%8E%BB%E5%93%8D%E5%BA%94%E5%BC%8F%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">❌ 错误示例（会导致失去响应式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%81-%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%9D%9A%E6%8C%81%E7%94%A8-ref-%E5%8C%85%E8%A3%B9%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">🔁 如果你坚持用 ref() 包裹对象（也可以）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93%EF%BC%9A%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E6%9B%B4%E6%96%B0%EF%BC%9F"><span class="nav-number"></span> <span class="nav-text">✅ 总结：如何安全更新？</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Share Library</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Share Library</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
