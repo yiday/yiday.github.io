@@ -186,6 +186,28 @@
     </author>
     <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
     <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
+    <category term="大模型" scheme="https://share.awake.wang/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="TurboQuant" scheme="https://share.awake.wang/tags/TurboQuant/"/>
+    <category term="llama.cpp" scheme="https://share.awake.wang/tags/llama-cpp/"/>
+    <category term="MacBook" scheme="https://share.awake.wang/tags/MacBook/"/>
+    <category term="量化" scheme="https://share.awake.wang/tags/%E9%87%8F%E5%8C%96/"/>
+    <category term="本地部署" scheme="https://share.awake.wang/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/"/>
+    <content>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>用普通笔记本跑大模型，不再是梦</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>作者</td><td>爱可可-爱生活（北京邮电大学教师）</td></tr><tr><td>发布时间</td><td>2026-03-28（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/vOXr_DWtYFs/">https://m.toutiao.com/is/vOXr_DWtYFs/</a></td></tr></tbody></table><hr><h2 id="📝-内容简介"><a href="#📝-内容简介" class="headerlink" title="📝 内容简介"></a>📝 内容简介</h2><p>本文介绍了 Google 的 TurboQuant 算法被移植进 llama.cpp 后取得的突破：MacBook Air（M4，16GB）终于能在 20000 tokens 上下文下运行 Qwen 3.5-9B 模型，而此前直接崩溃。这不是颠覆性的变革，但确实把”不可能”变成了”可以接受的慢”。</p><p>TurboQuant 的核心思路不是直接暴力压缩数据，而是改变数据的存储格式，让 KV 缓存用极坐标（角度）而非直角坐标来表示，顺带去掉了传统量化方案里必须附带的精度校正常数，还加了 1bit 错误修正。相比传统的 q4 量化（相当于把一张全彩图片强行降成 16 色），TurboQuant 更接近视觉无损压缩，模型”看起来”还是原来那张图。</p><p>实测表明，同等 bit 数下 TurboQuant 比 llama.cpp 原生的 KV cache 量化质量更好，尤其在 3bit 时差距明显。Google 官方宣称可达 90% 以上的精度保持，实测差距基本在 1% 级别。</p><hr><h2 id="🔑-关键词讲解"><a href="#🔑-关键词讲解" class="headerlink" title="🔑 关键词讲解"></a>🔑 关键词讲解</h2><ul><li><strong>TurboQuant</strong>：Google 推出的量化压缩算法，通过极坐标表示 KV 缓存，实现接近无损的模型压缩</li><li><strong>llama.cpp</strong>：开源的 LLM 推理框架，支持多种量化方案，是本地运行大模型的主流选择</li><li><strong>MacBook Air M4</strong>：苹果 latest 笔记本芯片，16GB 内存下已能运行 9B 模型</li><li><strong>Qwen 3.5-9B</strong>：阿里巴巴通义千问 9B 参数模型，中文能力优秀</li><li><strong>20000 tokens 上下文</strong>：模型能处理的上下文长度，相当于约 15000 汉字</li><li><strong>KV cache 量化</strong>：对键值缓存进行压缩，减少内存占用</li><li><strong>极坐标表示</strong>：用角度和模长代替直角坐标，提升压缩效率</li><li><strong>q4 量化</strong>：4 bit 量化，将模型 weight 压缩到 4 位精度</li><li><strong>视觉无损压缩</strong>：压缩后结果与原始数据几乎无法区分</li><li><strong>本地部署</strong>：在个人设备上运行大模型，无需云端 API</li></ul><hr><h2 id="💡-核心要点"><a href="#💡-核心要点" class="headerlink" title="💡 核心要点"></a>💡 核心要点</h2><h3 id="1-技术突破的本质"><a href="#1-技术突破的本质" class="headerlink" title="1. 技术突破的本质"></a>1. 技术突破的本质</h3><p>TurboQuant 不是新的模型架构，而是<strong>数据表示格式的创新</strong>。通过将 KV cache 从直角坐标转为极坐标，它实现了：</p><ul><li>✅ 更紧凑的存储（相同 bit 下保留更多信息）</li><li>✅ 更少的精度损失（1% 级别）</li><li>✅ 更快的推理速度（减少缓存大小）</li></ul><h3 id="2-硬件门槛大幅降低"><a href="#2-硬件门槛大幅降低" class="headerlink" title="2. 硬件门槛大幅降低"></a>2. 硬件门槛大幅降低</h3><p>此前要让 9B 模型跑 20k 上下文：</p><ul><li>❌ 需要 32GB+ 内存</li><li>❌ 需要高性能 GPU</li><li>❌ 成本高昂</li></ul><p>现在：</p><ul><li>✅ MacBook Air（M4，16GB）即可</li><li>✅ 普通笔记本也能胜任</li><li>✅ 消费级硬件就能体验长上下文</li></ul><h3 id="3-实际应用意义"><a href="#3-实际应用意义" class="headerlink" title="3. 实际应用意义"></a>3. 实际应用意义</h3><ul><li><strong>AI Agent</strong>：20k 上下文可以容纳单个任务的需求、历史记录、中间结果</li><li><strong>代码助手</strong>：能处理多个文件的上下文，不只是单个文件</li><li><strong>文档分析</strong>：长文档不再需要分段处理</li><li><strong>多轮对话</strong>：更长的对话记忆，减少重复</li></ul><h3 id="4-未来展望"><a href="#4-未来展望" class="headerlink" title="4. 未来展望"></a>4. 未来展望</h3><ul><li>TurboQuant 预计本周内合并到 llama.cpp 主线</li><li>MLX 版本已在路线图中</li><li>更短的上下文限制正在被逐个打破</li><li>本地设备的推理能力将持续提升</li></ul><hr><h2 id="📊-技术细节补充"><a href="#📊-技术细节补充" class="headerlink" title="📊 技术细节补充"></a>📊 技术细节补充</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">传统量化的局限：</span><br><span class="line">- q4：4 bit，精度损失 5-10%</span><br><span class="line">- q8：8 bit，精度高但内存占用翻倍</span><br><span class="line"></span><br><span class="line">TurboQuant 的优势：</span><br><span class="line">- 3 bit ≈ q4 精度（甚至更好）</span><br><span class="line">- 内存减少 30-50%</span><br><span class="line">- 适合 KV cache 的特殊结构</span><br></pre></td></tr></table></figure><hr><h2 id="🔗-相关链接与资源"><a href="#🔗-相关链接与资源" class="headerlink" title="🔗 相关链接与资源"></a>🔗 相关链接与资源</h2><ul><li><strong>原文链接</strong>：<a href="https://m.toutiao.com/is/vOXr_DWtYFs/">https://m.toutiao.com/is/vOXr_DWtYFs/</a></li><li><strong>llama.cpp 仓库</strong>：<a href="https://github.com/ggerganov/llama.cpp">https://github.com/ggerganov/llama.cpp</a></li><li><strong>TurboQuant 论文</strong>：（待补充）</li><li><strong>Qwen 模型</strong>：<a href="https://github.com/QwenLM/Qwen">https://github.com/QwenLM/Qwen</a></li></ul><hr><h2 id="🏷️-标签说明"><a href="#🏷️-标签说明" class="headerlink" title="🏷️ 标签说明"></a>🏷️ 标签说明</h2><ul><li><strong>技术标签</strong>：TurboQuant, llama.cpp, 量化, 大模型, 本地部署</li><li><strong>硬件标签</strong>：MacBook, M4, 16GB</li><li><strong>模型标签</strong>：Qwen 3.5-9B, 9B 参数</li><li><strong>场景标签</strong>：AI Agent, 代码助手, 文档分析</li></ul><hr><h2 id="⚠️-免责声明"><a href="#⚠️-免责声明" class="headerlink" title="⚠️ 免责声明"></a>⚠️ 免责声明</h2><p>本文内容源自今日头条网友分享，由 AI 整理发布，仅供学习交流使用。原始内容版权归原作者所有，如有疑问请联系原发布者。</p><p>技术细节可能存在不完整或过时信息，请以官方文档和最新研究为准。</p><hr><blockquote><p>一台最便宜的 MacBook Air，能跑 20000 tokens 上下文的 9B 模型，而且不崩溃。</p><p>这就是 TurboQuant 带来的变化。本地设备离长上下文代理仍有距离，只是这个距离，今年开始以肉眼可见的速度在缩短。</p></blockquote>]]>
+    </content>
+    <id>https://share.awake.wang/2026/03/31/turboquant-notebook-article/</id>
+    <link href="https://share.awake.wang/2026/03/31/turboquant-notebook-article/"/>
+    <published>2026-03-31T04:00:00.000Z</published>
+    <summary>Google的TurboQuant算法被移植进llama.cpp后，MacBook Air（M4，16GB）终于能在20000 tokens上下文下运行Qwen 3.5-9B，让普通笔记本跑大模型成为可能。</summary>
+    <title>爱可可-爱生活：【用普通笔记本跑大模型，不再是梦】</title>
+    <updated>2026-03-31T11:31:20.433Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>admin</name>
+    </author>
+    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
+    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
     <category term="DeepSeek" scheme="https://share.awake.wang/tags/DeepSeek/"/>
     <category term="大模型" scheme="https://share.awake.wang/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
@@ -403,22 +425,6 @@
     <published>2026-03-31T02:18:10.000Z</published>
     <summary>要知道，一个企业把命脉交给一个人，表面是高效，但内里是长期的高压锅：这人一疲惫、一...  文明 2天前 关注 张雪峰这么拼，看着不像只是为了自己。早已实现财富自由的他，身后却有1000名员工，这个数...</summary>
     <title>文明：张雪峰这么拼，看着不像只是为了自己。早已实现财富自由的他，身后却有1000名员工，这个数字本身就让人想深一口气。张雪峰的名字就是公司最值钱的IP，全国影响力大，客户掏钱买的更多是他的口碑和信任；而公司的流量几乎全靠他不停直播来维持，只有他能把粉丝变业绩，员工多是服务保障、后勤那一类，真正能把流量变现的人寥寥。</title>
-    <updated>2026-03-31T10:32:25.158Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>admin</name>
-    </author>
-    <category term="文章" scheme="https://share.awake.wang/categories/%E6%96%87%E7%AB%A0/"/>
-    <category term="副业" scheme="https://share.awake.wang/tags/%E5%89%AF%E4%B8%9A/"/>
-    <content>
-      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>80后宝妈一枚：为什么要努力薅羊毛</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/TdkirM3MmiY/">https://m.toutiao.com/is/TdkirM3MmiY/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>副业</strong>：见文中解释</li></ul><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><p>因为你会发现<br>就是上班挣的钱<br>也仅仅是维持日常开支<br>像我老公一个月就六千<br>每个月还得出房租费，邮费<br>七七八八，一个月下来根本没有存款<br>我去上班孩子没人带<br>所以只能薅点羊毛<br>多一份小收入，也挺好<br>我就只有两个手机<br>每天也有10-100不等<br>多一份收入多一份保障<br>在有限的条件里<br>给自己多攒一些安全感吧<br>你们一天能薅多少啊？#为什么大家对薅羊毛乐此不疲# #“薅羊毛”…</p><p>80后宝妈一枚<br>19小时前<br>关注<br>为什么要努力薅羊毛<br>因为你会发现<br>就是上班挣的钱<br>也仅仅是维持日常开支<br>像我老公一个月就六千<br>每个月还得出房租费，邮费<br>七七八八，一个月下来根本没有存款<br>我去上班孩子没人带<br>所以只能薅点羊毛<br>多一份小收入，也挺好<br>我就只有两个手机<br>每天也有10-100不等<br>多一份收入多一份保障<br>在有限的条件里<br>给自己多攒一些安全感吧<br>你们一天能薅多少啊？#为什么大家对薅羊毛乐此不疲# #“薅羊毛”上瘾怎么办# #女人经济独立重要吗# #没有收入的宝妈深夜的感想# #全职宝妈在家带娃都在干什么呢?# #陪孩子成长重要，还是赚钱重要# #宝妈如何一边带娃,一边挣钱?# #有什么适合全职宝妈的副业可以做# #全职妈妈该找什么副业来获得收入#</p><p>打开今日头条查看图片详情</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
-    </content>
-    <id>https://share.awake.wang/2026/03/31/80-article/</id>
-    <link href="https://share.awake.wang/2026/03/31/80-article/"/>
-    <published>2026-03-31T02:16:43.000Z</published>
-    <summary>因为你会发现 就是上班挣的钱 也仅仅是维持日常开支 像我老公一个月就六千 每个月还得出房租费，邮费 七七八八，一个月下来根本没有存款 我去上班孩子没人带 所以只能薅点羊毛 多一份小收入，也挺好 我就只...</summary>
-    <title>80后宝妈一枚：为什么要努力薅羊毛</title>
     <updated>2026-03-31T10:32:25.158Z</updated>
   </entry>
 </feed>
