@@ -186,6 +186,24 @@
     </author>
     <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
     <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
+    <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
+    <category term="openclaw" scheme="https://share.awake.wang/tags/openclaw/"/>
+    <content>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>御弟蝈蝈：2026年Openclaw不同人群的“最优开局组合”- 主流搭配推荐 - 【今日头条版】</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/BQBYwZtX6aw/">https://m.toutiao.com/is/BQBYwZtX6aw/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>OpenClaw</strong>：见文中解释</li><li><strong>openclaw</strong>：见文中解释</li></ul><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><ol><li><p>牛马普通人 &#x2F; 上班族（追求简单高效）：GOG + Tavily + Summarize + Agent Browser<br>推荐理由：基本能覆盖 80% 的日常需求（查资料 + 总结 + 日程 + 网页操作）。</p></li><li><p>内容创作者 &#x2F; 自媒体：Firecrawl + Summarize + s…</p></li></ol><p>御弟蝈蝈<br>1周前<br>关注<br>2026年Openclaw不同人群的“最优开局组合”- 主流搭配推荐 - 【今日头条版】</p><ol><li><p>牛马普通人 &#x2F; 上班族（追求简单高效）：GOG + Tavily + Summarize + Agent Browser<br>推荐理由：基本能覆盖 80% 的日常需求（查资料 + 总结 + 日程 + 网页操作）。</p></li><li><p>内容创作者 &#x2F; 自媒体：Firecrawl + Summarize + self-improving-agent + Ontology + Tavily<br>推荐理由： 研究 → 抓素材 → 总结 → 结构化知识 → 输出内容，全链路打通。</p></li><li><p>程序员 &#x2F; 开发者：Agent Browser + GitHub skill + self-improving-agent + mcporter &#x2F; Composio + Code Interpreter<br>推荐理由： 写代码、查 bug、提 PR、自动化测试、项目管理一条龙。</p></li><li><p>极致效率 &#x2F; 长期 Agent 玩家：Capability Evolver + self-improving-agent + Mission Control + Agent Autopilot<br>推荐理由： 让 Agent 自己进化、自己排期、自己开车，接近“数字员工”。</p></li></ol><p>这些技能大部分都可以通过 npx clawhub@latest install 技能名 直接安装（或在 OpenClaw 界面搜索安装），安装后立刻可用。<br>#Openclaw# #AI工作推荐# #ai转型范本# #ai搭配建议##工作# #自媒体# #视频剪辑# #程序员##学生党# #老师# #教师#</p><p>打开今日头条查看图片详情</p><p>打开今日头条查看图片详情</p><p>打开今日头条查看图片详情</p><p>打开今日头条查看图片详情</p><p>打开今日头条查看图片详情</p><p>上海市</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
+    </content>
+    <id>https://share.awake.wang/2026/03/31/2026openclaw-article/</id>
+    <link href="https://share.awake.wang/2026/03/31/2026openclaw-article/"/>
+    <published>2026-03-31T03:18:05.000Z</published>
+    <summary>1. 牛马普通人 / 上班族（追求简单高效）：GOG + Tavily + Summarize + Agent Browser 推荐理由：基本能覆盖 80% 的日常需求（查资料 + 总结 + 日程 +...</summary>
+    <title>御弟蝈蝈：2026年Openclaw不同人群的“最优开局组合”- 主流搭配推荐 - 【今日头条版】</title>
+    <updated>2026-03-31T11:18:05.520Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>admin</name>
+    </author>
+    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
+    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
     <category term="AI" scheme="https://share.awake.wang/tags/AI/"/>
     <category term="大模型" scheme="https://share.awake.wang/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
@@ -399,25 +417,5 @@
     <summary>李可先生医案处方集，收录百余则真实医案，展现火神派临床应用精髓与现代疑难重症治疗经验。</summary>
     <title>李可《医案处方集》PDF</title>
     <updated>2026-03-31T10:32:39.339Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>admin</name>
-    </author>
-    <category term="心灵修行" scheme="https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/"/>
-    <category term="玄学" scheme="https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/%E7%8E%84%E5%AD%A6/"/>
-    <category term="能量学" scheme="https://share.awake.wang/tags/%E8%83%BD%E9%87%8F%E5%AD%A6/"/>
-    <category term="通灵" scheme="https://share.awake.wang/tags/%E9%80%9A%E7%81%B5/"/>
-    <category term="灵性能力" scheme="https://share.awake.wang/tags/%E7%81%B5%E6%80%A7%E8%83%BD%E5%8A%9B/"/>
-    <category term="道格拉斯·德龙" scheme="https://share.awake.wang/tags/%E9%81%93%E6%A0%BC%E6%8B%89%E6%96%AF%C2%B7%E5%BE%B7%E9%BE%99/"/>
-    <content>
-      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>书名</td><td>你可以通灵</td></tr><tr><td>作者</td><td>道格拉斯·德龙（Douglas De Long）</td></tr><tr><td>格式</td><td>PDF</td></tr><tr><td>访问密码</td><td>168168</td></tr><tr><td>来源</td><td>magick999.com</td></tr></tbody></table><h2 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h2><p>道格拉斯·德龙是当代通灵与灵性能力开发领域的知名导师，本书是其代表作，旨在证明”通灵不是少数人的天赋，而是每个人都可以训练的 skill”。</p><p>“通灵”（Clairvoyance&#x2F;Mediumship）指访问非物质层面的信息与能量的能力。它不仅是”看到灵体”，更包括：</p><ul><li>超视觉（Clairvoyance）：看见能量、图像、符号</li><li>超听觉（Clairaudience）：听见灵性声音、 guidance</li><li>超感受（Clairsentience）：感受能量、情绪、直觉</li><li>超知道（Claircognizance）：直接”知道”信息而不知来源</li><li>通灵（Channeling）：让高我&#x2F;指导灵&#x2F;存有通过自己说话</li></ul><p>本书特色：</p><ul><li><strong>民主化</strong>：强调通灵能力人人皆有，只是需要开发</li><li><strong>系统训练</strong>：提供从零到进阶的完整练习体系</li><li><strong>安全第一</strong>：强调能量保护与伦理边界</li><li><strong>实战案例</strong>：包含大量真实通灵案例与解析</li></ul><p>适合对灵性能力、能量感知、与高我连接感兴趣的读者。</p><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>通灵（Clairvoyance&#x2F;Mediumship）</strong>：访问非物质层面信息的能力，多种形式</li><li><strong>道格拉斯·德龙（Douglas De Long）</strong>：通灵教学专家，强调”可以学会”</li><li><strong>灵性能力（Psychic Abilities）</strong>：超越五感的内在感知力</li><li><strong>高我（Higher Self）</strong>：个体的灵性核心，通灵的理想连接对象</li><li><strong>指导灵（Spirit Guides）</strong>：帮助个人的非物理存在，可通灵沟通</li><li><strong>能量场（Aura）</strong>：人体周围的能量层，通灵者常可见&#x2F;感知</li><li><strong>脉轮（Chakras）</strong>：能量中心，通灵训练常从第三眼开始</li><li><strong>意图（Intention）</strong>：通灵的关键，决定连接的层级</li><li>** Grounding（接地）**：保持与物质层连接，避免”飘飘然”</li><li><strong>能量保护（Protection）</strong>：白光罩、护盾等防护技术</li></ul><h2 id="通灵的本质"><a href="#通灵的本质" class="headerlink" title="通灵的本质"></a>通灵的本质</h2><p>道格拉斯·德龙对通灵的定义：</p><p><strong>“通灵是意识扩展的过程——从只认同物质现实，到认识到并能够访问更广阔的非物理现实。”</strong></p><p>关键观点：</p><ol><li><strong>通灵是 normal</strong>：不是”魔法”，是每个人与生俱来的能力，只是多数人遗忘</li><li><strong>层次差异</strong>：与不同层级的存有连接（高我、指导灵、已故亲人、其他维度存有）</li><li><strong>意图至上</strong>：连接的品质取决于你的意图——爱与服务的意图连接高频存有</li><li><strong>需要练习</strong>：通灵如同肌肉，不用则废，持续练习才稳定</li><li><strong>安全第一</strong>：不明连接可能导致负能量附着，必须有保护措施</li><li><strong>伦理底线</strong>：不为控制他人、获取不当利益而通灵</li></ol><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul><li><p><strong>引言：通灵——你的隐藏能力</strong></p><ul><li>为什么你认为自己不能通灵</li><li>通灵的科学与灵性证据</li><li>本书的目标与教学方法</li></ul></li><li><p><strong>第一章：什么是通灵</strong></p><ul><li>通灵的定义与形式</li><li>历史中的通灵者（耶稣、佛陀、爱德加·凯西等）</li><li>通灵 vs 想象力</li><li>通灵的伦理</li></ul></li><li><p><strong>第二章：准备你的能量系统</strong></p><ul><li>七脉轮与通灵</li><li>第三眼（眉心轮）的激活</li><li>能量净化技术</li><li>接地与 centeredness</li><li>日常能量维护</li></ul></li><li><p><strong>第三章：能量保护</strong></p><ul><li>为什么需要保护</li><li>白光罩技术</li><li>护盾 technique</li><li>水晶的应用</li><li>神圣空间创建</li><li>识别负能量</li></ul></li><li><p><strong>第四章：连接高我</strong></p><ul><li>高我 vs 小我</li><li>如何分辨高我声音</li><li>提问的艺术</li><li>验证信息</li><li>日常高我连接练习</li></ul></li><li><p><strong>第五章：指导灵的识别</strong></p><ul><li>指导灵的种类（个人、职业、守护、大师）</li><li>识别你的指导灵</li><li>建立信任关系</li><li>请求 signs</li><li>常见的指导灵信号</li></ul></li><li><p><strong>第六章：通灵技术（ Clairvoyance ）</strong></p><ul><li>视觉化能力培养</li><li>第三眼看见能量</li><li>符号解读</li><li>心灵电影</li><li>记录视觉信息</li></ul></li><li><p><strong>第七章：通灵技术（ Clairaudience ）</strong></p><ul><li>听觉训练</li><li>区分内在 vs 外在声音</li><li>引导音频的使用</li><li>常见通灵听到的内容</li><li>如何提问得到清晰回答</li></ul></li><li><p><strong>第八章：通灵技术（ Clairsentience ）</strong></p><ul><li>感受能量</li><li>身体感知（温度、 pressure、振动）</li><li>情绪感知</li><li>如何不被他人的情绪淹没</li><li>将感受转化为语言</li></ul></li><li><p><strong>第九章：通灵技术（ Claircognizance ）</strong></p><ul><li>“直接知道”现象</li><li>建立信任</li><li>记录”知道的内容”</li><li>如何增强</li></ul></li><li><p><strong>第十章：通灵练习</strong></p><ul><li>每日5分钟练习</li><li>灵气球&#x2F;能量球操作</li><li>解读物品记录</li><li>远距离通灵（读照片）</li><li>集体通灵</li><li>常见问题与解决</li></ul></li><li><p><strong>第十一章：真实案例分析</strong></p><ul><li>疾病诊断案例</li><li>人生决策咨询</li><li>与已故亲人连接</li><li>前世读取</li><li>错误案例与教训</li></ul></li><li><p><strong>第十二章：伦理与界限</strong></p><ul><li>阅读师的守则</li><li>隐私权</li><li>不预测、不操控</li><li>何时应拒绝通灵</li><li>已故亲人的连接伦理</li></ul></li><li><p><strong>第十三章：长期发展</strong></p><ul><li>记录你的通灵日记</li><li>寻找社群与督导</li><li>避免灵性自大</li><li>保持接地与现实功能</li><li>进阶学习资源</li></ul></li><li><p><strong>附录</strong></p><ul><li>结印本练习指南</li><li>常见符号词典</li><li>能量保护快速清单</li><li>推荐冥想音频列表</li><li>进一步学习资源</li></ul></li></ul><h2 id="原文摘录"><a href="#原文摘录" class="headerlink" title="原文摘录"></a>原文摘录</h2><blockquote><p>“通灵不是’怪异’的能力，是人类意识自然进化的结果。每个人都可开发。” —— 道格拉斯·德龙</p></blockquote><blockquote><p>“你的意图决定连接的品质。爱的意图连接高频存有，恐惧的意图吸引低频存在。”</p></blockquote><blockquote><p>“通灵的第一课是能量保护。没有保护的通灵如同不设防的城市。”</p></blockquote><blockquote><p>“分不清通灵与想象？问：这个信息带来 peace 还是 fear？真信息带来 peace。”</p></blockquote><blockquote><p>“高我从不恐吓、不制造焦虑。如果信息让你恐惧，那不是高我。”</p></blockquote><blockquote><p>“通灵如肌肉，不用则废。每天5分钟，比每周2小时更有效。”</p></blockquote><blockquote><p>“接地与扩展同样重要。通灵后接地，避免’飘在空中’。”</p></blockquote><blockquote><p>“最稳定的通灵者是那些同时保持理智与灵性的人。不要 cult”</p></blockquote><blockquote><p>“你的第一个指导灵通常是你的高我。先学会听它的声音，再连接其他。”</p></blockquote><blockquote><p>“通灵的目标不是’炫技’，是服务。服务导向的通灵最安全、最有成长。”</p></blockquote><h2 id="📥-下载地址"><a href="#📥-下载地址" class="headerlink" title="📥 下载地址"></a>📥 下载地址</h2><p><a href="https://url60.ctfile.com/f/15365260-8785257067-125e6c?p=168168">道格拉斯德龙-你可以通灵.pdf</a></p><blockquote><p>资源来自网络，仅供学习交流使用，请勿用于商业用途。下载后请及时删除。</p></blockquote>]]>
-    </content>
-    <id>https://share.awake.wang/2026/03/27/%E9%81%93%E6%A0%BC%E6%8B%89%E6%96%AF%E5%BE%B7%E9%BE%99-%E4%BD%A0%E5%8F%AF%E4%BB%A5%E9%80%9A%E7%81%B5-PDF/</id>
-    <link href="https://share.awake.wang/2026/03/27/%E9%81%93%E6%A0%BC%E6%8B%89%E6%96%AF%E5%BE%B7%E9%BE%99-%E4%BD%A0%E5%8F%AF%E4%BB%A5%E9%80%9A%E7%81%B5-PDF/"/>
-    <published>2026-03-27T12:25:30.000Z</published>
-    <summary>道格拉斯·德龙经典著作《你可以通灵》，系统教授如何开发与使用灵性阅读能力。</summary>
-    <title>道格拉斯·德龙《你可以通灵》PDF</title>
-    <updated>2026-03-31T10:32:39.361Z</updated>
   </entry>
 </feed>
