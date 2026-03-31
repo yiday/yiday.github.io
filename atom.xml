@@ -302,6 +302,27 @@
     <author>
       <name>admin</name>
     </author>
+    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
+    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
+    <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
+    <category term="token" scheme="https://share.awake.wang/tags/token/"/>
+    <category term="openclaw" scheme="https://share.awake.wang/tags/openclaw/"/>
+    <category term="人工智能" scheme="https://share.awake.wang/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="投资" scheme="https://share.awake.wang/tags/%E6%8A%95%E8%B5%84/"/>
+    <content>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>有投资者用“龙虾”智能体炒股月赚90%</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/8tl5g27eVMk/">https://m.toutiao.com/is/8tl5g27eVMk/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>OpenClaw</strong>：见文中解释</li><li><strong>openclaw</strong>：见文中解释</li><li><strong>token</strong>：见文中解释</li><li><strong>人工智能</strong>：见文中解释</li><li><strong>投资</strong>：见文中解释</li></ul><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><p>每经记者：陈晨 每经编辑：易启江</p><p>每经北京3月30日电随着AI智能体OpenClaw（一款开源人工智能体框架，俗称“龙虾”）在投资圈持续走红，一场围绕其炒股能力的真实大考已然拉开帷幕。每经记者调查发现，有人用“龙虾”在模拟盘通过加杠杆斩获近90%的惊人月度收益，也有人实盘20万元本金亏损8万元；还有人账户虽微弱跑赢大盘，最终盈利却仍不足以覆盖Token（词元）费用。</p><p>有券商IT（信息技术）人士表示，这一现象折射出智能化投资工具在C端市场（个人用户市场）的快速演进。但值得注意的是，当前这类工具整体仍处于探索阶段，其策略稳定性、数据来源可靠性以及风险控制能力，均有待进一步检验。此外，记者获悉，有券商正通过多重技术与制度措施，防范第三方平台非法接入，切实保障交易安全与市场秩序。</p><p>每日经济新闻</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
+    </content>
+    <id>https://share.awake.wang/2026/03/31/90-article/</id>
+    <link href="https://share.awake.wang/2026/03/31/90-article/"/>
+    <published>2026-03-31T05:12:52.000Z</published>
+    <summary>每经记者：陈晨 每经编辑：易启江  每经北京3月30日电随着AI智能体OpenClaw（一款开源人工智能体框架，俗称“龙虾”）在投资圈持续走红，一场围绕其炒股能力的真实大考已然拉开帷幕。每经记者调查发...</summary>
+    <title>有投资者用“龙虾”智能体炒股月赚90%</title>
+    <updated>2026-03-31T13:12:52.068Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>admin</name>
+    </author>
     <category term="历史" scheme="https://share.awake.wang/categories/%E5%8E%86%E5%8F%B2/"/>
     <category term="历史读物" scheme="https://share.awake.wang/categories/%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2%E8%AF%BB%E7%89%A9/"/>
     <category term="黄仁宇" scheme="https://share.awake.wang/tags/%E9%BB%84%E4%BB%81%E5%AE%87/"/>
@@ -428,26 +449,5 @@
     <summary>本地部署 OpenClaw 大模型：零 Token 快速上手（DeepSeek 专属版）  OpenClaw 是一款开源 AI 智能体框架，主打隐私私有化部署，全程无需 API 密钥 / Token，...</summary>
     <title>本地部署 OpenClaw 大模型：零 Token 快速上手（DeepSeek 专属版）</title>
     <updated>2026-03-31T11:20:27.037Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>admin</name>
-    </author>
-    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
-    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
-    <category term="大模型" scheme="https://share.awake.wang/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
-    <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
-    <category term="openclaw" scheme="https://share.awake.wang/tags/openclaw/"/>
-    <category term="模型" scheme="https://share.awake.wang/tags/%E6%A8%A1%E5%9E%8B/"/>
-    <category term="情绪" scheme="https://share.awake.wang/tags/%E6%83%85%E7%BB%AA/"/>
-    <content>
-      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>机械毁灭女：openclaw炒股技能TOP10分享！</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/ee-7ghEldow/">https://m.toutiao.com/is/ee-7ghEldow/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>OpenClaw</strong>：见文中解释</li><li><strong>openclaw</strong>：见文中解释</li><li><strong>大模型</strong>：见文中解释</li><li><strong>模型</strong>：见文中解释</li><li><strong>情绪</strong>：见文中解释</li></ul><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><p>1、机构持仓追踪<br>这样可以看到机构的持仓变动，进行买入或者卖出的计划，很适合买基金或者买股票的小白上手进行操作！</p><p>2、技术分析大师<br>这个就是进行详细分析的一个技能，很适合小白，而且安装上后可以进行基金或者A股的全面分析，进行详细的了解</p><p>3、华尔街研报生成<br>这个就很适合小白，生成各种不同类型的报告，进行提前的一个了解</p><p>4、自动化交易系统<br>…</p><p>机械毁灭女<br>1天前 · 头条新锐创作者<br>关注<br>openclaw炒股技能TOP10分享！</p><p>1、机构持仓追踪<br>这样可以看到机构的持仓变动，进行买入或者卖出的计划，很适合买基金或者买股票的小白上手进行操作！</p><p>2、技术分析大师<br>这个就是进行详细分析的一个技能，很适合小白，而且安装上后可以进行基金或者A股的全面分析，进行详细的了解</p><p>3、华尔街研报生成<br>这个就很适合小白，生成各种不同类型的报告，进行提前的一个了解</p><p>4、自动化交易系统<br>这个进行一个模拟，不是真正的交易，感觉拿不准的时候可以用上这个技能</p><p>5、量化回测引擎<br>这个就是量化的一个标准，符合小白进行上手操作</p><p>6、宏观市场体验<br>可以看到一个宏观市场的变动，适合小白</p><p>7、股权交易顾问<br>这个就是各个股权的变动风向标，适合小白上手</p><p>8、DCF估值模型<br>这个就是估值的一个大模型，看哪个价值更高</p><p>9、市场情绪分析<br>可以看到市场的一个大致方形走向，进行整体市场的分析</p><p>10、安全审计卫士<br>这个是可以看股票未来安全的一个标准，适合小白</p><p>#技能##ai##热门##数据##市场##技能##科技##openclaw##学习##工作##生活##本地部署##畅聊数码新品##数码爱好者##人气好物大赏##数码好物荐##数码圈八卦##我要上热门##我要上微头条#</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
-    </content>
-    <id>https://share.awake.wang/2026/03/31/openclawtop10-article/</id>
-    <link href="https://share.awake.wang/2026/03/31/openclawtop10-article/"/>
-    <published>2026-03-31T03:19:56.000Z</published>
-    <summary>1、机构持仓追踪 这样可以看到机构的持仓变动，进行买入或者卖出的计划，很适合买基金或者买股票的小白上手进行操作！  2、技术分析大师 这个就是进行详细分析的一个技能，很适合小白，而且安装上后可以进行基...</summary>
-    <title>机械毁灭女：openclaw炒股技能TOP10分享！</title>
-    <updated>2026-03-31T11:19:56.034Z</updated>
   </entry>
 </feed>
