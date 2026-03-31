@@ -184,6 +184,23 @@
     <author>
       <name>admin</name>
     </author>
+    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
+    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI" scheme="https://share.awake.wang/tags/AI/"/>
+    <content>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>高山：我给你直接可复制、一步到位、零踩坑的 Trae + OpenClaw 联动配置，照着做就能用，全程不用你敲复杂命令👇</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/slUFVwFMPXM/">https://m.toutiao.com/is/slUFVwFMPXM/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>AI</strong>：见文中解释</li></ul><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><p>一、一键安装（Trae 里直接复制）</p><p>1. 打开 Trae → 切换到 SOLO 模式<br>2. 复制粘贴下面指令，回车：<br>plaintext</p><p>帮我一键安装 OpenClaw 并自动配置本地 Ollama 模型，自动解决 Node 22+ 依赖，全程自动完成<br> <br>…</p><p>高山<br>6小时前<br>关注<br>我给你直接可复制、一步到位、零踩坑的 Trae + OpenClaw 联动配置，照着做就能用，全程不用你敲复杂命令👇</p><p>一、一键安装（Trae 里直接复制）</p><p>1. 打开 Trae → 切换到 SOLO 模式<br>2. 复制粘贴下面指令，回车：<br>plaintext</p><p>帮我一键安装 OpenClaw 并自动配置本地 Ollama 模型，自动解决 Node 22+ 依赖，全程自动完成 </p><p>3. 等 1-3 分钟，Trae 自动装完、配好、启动服务</p><p>二、Ollama 本地模型配置（直接复制）</p><p>1. 打开 Trae → 进入 设置 → 模型&#x2F;插件<br>2. 找到 OpenClaw 配置，粘贴：</p><p>plaintext</p><p>provider: ollama<br>base_url: 网页链接<br>api_key: ollama-local<br>model: qwen2.5:7b </p><p>3. 保存 → 重启 OpenClaw 网关</p><p>三、验证调用（直接用）</p><p>1. 打开 Trae 聊天框<br>2. 输入：</p><p>plaintext</p><p>用 OpenClaw 帮我执行：查看当前目录所有文件 </p><p>3. 看结果：</p><ul><li>成功：显示文件列表</li><li>失败：Trae 自动修复</li></ul><p>四、怎么看有没有调用成功</p><p>1. Trae 日志：出现  OpenClaw 执行任务  字样<br>2. OpenClaw 终端：有  Forwarding to Ollama  日志<br>3. Ollama 终端：执行  ollama list  能看到模型，且有请求记录</p><p>五、避坑（必看）</p><ul><li>必须 Node 22+（Trae 会自动装）</li><li>模型名必须和  ollama list  完全一致</li><li>端口 18789 别被占用</li><li>本地模型别用太复杂的，Qwen2.5:7B 最稳</li></ul><p>六、一句话总结</p><p>Trae 写代码 → OpenClaw 执行任务 → Ollama 本地模型驱动<br>一套组合，写代码+自动化全搞定</p><p>#Trae开发# #OpenClaw# #探寻人工智能#</p><p>打开今日头条查看图片详情</p><p>打开今日头条查看图片详情</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
+    </content>
+    <id>https://share.awake.wang/2026/03/31/trae-openclaw-article/</id>
+    <link href="https://share.awake.wang/2026/03/31/trae-openclaw-article/"/>
+    <published>2026-03-31T03:00:11.000Z</published>
+    <summary>一、一键安装（Trae 里直接复制）   1. 打开 Trae → 切换到 SOLO 模式 2. 复制粘贴下面指令，回车： plaintext    帮我一键安装 OpenClaw 并自动配置本地 O...</summary>
+    <title>高山：我给你直接可复制、一步到位、零踩坑的 Trae + OpenClaw 联动配置，照着做就能用，全程不用你敲复杂命令👇</title>
+    <updated>2026-03-31T11:00:11.662Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>admin</name>
+    </author>
     <category term="心灵修行" scheme="https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/"/>
     <category term="自我成长" scheme="https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF/"/>
     <category term="内耗" scheme="https://share.awake.wang/tags/%E5%86%85%E8%80%97/"/>
@@ -396,24 +413,5 @@
     <summary>琳达·豪著作，指导如何通过阿卡西记录查询并实践你的灵魂使命与生命蓝图。</summary>
     <title>琳达·豪《在阿卡西纪录中发现你的灵魂道路》PDF</title>
     <updated>2026-03-31T10:32:39.351Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>admin</name>
-    </author>
-    <category term="心灵修行" scheme="https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/"/>
-    <category term="玄学" scheme="https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/%E7%8E%84%E5%AD%A6/"/>
-    <category term="阿卡西记录" scheme="https://share.awake.wang/tags/%E9%98%BF%E5%8D%A1%E8%A5%BF%E8%AE%B0%E5%BD%95/"/>
-    <category term="灵性典籍" scheme="https://share.awake.wang/tags/%E7%81%B5%E6%80%A7%E5%85%B8%E7%B1%8D/"/>
-    <category term="生命之书" scheme="https://share.awake.wang/tags/%E7%94%9F%E5%91%BD%E4%B9%8B%E4%B9%A6/"/>
-    <content>
-      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>书名</td><td>生命之书-阿卡西记录（文字整理版）</td></tr><tr><td>格式</td><td>PDF</td></tr><tr><td>访问密码</td><td>168168</td></tr><tr><td>来源</td><td>magick999.com</td></tr></tbody></table><h2 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h2><p>本书是阿卡西记录相关 teachings 的文字整理精华版，来源于 magick999.com 网站的灵性资料库。它汇集了多位阿卡西记录阅读师和解读者的核心观点，形成一部便于查阅的参考手册。</p><p>特点：</p><ul><li><strong>精华提炼</strong>：从大量阿卡西资料中提取最关键、最实用的 teachings</li><li><strong>易于查阅</strong>：按主题分类，适合作为灵性工具书</li><li><strong>价格自由</strong>：magick999.com 提倡灵性资料免费分享</li><li><strong>入门友好</strong>：语言简洁，概念清晰，适合初学者</li></ul><p>内容包括：</p><ol><li><strong>阿卡西记录基础</strong>：本质、结构、访问条件</li><li><strong>阅读技术</strong>：进入方法、提问技巧、信息识别</li><li><strong>常见主题</strong>：灵魂使命、前世、关系、健康、职业</li><li><strong>与其他灵性实践的关系</strong>：冥想、瑜伽、塔罗、星盘</li><li><strong>伦理与安全</strong>：阅读师的界限、能量保护</li><li><strong>进阶话题</strong>：集体记录、地点读取、时间线</li></ol><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>文字整理版</strong>：由自发志愿者或网站编辑从原始资料中提炼的精华版本</li><li><strong>magick999.com</strong>：知名灵性资料网站，提供免费电子书下载</li><li><strong>参考手册（Reference Guide）</strong>：按主题编排，便于快速查阅的资料形式</li><li><strong>精华（Essence）</strong>：去除冗余，保留核心 teachings</li><li><strong>入门级</strong>：适合零基础读者快速掌握基础概念</li><li><strong>工具书（Handbook）</strong>：日常灵性实践中的实用指南</li><li><strong>多位作者整合</strong>：汇集琳达·豪、埃德加·凯西等不同来源的 teachings</li><li><strong>跨平台</strong>：本书内容在多个网站流传，是互联网灵性共享的产物</li><li><strong>开源灵性</strong>：资料自由传播，不设版权限制</li><li><strong>社区驱动</strong>：内容由灵性社区共同维护与改进</li></ul><h2 id="来源说明"><a href="#来源说明" class="headerlink" title="来源说明"></a>来源说明</h2><p>magick999.com 是一个成立于2000年代初的灵性资源网站，特点：</p><ul><li><strong>免费共享</strong>：所有资料免费下载，反对灵性商业化</li><li><strong>志愿者编辑</strong>：内容由志愿者从各处收集、整理、排版</li><li><strong>多元融合</strong>：涵盖新时代、基督教神秘主义、藏传佛教、印度教等</li><li><strong>CC协议</strong>：部分资料采用知识共享许可</li><li><strong>社区互动</strong>：读者可提交新资料或勘误</li></ul><p>本书即该网站”阿卡西记录”专题的整理产物。</p><h2 id="目录结构（推测）"><a href="#目录结构（推测）" class="headerlink" title="目录结构（推测）"></a>目录结构（推测）</h2><ul><li><p><strong>第一部分：基础理论</strong></p><ul><li>阿卡西记录是什么</li><li>宇宙结构：物质层与非物质层</li><li>灵魂与记录的关系</li><li>历史渊源</li></ul></li><li><p><strong>第二部分：访问技术</strong></p><ul><li>准备工作（环境、能量、意图）</li><li>冥想技巧</li><li>视觉化练习</li><li>提问艺术</li></ul></li><li><p><strong>第三部分：信息识别</strong></p><ul><li>直觉信号（视觉、听觉、感受）</li><li>区分想象与真实</li><li>符号解读</li><li>验证方法</li></ul></li><li><p><strong>第四部分：实用主题</strong></p><ul><li>灵魂使命与天赋</li><li>前世经历</li><li>关系业力（双生火焰、灵魂家族）</li><li>健康与疗愈</li><li>职业与财富</li><li>人生决策</li></ul></li><li><p><strong>第五部分：进阶话题</strong></p><ul><li>读取地点&#x2F;物体的记录</li><li>集体&#x2F;团体记录</li><li>时间线操作</li><li>能量疗愈结合</li></ul></li><li><p><strong>第六部分：伦理与安全</strong></p><ul><li>阅读师的道德</li><li>隐私与界限</li><li>能量保护</li><li>何时应拒绝</li></ul></li><li><p><strong>第七部分：与其他实践结合</strong></p><ul><li>冥想</li><li>瑜伽</li><li>塔罗&#x2F;星盘</li><li>梦 work</li><li>灵气&#x2F;量子触疗</li></ul></li><li><p><strong>附录</strong></p><ul><li>快速查询表</li><li>术语词典</li><li>练习模板</li><li>推荐资源</li></ul></li></ul><h2 id="原文摘录（示例）"><a href="#原文摘录（示例）" class="headerlink" title="原文摘录（示例）"></a>原文摘录（示例）</h2><blockquote><p>“阿卡西记录不是外部数据库，而是你灵魂的一部分。访问它，就是 remembering 你本来的样子。”</p></blockquote><blockquote><p>“最有效的提问方式是：’从最高、最广的角度，关于[主题]，我需要知道什么？’”</p></blockquote><blockquote><p>“信息总是以你能理解的方式呈现。不要期待’标准答案’。”</p></blockquote><blockquote><p>“灵性成长的目标不是’获取超能力’，而是让爱与智慧自然流淌。”</p></blockquote><blockquote><p>“阿卡西记录中，每个灵魂都是完美的。问题不是’错误’，是学习机会。”</p></blockquote><blockquote><p>“你的直觉通道可能是视觉、听觉、感受、或直接知道。发现并信任它。”</p></blockquote><blockquote><p>“能量保护不是恐惧，是尊重。如同洗手是卫生。”</p></blockquote><blockquote><p>“没有’坏’的查询，只有不良的意图。清晰的意图带来清晰的答案。”</p></blockquote><blockquote><p>“阿卡西记录不会替你做决定，它只提供信息。选择权永远是你的。”</p></blockquote><blockquote><p>“每日练习，哪怕只有5分钟，比每周一次长时更有效。”</p></blockquote><h2 id="📥-下载地址"><a href="#📥-下载地址" class="headerlink" title="📥 下载地址"></a>📥 下载地址</h2><p><a href="https://url60.ctfile.com/f/15365260-8785257054-28491c?p=168168">生命之书-阿卡西记录-文字整理版-magick999.com.pdf</a></p><blockquote><p>资源来自网络，仅供学习交流使用，请勿用于商业用途。下载后请及时删除。</p></blockquote>]]>
-    </content>
-    <id>https://share.awake.wang/2026/03/27/%E7%94%9F%E5%91%BD%E4%B9%8B%E4%B9%A6-%E9%98%BF%E5%8D%A1%E8%A5%BF%E8%AE%B0%E5%BD%95-%E6%96%87%E5%AD%97%E6%95%B4%E7%90%86%E7%89%88-magick999-PDF/</id>
-    <link href="https://share.awake.wang/2026/03/27/%E7%94%9F%E5%91%BD%E4%B9%8B%E4%B9%A6-%E9%98%BF%E5%8D%A1%E8%A5%BF%E8%AE%B0%E5%BD%95-%E6%96%87%E5%AD%97%E6%95%B4%E7%90%86%E7%89%88-magick999-PDF/"/>
-    <published>2026-03-27T12:25:20.000Z</published>
-    <summary>《生命之书-阿卡西记录》文字整理版，精选阿卡西记录核心 teachings，适合快速入门与日常参考。</summary>
-    <title>《生命之书-阿卡西记录》文字整理版 PDF</title>
-    <updated>2026-03-31T10:32:39.355Z</updated>
   </entry>
 </feed>
