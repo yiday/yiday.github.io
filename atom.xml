@@ -302,6 +302,29 @@
     <author>
       <name>admin</name>
     </author>
+    <category term="文章" scheme="https://share.awake.wang/categories/%E6%96%87%E7%AB%A0/"/>
+    <content>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>仙女穿搭记：百变小歪</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/rY5sBHWFFXQ/">https://m.toutiao.com/is/rY5sBHWFFXQ/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><p>#这还拿不下你 #换一种穿搭风格 #春季穿搭 #OOTD #甜妹风 #长在我的心巴上咯 #今天有点不一样 #糟糕没酷起来</p><p>仙女穿搭记<br>1天前<br>关注<br>百变小歪<br>#这还拿不下你 #换一种穿搭风格 #春季穿搭 #OOTD #甜妹风 #长在我的心巴上咯 #今天有点不一样 #糟糕没酷起来</p><p>打开今日头条查看图片详情</p><p>打开今日头条查看图片详情</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
+    </content>
+    <id>https://share.awake.wang/2026/03/31/-article/</id>
+    <link href="https://share.awake.wang/2026/03/31/-article/"/>
+    <published>2026-03-31T05:21:56.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</]]>
+    </summary>
+    <title>仙女穿搭记：百变小歪</title>
+    <updated>2026-03-31T13:21:56.019Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>admin</name>
+    </author>
     <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
     <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
     <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
@@ -425,29 +448,5 @@
     <summary>2026-2030年，计算机不再全员写代码，AI、安全、云原生、大数据、工业软件、芯片嵌入式已成绝对顶流，缺口大、薪资高、抗35岁危机！   🔥 1. 人工智能/大模型（天花板级） 缺口超500万，...</summary>
     <title>兜罗万象：AI预测：未来5年计算机类专业最吃香6大方向！选对少卷10年🔥</title>
     <updated>2026-03-31T11:24:40.299Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>admin</name>
-    </author>
-    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
-    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
-    <category term="DeepSeek" scheme="https://share.awake.wang/tags/DeepSeek/"/>
-    <category term="大模型" scheme="https://share.awake.wang/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
-    <category term="OpenClaw" scheme="https://share.awake.wang/tags/OpenClaw/"/>
-    <category term="Ollama" scheme="https://share.awake.wang/tags/Ollama/"/>
-    <category term="openclaw" scheme="https://share.awake.wang/tags/openclaw/"/>
-    <category term="模型" scheme="https://share.awake.wang/tags/%E6%A8%A1%E5%9E%8B/"/>
-    <category term="ollama" scheme="https://share.awake.wang/tags/ollama/"/>
-    <category term="上下文" scheme="https://share.awake.wang/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
-    <content>
-      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>本地部署 OpenClaw 大模型：零 Token 快速上手（DeepSeek 专属版）</td></tr><tr><td>来源</td><td>今日头条</td></tr><tr><td>发布时间</td><td>2026-03-31（约）</td></tr><tr><td>格式</td><td>article</td></tr><tr><td>访问链接</td><td><a href="https://m.toutiao.com/is/VHj5v12J-lM/">https://m.toutiao.com/is/VHj5v12J-lM/</a></td></tr></tbody></table><hr><h2 id="关键词讲解"><a href="#关键词讲解" class="headerlink" title="关键词讲解"></a>关键词讲解</h2><ul><li><strong>OpenClaw</strong>：见文中解释</li><li><strong>openclaw</strong>：见文中解释</li><li><strong>Ollama</strong>：见文中解释</li><li><strong>ollama</strong>：见文中解释</li><li><strong>大模型</strong>：见文中解释</li><li><strong>DeepSeek</strong>：见文中解释</li><li><strong>模型</strong>：见文中解释</li><li><strong>上下文</strong>：见文中解释</li></ul><p>本文内容源自今日头条网友分享，由 AI 整理发布。</p><hr><p>本地部署 OpenClaw 大模型：零 Token 快速上手（DeepSeek 专属版）</p><p>OpenClaw 是一款开源 AI 智能体框架，主打隐私私有化部署，全程无需 API 密钥 &#x2F; Token，就能让大模型在本地 “安家”。</p><p>之前用千问的小伙伴已经快速跑通流程，这次咱们换热门的DeepSeek来接入，手把手带你从环境准备到服务验证，全程零 Token、零复杂配置，零基础也能跟着做！</p><p>一、核心准备：硬件与依赖先搞定</p><p>部署前的基础准备是关键，硬件够、依赖装对，后续全程一路绿灯～</p><ol><li>硬件最低要求（通用不挑机）</li></ol><p>内存：≥2GB（推荐 8GB 以上，跑 DeepSeek 7B 模型更丝滑）</p><p>磁盘：预留 ≥20GB 空间（7B 量化模型约 4.7GB）</p><p>处理器：Intel i5&#x2F;Ryzen 5 及以上，无 GPU 也能跑（CPU 运行速度稍慢，不影响体验）</p><p>系统：Windows 11、macOS、Linux 全兼容（Windows 建议用管理员 CMD 终端，避免权限坑）</p><ol start="2"><li>核心依赖安装（Node.js + Ollama）</li></ol><p>OpenClaw 基于 Node.js 运行，本地模型靠 Ollama 管理，两步搞定安装：</p><p>（1）安装 Node.js 22+</p><p>打开网站安装适合的系统</p><h1 id="Linux-macOS-命令curl-fsSL-https-deb-nodesource-com-setup-22-x-sudo-E-bash-sudo-apt-install-y-nodejs-Windows：直接从-nodejs-org-下载-22-版本，一路点“下一步”安装"><a href="#Linux-macOS-命令curl-fsSL-https-deb-nodesource-com-setup-22-x-sudo-E-bash-sudo-apt-install-y-nodejs-Windows：直接从-nodejs-org-下载-22-版本，一路点“下一步”安装" class="headerlink" title="Linux&#x2F;macOS 命令curl -fsSL https://deb.nodesource.com/setup_22.x |sudo-E bash -sudo-apt install -y nodejs# Windows：直接从 nodejs.org 下载 22+ 版本，一路点“下一步”安装"></a>Linux&#x2F;macOS 命令curl -fsSL <a href="https://deb.nodesource.com/setup_22.x">https://deb.nodesource.com/setup_22.x</a> |sudo-E bash -sudo-apt install -y nodejs# Windows：直接从 nodejs.org 下载 22+ 版本，一路点“下一步”安装</h1><p>✅ 验证：终端输入node -v，显示 v22.x.x 就说明装成功了</p><p>（2）安装 Ollama（本地模型管家）</p><p>下载安装：从 Ollama 官网 下对应系统版本，Windows 安装后自动注册服务，Linux&#x2F;macOS 执行命令</p><h1 id="Linux-macOS-一键安装curl-fsSL-https-ollama-com-install-sh-sh"><a href="#Linux-macOS-一键安装curl-fsSL-https-ollama-com-install-sh-sh" class="headerlink" title="Linux&#x2F;macOS 一键安装curl-fsSL https://ollama.com/install.sh | sh"></a>Linux&#x2F;macOS 一键安装curl-fsSL <a href="https://ollama.com/install.sh">https://ollama.com/install.sh</a> | sh</h1><p>✅ 验证：终端输入 ollama –version，显示版本号即安装完成</p><p>二、核心步骤：DeepSeek 接入 + OpenClaw 部署（零 Token）</p><p>这部分是重点！咱们先拉取定制化的 DeepSeek 模型，再配置 OpenClaw 接入，全程不碰任何 Token～</p><ol><li>安装 OpenClaw 主程序</li></ol><p>先配国内镜像加速，再全局安装，速度更快不踩坑：</p><h1 id="配置-npm-国内镜像（加速安装，国内用户必做）npm-config-set-registry-https-registry-npmmirror-com-全局安装-OpenClaw-最新版npm-install-g-openclaw-latest"><a href="#配置-npm-国内镜像（加速安装，国内用户必做）npm-config-set-registry-https-registry-npmmirror-com-全局安装-OpenClaw-最新版npm-install-g-openclaw-latest" class="headerlink" title="配置 npm 国内镜像（加速安装，国内用户必做）npm-config set registry https://registry.npmmirror.com# 全局安装 OpenClaw 最新版npm install -g openclaw@latest"></a>配置 npm 国内镜像（加速安装，国内用户必做）npm-config set registry <a href="https://registry.npmmirror.com/#">https://registry.npmmirror.com#</a> 全局安装 OpenClaw 最新版npm install -g openclaw@latest</h1><p>✅ 双重验证： 1. 输入 openclaw –version，显示 v2026.3.x 及以上版本</p><ol start="2"><li><p>输入 openclaw doctor，无报错提示，环境就完全没问题</p></li><li><p>拉取并定制 DeepSeek 模型（关键！）</p></li></ol><p>OpenClaw 要求模型上下文窗口 ≥16000 tokens，咱们给 DeepSeek 手动配置 32768 tokens，满足长文本需求。以 DeepSeek 7B 量化版 为例（4GB+ 显存就能跑）：</p><h1 id="1-拉取-DeepSeek-基础模型ollama-pull-deepseek-7b-2-创建-Modelfile-配置上下文（32768-tokens，超长上下文）-Windows（CMD-终端，替换-）cd-C-Users-”FROM-deepseek-7bPARAMETER-num-ctx-32768”-Out-File-Encoding-ascii-Modelfile-Linux-macOScd-echo”FROM-deepseek-7bPARAMETER-num-ctx-32768”-Modelfile-3-生成定制模型（命名好记，后续直接用）ollama-create-deepseek-7b-32k-f-Modelfile"><a href="#1-拉取-DeepSeek-基础模型ollama-pull-deepseek-7b-2-创建-Modelfile-配置上下文（32768-tokens，超长上下文）-Windows（CMD-终端，替换-）cd-C-Users-”FROM-deepseek-7bPARAMETER-num-ctx-32768”-Out-File-Encoding-ascii-Modelfile-Linux-macOScd-echo”FROM-deepseek-7bPARAMETER-num-ctx-32768”-Modelfile-3-生成定制模型（命名好记，后续直接用）ollama-create-deepseek-7b-32k-f-Modelfile" class="headerlink" title="1. 拉取 DeepSeek 基础模型ollama pull deepseek:7b# 2. 创建 Modelfile 配置上下文（32768 tokens，超长上下文）# Windows（CMD 终端，替换 &lt;你的用户名&gt;）cd-C:\Users&lt;你的用户名&gt;@”FROM deepseek:7bPARAMETER num_ctx 32768”@ | Out-File -Encoding ascii Modelfile# Linux&#x2F;macOScd-~echo”FROM deepseek:7bPARAMETER num_ctx 32768” &gt; Modelfile# 3. 生成定制模型（命名好记，后续直接用）ollama create deepseek:7b-32k -f Modelfile"></a>1. 拉取 DeepSeek 基础模型ollama pull deepseek:7b# 2. 创建 Modelfile 配置上下文（32768 tokens，超长上下文）# Windows（CMD 终端，替换 &lt;你的用户名&gt;）cd-C:\Users&lt;你的用户名&gt;@”FROM deepseek:7bPARAMETER num_ctx 32768”@ | Out-File -Encoding ascii Modelfile# Linux&#x2F;macOScd-~echo”FROM deepseek:7bPARAMETER num_ctx 32768” &gt; Modelfile# 3. 生成定制模型（命名好记，后续直接用）ollama create deepseek:7b-32k -f Modelfile</h1><p>显存备选方案（按自己电脑配置选）：</p><p>8GB 显存：deepseek:7b（原生版，效果更好）</p><p>4GB 显存：deepseek:7b-instruct-q4_0（量化版，轻量化不卡顿）</p><p>2GB 显存：deepseek:3b（轻量版，低配电脑也能跑）</p><ol start="3"><li>OpenClaw 初始化配置（零 Token 核心步骤）</li></ol><p>执行配置向导，全程选本地、填对地址，完全不用输入任何 Token &#x2F; 密钥！</p><h1 id="启动配置向导openclaw-onboard"><a href="#启动配置向导openclaw-onboard" class="headerlink" title="启动配置向导openclaw-onboard"></a>启动配置向导openclaw-onboard</h1><p>一步步跟着选（新手直接抄）：</p><p>提示 “是否确认安全风险”：输入 Yes 回车</p><p>选择配置模式：新手直接选 QuickStart（快速配置，不用动脑）</p><p>选择模型提供商：输入 Ollama（核心！本地模型都走这个通道）</p><p>填写 API 地址：输入 <a href="http://127.0.0.1:11434/v1%EF%BC%88Ollama">http://127.0.0.1:11434/v1（Ollama</a> 本地固定地址，必须带 &#x2F;v1！）</p><p>填写模型名称：输入咱们定制的 deepseek:7b-32k（和上一步模型名完全对应）</p><p>后续所有提示直接回车默认，配置就完成啦！</p><ol start="4"><li>启动 OpenClaw 服务，开启本地 AI 对话</li></ol><p>执行启动命令，坐等服务加载，然后就能用 Web 控制台玩起来～</p><h1 id="启动服务openclaw-gateway-start-后续想停止服务用这个命令-openclaw-gateway-stop"><a href="#启动服务openclaw-gateway-start-后续想停止服务用这个命令-openclaw-gateway-stop" class="headerlink" title="启动服务openclaw-gateway start# 后续想停止服务用这个命令# openclaw gateway stop"></a>启动服务openclaw-gateway start# 后续想停止服务用这个命令# openclaw gateway stop</h1><p>三、快速验证：DeepSeek 本地部署成功了吗？</p><p>两步测试，马上确认效果，新手也能快速判断～</p><ol><li>基础功能测试（必做）</li></ol><p>进入 Web 控制台的「对话」页面</p><p>输入测试指令：帮我写一段 Python 代码，打印“Hello OpenClaw + DeepSeek 本地部署成功”</p><p>若 10-30 秒内返回代码，说明 DeepSeek 本地调用完全通畅！</p><ol start="2"><li>上下文能力验证（进阶）</li></ol><p>输入指令：我刚才让你写的代码功能是什么？</p><p>如果模型能精准回复 “打印指定欢迎语”，说明咱们配置的 32k 上下文生效啦，长对话也不会丢内容！</p><p>四、避坑指南：新手常见问题快速解决</p><p>部署时遇到小问题不用慌，对照这几条马上搞定～</p><p>五、扩展玩法：让本地 AI 更强大（可选）</p><p>部署完成后，还能给 OpenClaw 加技能，让它更懂你的需求～</p><ol><li>安装实用技能（零 Token）</li></ol><p>自动安装：</p><p>在控制台输入指令，比如「帮我安装联网搜索技能」，AI 自动配置</p><p>手动安装：从 ClawHub 官网 下载 Skill 压缩包，解压到：</p><p>Windows：C:\Users&lt;你的用户名&gt;.openclaw\skills\</p><p>Linux&#x2F;macOS：~&#x2F;.openclaw&#x2F;skills&#x2F;</p><p>重启服务即可生效</p><ol start="2"><li>换其他本地模型（通用流程）</li></ol><p>想换别的模型？直接走 3 步流程：</p><p>ollama pull 模型名 拉取模型</p><p>配置上下文生成定制模型</p><p>重新执行 openclaw onboard，改模型名即可</p><p>六、总结：本地部署核心要点</p><p>用 Node.js + Ollama 对接 DeepSeek，全程零 Token、零 API 密钥，核心流程就 4 步：</p><p>装 Node.js + Ollama 基础依赖</p><p>拉取并定制 DeepSeek 32k 上下文模型</p><p>配置 OpenClaw 本地 Ollama 提供商</p><p>启动服务，用 Web 控制台验证</p><p>这样部署的本地 AI，隐私完全可控，不用怕数据泄露，日常对话、代码生成、文案创作都能搞定～ 赶紧跟着步骤试试，拥有自己的本地 DeepSeek 智能体吧！</p><p>提示：部署过程中如果遇到具体报错，可截图终端信息，我帮你快速定位问题～</p><blockquote><p>本文为网络资源整理分享，仅供学习交流使用。</p></blockquote>]]>
-    </content>
-    <id>https://share.awake.wang/2026/03/31/openclaw-token-deepseek-article/</id>
-    <link href="https://share.awake.wang/2026/03/31/openclaw-token-deepseek-article/"/>
-    <published>2026-03-31T03:20:27.000Z</published>
-    <summary>本地部署 OpenClaw 大模型：零 Token 快速上手（DeepSeek 专属版）  OpenClaw 是一款开源 AI 智能体框架，主打隐私私有化部署，全程无需 API 密钥 / Token，...</summary>
-    <title>本地部署 OpenClaw 大模型：零 Token 快速上手（DeepSeek 专属版）</title>
-    <updated>2026-03-31T11:20:27.037Z</updated>
   </entry>
 </feed>
