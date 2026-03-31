@@ -1,3 +1,4 @@
+https://share.awake.wang/2026/03/31/ollama-openclaw-article/
 https://share.awake.wang/2026/03/31/ai5610-article/
 https://share.awake.wang/2026/03/31/openclaw-token-deepseek-article/
 https://share.awake.wang/2026/03/31/openclawtop10-article/
@@ -377,6 +378,7 @@ https://share.awake.wang/tags/ollama/
 https://share.awake.wang/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/
 https://share.awake.wang/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/
 https://share.awake.wang/tags/%E9%81%BF%E5%9D%91/
+https://share.awake.wang/tags/API/
 https://share.awake.wang/categories/%E6%95%99%E8%82%B2/
 https://share.awake.wang/categories/AI/
 https://share.awake.wang/categories/%E6%96%87%E7%AB%A0/
