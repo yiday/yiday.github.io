@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://share.awake.wang/2026/03/31/openclawtop10-article/</loc>
+    
+    <lastmod>2026-03-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://share.awake.wang/2026/03/31/2026openclaw-article/</loc>
     
     <lastmod>2026-03-31</lastmod>
@@ -2798,6 +2807,20 @@
   
   <url>
     <loc>https://share.awake.wang/tags/openclaw/</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E6%83%85%E7%BB%AA/</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
