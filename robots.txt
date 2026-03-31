@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /$
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /config.yml
+
+Sitemap: https://share.awake.wang/sitemap.xml
