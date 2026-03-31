@@ -10,22 +10,28 @@
   <rights>All rights reserved 2026, admin</rights>
   <subtitle>发现好资源，分享给更多人</subtitle>
   <title>无偿分享家</title>
-  <updated>2026-03-31T10:32:39.335Z</updated>
+  <updated>2026-03-31T15:53:41.426Z</updated>
   <entry>
     <author>
       <name>admin</name>
     </author>
+    <category term="Hexo" scheme="https://share.awake.wang/categories/Hexo/"/>
+    <category term="Hexo" scheme="https://share.awake.wang/tags/Hexo/"/>
+    <category term="Butterfly" scheme="https://share.awake.wang/tags/Butterfly/"/>
+    <category term="博客搭建" scheme="https://share.awake.wang/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <category term="图床" scheme="https://share.awake.wang/tags/%E5%9B%BE%E5%BA%8A/"/>
+    <category term="永久链接" scheme="https://share.awake.wang/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/"/>
     <content>
-      <![CDATA[<h2 id="Oops-404-—-页面走丢了"><a href="#Oops-404-—-页面走丢了" class="headerlink" title="Oops! 404 — 页面走丢了"></a>Oops! 404 — 页面走丢了</h2><p>抱歉，您访问的页面不存在或已被移除。</p><h3 id="您可以："><a href="#您可以：" class="headerlink" title="您可以："></a>您可以：</h3><ul><li><strong><a href="/">返回首页</a></strong> — 继续浏览博客</li><li><strong><a href="javascript:history.back()">返回上页</a></strong> — 回到之前页面</li><li><strong><a href="/archives/">查看全部文章</a></strong> — 浏览所有资源</li></ul><hr><p><strong>想找特定资源？</strong></p><ul><li>使用<strong>搜索框</strong>（右上角）</li><li>查看<strong>分类</strong>或<strong>标签</strong>（菜单栏）</li><li>访问 <a href="https://github.com/yiday/yiday.github.io">GitHub 仓库</a> 反馈问题</li></ul><hr><p><em>资源来自网络，仅供学习交流。发现链接失效？<a href="#">点此反馈</a></em></p>]]>
+      <![CDATA[<h2 id="📚-Hexo-博客技术资源"><a href="#📚-Hexo-博客技术资源" class="headerlink" title="📚 Hexo 博客技术资源"></a>📚 Hexo 博客技术资源</h2><p>欢迎来到 Hexo 技术资源汇总页。这里集中了所有关于 Hexo 博客、Butterfly 主题、图床、永久链接、插件等相关的技术文章和教程。</p><h3 id="🧩-已发布文章"><a href="#🧩-已发布文章" class="headerlink" title="🧩 已发布文章"></a>🧩 已发布文章</h3><p>暂无已发布技术文章。</p><blockquote><p>后续发布 Hexo 相关文章后，会在此处自动列出。</p></blockquote><hr><h2 id="🔧-常见主题"><a href="#🔧-常见主题" class="headerlink" title="🔧 常见主题"></a>🔧 常见主题</h2><h3 id="Hexo-基础"><a href="#Hexo-基础" class="headerlink" title="Hexo 基础"></a>Hexo 基础</h3><ul><li>安装与配置</li><li>写作与发布流程</li><li>主题切换与自定义</li></ul><h3 id="Butterfly-主题"><a href="#Butterfly-主题" class="headerlink" title="Butterfly 主题"></a>Butterfly 主题</h3><ul><li>安装与启用</li><li>配置文件详解</li><li>功能特性（暗色模式、搜索、标签等）</li></ul><h3 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h3><ul><li><code>hexo-generator-search</code> — 本地搜索</li><li><code>hexo-abbrlink</code> — 永久链接优化</li><li><code>hexo-deployer-git</code> — Git 部署</li></ul><h3 id="图床方案"><a href="#图床方案" class="headerlink" title="图床方案"></a>图床方案</h3><ul><li>GitHub + PicGo</li><li>城通网盘</li><li>阿里云OSS &#x2F; 腾讯云COS</li><li>自建Minio</li></ul><h3 id="永久链接（Permalink）"><a href="#永久链接（Permalink）" class="headerlink" title="永久链接（Permalink）"></a>永久链接（Permalink）</h3><ul><li>短链接 vs 长链接</li><li><code>hexo-abbrlink</code> 的使用</li><li>SEO 优化建议</li></ul><hr><h2 id="🛠️-使用技巧"><a href="#🛠️-使用技巧" class="headerlink" title="🛠️ 使用技巧"></a>🛠️ 使用技巧</h2><ul><li><strong>修改主题配置</strong>：编辑 <code>themes/butterfly/_config.yml</code></li><li><strong>新增自定义页面</strong>：在 <code>source/</code> 下创建 <code>.md</code> 文件</li><li><strong>加速访问</strong>：使用国内CDN或自建图床</li></ul><hr><p><em>此页面持续更新，最新内容请查看<a href="/archives/">全部文章</a>。</em></p>]]>
     </content>
-    <id>https://share.awake.wang/2026/03/31/404/</id>
-    <link href="https://share.awake.wang/2026/03/31/404/"/>
-    <published>2026-03-31T10:32:39.334Z</published>
+    <id>https://share.awake.wang/404/</id>
+    <link href="https://share.awake.wang/404/"/>
+    <published>2026-03-31T09:50:00.000Z</published>
     <summary>
-      <![CDATA[<h2 id="Oops-404-—-页面走丢了"><a href="#Oops-404-—-页面走丢了" class="headerlink" title="Oops! 404 — 页面走丢了"></a>Oops! 404 — 页面走丢了</h2><p>抱歉，您访问的页面不存在]]>
+      <![CDATA[<h2 id="📚-Hexo-博客技术资源"><a href="#📚-Hexo-博客技术资源" class="headerlink" title="📚 Hexo 博客技术资源"></a>📚 Hexo 博客技术资源</h2><p>欢迎来到 Hexo 技术资源汇总页。这里集中]]>
     </summary>
-    <title>404 - 页面未找到</title>
-    <updated>2026-03-31T10:32:39.335Z</updated>
+    <title>Hexo 博客技术资源汇总</title>
+    <updated>2026-03-31T15:53:41.426Z</updated>
   </entry>
   <entry>
     <author>
