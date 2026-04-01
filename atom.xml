@@ -10,7 +10,27 @@
   <rights>All rights reserved 2026, leon</rights>
   <subtitle>发现好资源，分享给更多人</subtitle>
   <title>无偿分享家</title>
-  <updated>2026-04-01T02:50:13.223Z</updated>
+  <updated>2026-04-01T02:55:20.566Z</updated>
+  <entry>
+    <author>
+      <name>leon</name>
+    </author>
+    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
+    <category term="创业" scheme="https://share.awake.wang/categories/AI/%E5%88%9B%E4%B8%9A/"/>
+    <category term="AI" scheme="https://share.awake.wang/tags/AI/"/>
+    <category term="一人公司" scheme="https://share.awake.wang/tags/%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8/"/>
+    <category term="创业" scheme="https://share.awake.wang/tags/%E5%88%9B%E4%B8%9A/"/>
+    <category term="被动收入" scheme="https://share.awake.wang/tags/%E8%A2%AB%E5%8A%A8%E6%94%B6%E5%85%A5/"/>
+    <content>
+      <![CDATA[<p>在人工智能快速普及的 2025-2026 年，一个令人瞩目的创业故事悄然流传：一名普通青年，仅凭一己之力，借助 AI 工具链，打造了一家“一人公司”，在运营不到一年的时间里，实现了年营收 150 万元的成绩。没有团队、没有巨额融资、没有传统办公场所，他的成功究竟是靠运气，还是有一套可复制的打法？</p><p>这位创业者网名“阿舟”，原本是一名普通的内容创作者，擅长写作与策划。2024 年末，他开始系统性使用各类 AI 工具（包括大语言模型、图像生成、语音合成、自动化脚本等），逐步将内容生产、营销获客、客户服务与交付流程全面自动化。通过订阅制、知识付费与定制服务三块收入，他构建了一个轻量化但高利润的业务模型。</p><p>阿舟的核心业务是“AI 赋能的个人品牌与内容营销”。他服务对象主要是中小微企业与个人创业者，帮助他们快速产出高质量的公众号文章、短视频脚本、产品文案与社交媒体内容。他的定价策略清晰：基础订阅 999 元&#x2F;月（含 10 篇稿件 + 3 个短视频脚本），高级定制 5000 元&#x2F;月起（按项目计），而全年打包客户更是带来稳定的现金流。</p><p>从技术实现角度看，阿舟的工作流高度依赖 AI：</p><ol><li><strong>选题与调研</strong>：使用检索增强生成（RAG）系统抓取行业热点与竞品内容，自动生成选题列表并评估潜力。</li><li><strong>内容初稿</strong>：调用 StepFun Step、Claude 或国产大模型，根据提示词生成文章初稿，附带 SEO 关键词建议。</li><li><strong>润色与修正</strong>：通过自定义规则与少量人工审核（他自己），确保风格统一、事实准确。</li><li><strong>配图与视频</strong>：使用 Midjourney、DALL·E 3 生成配图；ElevenLabs 与 Azure TTS 将文章转为播客版本；Runway&#x2F;GPT-4o 短视频脚本自动分镜。</li><li><strong>发布与互动</strong>：借助 Notion API 与社交平台接口，定时发布内容；ChatGPT 自动回复常见咨询，复杂问题转人工（仍是他自己处理）。</li></ol><p>整个系统用 Python + FastAPI 搭建，部署在轻度配置的云服务器上，月成本不到 500 元。AI 调用使用多平台混合策略（国内 Qwen、国际 Claude&#x2F;Step），在保证质量的同时控制费用。</p><p>阿舟的成功并非偶然。他的打法有四个关键点：</p><ul><li><strong>聚焦细分市场</strong>：不做泛泛的 AI 教学，而是专注帮客户“用 AI 做出能卖钱的内容”。需求明确，获客成本低。</li><li><strong>标准化产品</strong>：将服务打包成订阅与套餐，减少定制谈判，提高交付效率。</li><li><strong>杠杆效应</strong>：AI 让他一个人能完成过去需要一个 5-10 人团队（写手、设计师、运营）才能完成的工作，边际成本趋近于零。</li><li><strong>私域流量复购</strong>：通过持续输出价值，将客户沉淀到微信社群与邮件列表，年均复购率超过 40%。</li></ul><p>当然，挑战也不断出现：平台政策变化（如公众号流量波动）、AI 生成内容同质化风险、版权合规问题，以及个人精力瓶颈。阿舟目前仍在探索如何引入更多 AI 代理（Agent）来进一步自动化决策与客户分层，同时保持“一人公司”的灵活性。</p><p>这一案例揭示了一个趋势：<strong>AI 正在重新定义创业的最小可行单元</strong>。以前，创业需要团队、资本、办公空间；现在，一个有想法、能熟练使用 AI 工具的个人，就能在细分市场建立可持续的收入。这并不意味着“人人都是公司”，而是说，个人能力的边界被大幅拓展。</p><p>对于普通人而言，阿舟的故事给出了一条可行的路径：</p><ol><li>选择一个你擅长的垂直领域；</li><li>系统性学习并应用 AI 工具（从写作到设计到自动化）；</li><li>将你的服务产品化、标准化；</li><li>利用内容营销与社群运营建立个人品牌；</li><li>复盘数据、持续迭代，逐步提高客单价与复购。</li></ol><p>或许，我们正在迎来“个人创业者”的黄金时代。而在这条路上，AI 不是替代人类的威胁，而是放大个人才能的杠杆。正如阿舟所说：“我不是在和一个 AI 竞争，我是在用 twenty AI 帮我完成我一个人做不到的事。”</p>]]>
+    </content>
+    <id>https://share.awake.wang/2026/04/01/%E7%94%B7%E5%AD%90%E9%9D%A0ai%E5%BC%80%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8%E5%B9%B4%E8%90%A5%E6%94%B6%E8%BE%BE150%E4%B8%87/</id>
+    <link href="https://share.awake.wang/2026/04/01/%E7%94%B7%E5%AD%90%E9%9D%A0ai%E5%BC%80%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8%E5%B9%B4%E8%90%A5%E6%94%B6%E8%BE%BE150%E4%B8%87/"/>
+    <published>2026-04-01T03:00:00.000Z</published>
+    <summary>一个普通人如何借助 AI 工具打造自动化一人公司，实现年营收 150 万的实战案例与底层逻辑。</summary>
+    <title>男子靠AI开一人公司年营收达150万</title>
+    <updated>2026-04-01T02:55:20.566Z</updated>
+  </entry>
   <entry>
     <author>
       <name>leon</name>
@@ -142,23 +162,6 @@
     <summary>关于 黄金再收复4700美元 的原创文章，结合科学分析与传统智慧。</summary>
     <title>黄金再收复4700美元</title>
     <updated>2026-04-01T02:10:09.711Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>leon</name>
-    </author>
-    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
-    <category term="AI" scheme="https://share.awake.wang/tags/AI/"/>
-    <content>
-      <![CDATA[<h1 id="男子靠AI开一人公司年营收达150万"><a href="#男子靠AI开一人公司年营收达150万" class="headerlink" title="男子靠AI开一人公司年营收达150万"></a>男子靠AI开一人公司年营收达150万</h1><p>本文内容正在生成中，请稍后查看。</p><p>（AI 生成失败，已记录错误）</p>]]>
-    </content>
-    <id>https://share.awake.wang/2026/04/01/%E7%94%B7%E5%AD%90%E9%9D%A0ai%E5%BC%80%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8%E5%B9%B4%E8%90%A5%E6%94%B6%E8%BE%BE150%E4%B8%87/</id>
-    <link href="https://share.awake.wang/2026/04/01/%E7%94%B7%E5%AD%90%E9%9D%A0ai%E5%BC%80%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8%E5%B9%B4%E8%90%A5%E6%94%B6%E8%BE%BE150%E4%B8%87/"/>
-    <link href="https://share.awake.wang/img/butterfly-icon.png" rel="enclosure"/>
-    <published>2026-03-31T17:55:01.141Z</published>
-    <summary>关于 男子靠AI开一人公司年营收达150万 的原创文章，结合科学分析与传统智慧。</summary>
-    <title>男子靠AI开一人公司年营收达150万</title>
-    <updated>2026-04-01T01:55:01.143Z</updated>
   </entry>
   <entry>
     <author>
@@ -363,12 +366,12 @@
     <category term="易学" scheme="https://share.awake.wang/categories/%E4%BD%9B%E5%AD%A6/%E9%81%93%E5%AE%B6/%E6%98%93%E5%AD%A6/"/>
     <category term="南怀瑾" scheme="https://share.awake.wang/tags/%E5%8D%97%E6%80%80%E7%91%BE/"/>
     <category term="国学" scheme="https://share.awake.wang/tags/%E5%9B%BD%E5%AD%A6/"/>
+    <category term="易经系传别讲" scheme="https://share.awake.wang/tags/%E6%98%93%E7%BB%8F%E7%B3%BB%E4%BC%A0%E5%88%AB%E8%AE%B2/"/>
     <category term="易经" scheme="https://share.awake.wang/tags/%E6%98%93%E7%BB%8F/"/>
+    <category term="系辞" scheme="https://share.awake.wang/tags/%E7%B3%BB%E8%BE%9E/"/>
     <category term="周易" scheme="https://share.awake.wang/tags/%E5%91%A8%E6%98%93/"/>
     <category term="易学" scheme="https://share.awake.wang/tags/%E6%98%93%E5%AD%A6/"/>
     <category term="传统文化" scheme="https://share.awake.wang/tags/%E4%BC%A0%E7%BB%9F%E6%96%87%E5%8C%96/"/>
-    <category term="易经系传别讲" scheme="https://share.awake.wang/tags/%E6%98%93%E7%BB%8F%E7%B3%BB%E4%BC%A0%E5%88%AB%E8%AE%B2/"/>
-    <category term="系辞" scheme="https://share.awake.wang/tags/%E7%B3%BB%E8%BE%9E/"/>
     <content>
       <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>书名</td><td>易经系传别讲</td></tr><tr><td>作者</td><td>南怀瑾</td></tr><tr><td>出版社</td><td>东方出版社（原台湾老古文化）</td></tr><tr><td>出版年份</td><td>1993年首版（台湾），1999年大陆简体版</td></tr><tr><td>豆瓣评分</td><td>9.2&#x2F;10（2万+评价）</td></tr><tr><td>格式</td><td>txt</td></tr><tr><td>文件大小</td><td>约 3.5MB</td></tr><tr><td>备注</td><td>南怀瑾对《系辞》的深入讲解，融合儒释道三家视角</td></tr></tbody></table><hr><h2 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h2><p>《易经系传别讲》是南怀瑾先生对《易经》《系辞》上下传的系统讲解。《系辞》是《易经》的哲学总论，被认为是最能体现《易经》思想深度的部分。</p><p>南怀瑾从《系辞》的文言原文出发，逐章逐句进行解读，结合儒释道三家智慧，融汇历史典故、个人体悟，使这部深奥的哲学经典变得亲切可读。</p><p><strong>本书特色</strong>：</p><ol><li><strong>深度解析</strong>：对《系辞》每一章都做详细讲解，紧扣原文</li><li><strong>三家融合</strong>：以易学为主，兼通道家、佛家，展现中国文化”三教合一”的精神</li><li><strong>诙谐生动</strong>：语言风趣幽默，妙语连珠，.read</li><li><strong>注重实践</strong>：强调《系辞》的修养方法与人生智慧</li><li><strong>宏大视野</strong>：从整个人类文明、中国文化史的高度审视《系辞》</li></ol><p>南怀瑾认为，《系辞》是理解《易经》思想的关键，是孔子对《易经》的哲学阐释。他把《系辞》从”天书”变成”人书”，让读者看到《易经》不仅是卜筮之书，更是人生哲学的宝库。</p><hr><h2 id="🔑-关键词讲解"><a href="#🔑-关键词讲解" class="headerlink" title="🔑 关键词讲解"></a>🔑 关键词讲解</h2><ul><li><strong>易经系传别讲</strong>：”系传”即《系辞传》，”别讲”意为”特别的讲解”，指南怀瑾对《系辞》的独特解读</li><li><strong>南怀瑾</strong>（1918-2012）：当代国学大师，生于浙江温州，早年研习经史子集，后游学四方，遍参禅门大德，融汇儒释道三家，毕生致力于中国传统文化传播</li><li><strong>系辞传</strong>：《易经》的七篇《易传》之一，分上下两传，是《易传》中理论性最强、最系统的一部，被认为是孔子所作</li><li><strong>易传</strong>：又称”十翼”，是对《易经》卦爻辞的哲学阐释，包括《彖传》《象传》《系辞传》《文言传》《说卦传》《序卦传》《杂卦传》</li><li><strong>系辞上传</strong>：通常认为主要讲”天人合一”的宇宙观</li><li><strong>系辞下传</strong>：通常认为主要讲”人文化成”的人生观</li><li><strong>太极</strong>：《系辞》中”易有太极，是生两仪”，是宇宙万物的本源</li><li><strong>两仪</strong>：阴阳二气，由太极分化而来</li><li><strong>四象</strong>：太阳、少阳、太阴、少阴，由阴阳两两组合</li><li><strong>八卦</strong>：乾、坤、震、巽、坎、离、艮、兑，象征天、地、雷、风、水、火、山、泽</li><li><strong>六十四卦</strong>：八卦两两相重而成</li><li><strong>一阴一阳之谓道</strong>：《系辞》核心命题，阴阳互动是宇宙的根本规律</li><li><strong>刚柔相推，变在其中矣</strong>：刚柔的相互推移，变化就在其中</li><li><strong>圣人设卦观象</strong>：圣人设立卦象是为了观察万物</li><li><strong>易与天地准，故能弥纶天地之道</strong>：《易经》与天地平行，能总括天地之道</li><li><strong>范围天地之化而不过，曲成万物而不遗</strong>：《易经》的范围能涵盖天地化育，且无过失；能曲尽万物之理而无遗漏</li><li><strong>通乎昼夜之道而知</strong>：通晓昼夜（阴阳）之道就能智慧</li><li><strong>形而上者谓之道，形而下者谓之器</strong>：超越形体的叫道，具体事物的叫器</li><li><strong>化而裁之谓之变，推而行之谓之通</strong>：变化而裁度之叫做变，推广而实行之叫做通</li><li><strong>利用出入，民咸用之谓之神</strong>：利用出入，百姓都使用它，这就叫神</li><li><strong>易有太极，是生两仪，两仪生四象，四象生八卦</strong>：《系辞》的宇宙生成论</li><li><strong>圣人立象以尽意，设卦以尽情伪</strong>：圣人设立卦象来表达意念，设立卦来穷尽情感与虚伪</li><li><strong>易无思也，无为也，寂然不动，感而遂通天下之故</strong>：《易经》本身没有思想，没有作为，寂然不动，但感召就能通达天下之事</li><li><strong>非天下之至神，其孰能与于此</strong>：不是天下最神妙的，谁能做到这一点</li><li><strong>夫易，圣人之所以极深而研几也</strong>：《易经》是圣人用来探究极深之理、研究几微之变的</li><li><strong>唯深也，故能通天下之志</strong>：只有深邃，才能通达天下人的意志</li><li><strong>唯几也，故能成天下之务</strong>：只有几微，才能成就天下之事</li><li><strong>唯神也，故不疾而速，不行而至</strong>：只有神妙，才能不用快就快，不行就能到</li><li><strong>易与天地相似，故不违</strong>：《易经》与天地相似，所以不违背天地</li><li><strong>知周乎万物，而道济天下</strong>：智慧周遍万物，而道能济天下</li><li><strong>故大衍之数五十，其用四十有九</strong>：大衍之数五十，其用四十有九（揲蓍法）</li><li><strong>天地之数五十有五，所以成变化而行鬼神</strong>：天地之数五十有五，所以能成就变化而行鬼神之事</li><li><strong>是故易有太极，是生两仪</strong>：因此《易经》有太极，太极生两仪</li><li><strong>天地设位，圣人成能</strong>：天地设定了位置，圣人成就了功能</li><li><strong>人谋鬼谋，百姓与能</strong>：人谋和鬼谋，百姓都能参与</li><li><strong>易则训之</strong>：《易经》教导我们</li><li><strong>一阴一阳之谓道</strong>：一阴一阳的相互作用就叫道</li><li><strong>继之者善也，成之者性也</strong>：继承这个道的就是善，成就这个道的就是性</li><li><strong>仁者见之谓之仁，知者见之谓之知</strong>：仁者看到道称为仁，智者看到道称为智</li><li><strong>百姓日用而不知，故君子之道鲜矣</strong>：百姓每天使用却不知道，所以君子之道很少人懂得</li><li><strong>显诸仁，藏诸用</strong>：显现为仁，隐藏为用</li><li><strong>鼓万物而不与圣人同忧</strong>：鼓动万物而不与圣人同忧</li><li><strong>天下同归而殊涂，一致而百虑</strong>：天下同归而殊途，一致而百虑</li><li><strong>《易》与天地准，故能弥纶天地之道</strong>：《易经》与天地准，所以能弥纶天地之道</li></ul><hr><h2 id="👤-作者简介"><a href="#👤-作者简介" class="headerlink" title="👤 作者简介"></a>👤 作者简介</h2><p><strong>南怀瑾</strong>（1918年3月18日－2012年9月29日），本名南常泰，小名春满，晚号禅素先生，浙江温州乐清人。他是20世纪最具影响力的国学大师之一，毕生致力于中国传统文化的研究、传承与弘扬。</p><p>南怀瑾19岁入浙江国术馆，后考入中央军校政治研究班，抗战期间投笔从戎。1945年入川，在成都参与袍哥组织，后至金陵大学研究院读书，但因家贫辍学。此后辗转多地，参禅学佛，遍访高人。</p><p>1949年到台湾，先后在台湾多所大学任教或讲学。1969年创立”东西精华协会”，1976年创办”老古文化事业公司”，1985年移居美国，1988年在香港建立”香港国际文教基金会”，1990年代后在大陆推动传统文化复兴。</p><p><strong>学术特点</strong>：</p><ul><li>融汇儒释道三家，打通学术与修行</li><li>主张”佛为心，道为骨，儒为表，大度看世界”</li><li>语言生动幽默，善于将深奥哲理生活化</li><li>传承注重行持，强调”知行合一”</li></ul><p><strong>主要著作</strong>（择要）：</p><ul><li>《论语别裁》</li><li>《孟子旁通》</li><li>《老子他说》</li><li>《庄子諵譁》</li><li>《金刚经说什么》</li><li>《楞严大义今释》</li><li>《禅与道概论》</li><li>《中国文化要义》</li><li>《历史的经验》</li><li>《易经杂说》</li><li>《禅海蠡测》</li><li>《易经系传别讲》</li></ul><p>南怀瑾一生行迹遍及中国、美国、欧洲、东南亚，桃李满天下。他并非学院派学者，而是”实修实证”的践行者，其著作多为讲演录音整理，因此语言亲切如话，深受大众喜爱。</p><hr><h2 id="📖-目录结构（大致框架）"><a href="#📖-目录结构（大致框架）" class="headerlink" title="📖 目录结构（大致框架）"></a>📖 目录结构（大致框架）</h2><p>《易经系传别讲》结构大致如下：</p><ul><li><strong>序言</strong>：本书缘起、《系辞》的重要性</li><li><strong>系辞上传</strong><ul><li>第一章：天尊地卑、动静有常</li><li>第二章：圣人设卦观象</li><li>第三章：彖者言乎象者也</li><li>第四章：易与天地准</li><li>第五章：一阴一阳之谓道</li><li>第六章：夫易，圣人之所以极深而研几也</li><li>第七章：易其至矣乎</li><li>第八章：圣人有以见天下之赜</li><li>第九章：易与天地相似</li><li>第十章：圣人设卦观象</li><li>第十一章：易则训之</li><li>第十二章：夫乾，其静也专</li><li>第十三章：子曰” uppermost”</li><li>第十四章：易与天地准</li><li>第十五章：凡《易》之道</li><li>第十六章：易则训之</li></ul></li><li><strong>系辞下传</strong><ul><li>第一章：八卦成列</li><li>第二章：六爻之动，三极之道也</li><li>第三章：易之道也</li><li>第四章：易则训之</li><li>第五章：范围天地之化</li><li>第六章：易之道也</li><li>第七章：易则训之</li><li>第八章：易则训之</li><li>第九章：易则训之</li><li>第十章：易则训之</li><li>第十一章：易之道也</li><li>第十二章：易之道也</li></ul></li><li><strong>附录</strong>：相关问答、补充说明</li></ul><p>全书约50万字，是南怀瑾对《系辞》最完整的讲解。</p><hr><h2 id="💡-经典摘录"><a href="#💡-经典摘录" class="headerlink" title="💡 经典摘录"></a>💡 经典摘录</h2><blockquote><p>“《系辞》是《易经》的灵魂，没有《系辞》，《易经》只是一本卜筮之书；有了《系辞》，《易经》才成为哲学经典。”<br>——南怀瑾谈《系辞》的价值</p></blockquote><blockquote><p>“一阴一阳之谓道，这个道理贯通一切。宇宙、人生、社会、自然，无非阴阳互动。”<br>——《系辞上传》讲解</p></blockquote><blockquote><p>“形而上者谓之道，形而下者谓之器。道是本体，器是现象。不能离器求道，也不能执器废道。”<br>——《系辞》哲学</p></blockquote><blockquote><p>“易有太极，是生两仪。太极不是实物，是无极而太极，是理，是道。”<br>——宇宙生成论</p></blockquote><blockquote><p>“圣人设卦观象，系辞焉以明吉凶。孔子作《易传》，是要让《易经》从神坛上走下来，成为人人可学的哲学。”<br>——《系辞》的教化意义</p></blockquote><blockquote><p>“易与天地准，故能弥纶天地之道。《易经》的法则与天地并列，所以能总括天地之道而不失误。”<br>——《系辞上传》</p></blockquote><blockquote><p>“范围天地之化而不过，曲成万物而不遗。《易经》的智慧能涵盖天地化育而不有过失，能曲尽万物之理而无遗漏。”<br>——《系辞》的功能</p></blockquote><blockquote><p>“《易》无思也，无为也，寂然不动，感而遂通天下之故。《易经》本身是静的，但能感而遂通，这就是神。”<br>——论《易经》的神妙</p></blockquote><blockquote><p>“天下同归而殊涂，一致而百虑。天下最终归宿相同，但道路不同；根本一致，但思虑各异。《易经》就是让人找到那个’同归’与’一致’。”<br>——《系辞下传》</p></blockquote><blockquote><p>“显诸仁，藏诸用。道显现为仁爱，隐藏为功用。儒家重’仁’，道家重’用’，《易经》两者兼备。”<br>——《系辞》的哲学</p></blockquote><hr><h2 id="🔗-相关资源"><a href="#🔗-相关资源" class="headerlink" title="🔗 相关资源"></a>🔗 相关资源</h2><ul><li><strong>《易经》原文</strong>：<a href="https://ctext.org/zhouyi/">https://ctext.org/zhouyi/</a> （中国哲学书电子化计划）</li><li><strong>《系辞》原文</strong>：<a href="https://ctext.org/zhouyi/xi-ci/">https://ctext.org/zhouyi/xi-ci/</a> （可对照阅读）</li><li><strong>南怀瑾全集</strong>：建议收藏完整版本（网上有pdf资源）</li><li><strong>《周易集注》</strong>：朱熹注，经典注本</li><li><strong>《周易正义》</strong>：孔颖达疏，唐代官修注疏</li><li><strong>《易传》</strong>：又称”十翼”，包括《彖传》《象传》《系辞传》《文言传》《说卦传》《序卦传》《杂卦传》</li></ul><hr><h2 id="📥-下载地址"><a href="#📥-下载地址" class="headerlink" title="📥 下载地址"></a>📥 下载地址</h2><p><a href="https://url60.ctfile.com/f/15365260-8786594782-1bfdf4?p=168168">易经系传别讲.txt</a></p><p><strong>访问密码</strong>：168168</p><blockquote><p>资源来自网络，仅供学习交流使用，请勿用于商业用途。下载后请及时删除。</p></blockquote><hr><h2 id="⚠️-免责声明"><a href="#⚠️-免责声明" class="headerlink" title="⚠️ 免责声明"></a>⚠️ 免责声明</h2><p>本文资源来自网络，仅供学习交流使用，请勿用于商业用途。下载后请及时删除。</p><p>《易经系传别讲》为南怀瑾先生著作，版权归原作者所有。如涉及版权问题，请联系删除。</p><hr><blockquote><p>南怀瑾先生说：”《系辞》是《易经》的哲学总纲，理解了《系辞》，就掌握了《易经》的精髓。”</p></blockquote><blockquote><p>这本《易经系传别讲》，是进入《系辞》深奥世界的最佳指南。愿每位读者都能从《系辞》中获得宇宙人生的智慧。</p></blockquote>]]>
     </content>
