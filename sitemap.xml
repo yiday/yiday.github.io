@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://share.awake.wang/2026/04/02/%E6%B2%89%E9%BB%98%E7%9A%84%E5%AE%88%E6%8A%A4%E8%80%85%EF%BC%9A%E5%BD%93AI%E7%BB%9F%E6%B2%BB%E4%B8%96%E7%95%8C%EF%BC%8C%E4%BA%BA%E6%80%A7%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97/</loc>
+    
+    <lastmod>2026-04-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://share.awake.wang/2026/04/02/%E4%BB%8E%E5%8C%96%2210%C2%B720%22%E4%BA%8B%E6%95%853%E6%AD%BB%E8%B0%83%E6%9F%A5%E6%8A%A5%E5%91%8A%E5%85%AC%E5%B8%83%EF%BC%9A%E8%B6%85%E9%80%9F+%E6%89%93%E7%94%B5%E8%AF%9D%EF%BC%8C3%E6%9D%A1%E4%BA%BA%E5%91%BD%E7%9A%84%22%E7%AD%94%E6%A1%88%22%E5%B0%B1%E8%BF%99%E4%BA%9B%EF%BC%9F/</loc>
     
     <lastmod>2026-04-02</lastmod>
@@ -3833,6 +3842,34 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://share.awake.wang/tags/%E5%8F%8D%E4%B9%8C%E6%89%98%E9%82%A6/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E4%BA%BA%E6%80%A7/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E7%9F%AD%E7%AF%87%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -4607,6 +4644,20 @@
   
   <url>
     <loc>https://share.awake.wang/categories/%E4%B8%AD%E5%8C%BB/%E5%85%BB%E7%94%9F/%E9%81%93%E6%95%99/%E4%BB%99%E5%AD%A6/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E7%A7%91%E5%B9%BB/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E7%A7%91%E5%B9%BB/%E4%BA%BA%E6%96%87%E8%AF%84%E8%AE%BA/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
