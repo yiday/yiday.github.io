@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://share.awake.wang/2026/04/05/2026-04-05-%E5%9B%9E%E5%BF%86%E7%9A%84%E6%97%B6%E5%85%89%E5%93%B2%E6%80%9D%EF%BC%9A%E5%9C%A8%E8%AE%B0%E5%BF%86%E4%B8%AD%E5%AF%BB%E6%89%BE%E8%87%AA%E6%88%91-article/</loc>
+    
+    <lastmod>2026-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://share.awake.wang/2026/04/05/2026-04-05-%E7%BE%8E%E4%BC%8A%E6%88%98%E4%BA%89%E7%9A%84%E6%B7%B1%E5%B1%82%E9%80%BB%E8%BE%91%E4%B8%8E%E5%8E%86%E5%8F%B2%E5%9B%9E%E5%93%8D-article/</loc>
     
     <lastmod>2026-04-05</lastmod>
@@ -4205,6 +4214,34 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://share.awake.wang/tags/%E5%9B%9E%E5%BF%86/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E8%AE%B0%E5%BF%86/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E7%A6%85%E6%84%8F/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -5091,6 +5128,13 @@
   
   <url>
     <loc>https://share.awake.wang/categories/%E5%9B%BD%E9%99%85%E5%85%B3%E7%B3%BB/%E5%8E%86%E5%8F%B2/%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E5%BF%83%E7%81%B5%E4%BF%AE%E8%A1%8C/%E4%BC%A0%E7%BB%9F%E6%96%87%E5%8C%96/</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
