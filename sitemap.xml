@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A1-%E4%BC%8A%E6%9C%97%E4%B8%BA%E4%BD%95%E8%83%BD%E6%8E%8C%E6%8E%A7%E5%85%A8%E7%90%83%E7%9F%B3%E6%B2%B9%E5%91%BD%E8%84%89/</loc>
+    
+    <lastmod>2026-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E6%BD%98%E5%AD%90%E5%89%91-%E4%B8%80%E5%93%81%E5%B8%83%E8%A1%A3%E7%94%B7%E4%B8%BB%E7%9A%84%E6%83%8A%E5%A4%A9%E8%BA%AB%E4%B8%96%E4%B8%8E%E6%B1%9F%E6%B9%96%E6%9D%83%E8%B0%8B/</loc>
     
     <lastmod>2026-04-11</lastmod>
@@ -5022,6 +5031,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://share.awake.wang/tags/%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A1/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E6%88%98%E7%95%A5%E8%A6%81%E9%81%93/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -6048,6 +6071,27 @@
   
   <url>
     <loc>https://share.awake.wang/categories/%E5%BD%B1%E8%A7%86/%E6%96%87%E5%8C%96/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E5%9B%BD%E9%99%85%E5%85%B3%E7%B3%BB/%E5%9C%B0%E7%90%86/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E5%9B%BD%E9%99%85%E5%85%B3%E7%B3%BB/%E5%9C%B0%E7%90%86/%E8%83%BD%E6%BA%90/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E5%9B%BD%E9%99%85%E5%85%B3%E7%B3%BB/%E5%9C%B0%E7%90%86/%E8%83%BD%E6%BA%90/%E7%A7%91%E6%99%AE/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
