@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://share.awake.wang/2026/04/11/2026-04-11-tianya-shen-tie-an-hai-chen-sha/</loc>
+    
+    <lastmod>2026-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://share.awake.wang/2026/04/11/2026-04-11-114-%E6%94%BE%E7%9C%BC2023-2024%E6%85%A2%E6%85%A2%E5%86%99%E6%88%91%E7%9A%84%E8%A7%81%E9%97%BB/</loc>
     
     <lastmod>2026-04-11</lastmod>
@@ -5142,6 +5151,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://share.awake.wang/tags/%E6%9A%97%E9%BB%91%E6%96%87%E5%AD%A6/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E6%82%AC%E7%96%91/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -6217,6 +6240,20 @@
   
   <url>
     <loc>https://share.awake.wang/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E6%82%AC%E7%96%91%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E6%82%AC%E7%96%91%E5%B0%8F%E8%AF%B4/%E5%A4%A9%E6%B6%AF%E7%A5%9E%E8%B4%B4/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
