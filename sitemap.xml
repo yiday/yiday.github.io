@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E5%BF%85%E9%A1%BB%E7%8A%AF%E8%A7%84%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%AE%81%E8%88%AA%E4%B8%80/</loc>
+    <loc>https://share.awake.wang/2026/04/11/2026-04-11-114-%E6%94%BE%E7%9C%BC2023-2024%E6%85%A2%E6%85%A2%E5%86%99%E6%88%91%E7%9A%84%E8%A7%81%E9%97%BB/</loc>
     
     <lastmod>2026-04-11</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E9%92%A2%E9%93%81%E4%BE%A0-%E4%BB%8E%E6%BC%AB%E5%A8%81%E8%8B%B1%E9%9B%84%E5%88%B0%E7%A7%91%E6%8A%80%E5%B9%BB%E6%83%B3%E7%9A%84%E4%BC%A0%E5%A5%87/</loc>
+    
+    <lastmod>2026-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E5%BF%85%E9%A1%BB%E7%8A%AF%E8%A7%84%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%AE%81%E8%88%AA%E4%B8%80/</loc>
     
     <lastmod>2026-04-11</lastmod>
     
@@ -5112,6 +5121,27 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://share.awake.wang/tags/2023/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/2024/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E4%B8%AA%E4%BA%BA%E8%A7%81%E9%97%BB/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -6180,6 +6210,13 @@
   
   <url>
     <loc>https://share.awake.wang/categories/%E6%96%87%E5%AD%A6/%E6%82%AC%E7%96%91/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
