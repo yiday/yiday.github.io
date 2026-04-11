@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E5%BF%85%E9%A1%BB%E7%8A%AF%E8%A7%84%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%AE%81%E8%88%AA%E4%B8%80/</loc>
+    
+    <lastmod>2026-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://share.awake.wang/2026/04/11/2026-04-11-%E9%92%A2%E9%93%81%E4%BE%A0-%E4%BB%8E%E6%BC%AB%E5%A8%81%E8%8B%B1%E9%9B%84%E5%88%B0%E7%A7%91%E6%8A%80%E5%B9%BB%E6%83%B3%E7%9A%84%E4%BC%A0%E5%A5%87/</loc>
     
     <lastmod>2026-04-11</lastmod>
@@ -5082,6 +5091,27 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://share.awake.wang/tags/%E5%AE%81%E8%88%AA%E4%B8%80/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E5%BF%85%E9%A1%BB%E7%8A%AF%E8%A7%84%E7%9A%84%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/tags/%E6%82%AC%E7%96%91%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -6136,6 +6166,20 @@
   
   <url>
     <loc>https://share.awake.wang/categories/%E7%A7%91%E6%8A%80/%E6%BC%AB%E5%A8%81/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E6%96%87%E5%AD%A6/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://share.awake.wang/categories/%E6%96%87%E5%AD%A6/%E6%82%AC%E7%96%91/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
