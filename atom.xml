@@ -10,7 +10,27 @@
   <rights>All rights reserved 2026, leon</rights>
   <subtitle>发现好资源，分享给更多人</subtitle>
   <title>Awake数字分享博客</title>
-  <updated>2026-04-10T23:34:26.418Z</updated>
+  <updated>2026-04-11T01:29:17.593Z</updated>
+  <entry>
+    <author>
+      <name>leon</name>
+    </author>
+    <category term="AI" scheme="https://share.awake.wang/categories/AI/"/>
+    <category term="技术编程" scheme="https://share.awake.wang/categories/AI/%E6%8A%80%E6%9C%AF%E7%BC%96%E7%A8%8B/"/>
+    <category term="模型" scheme="https://share.awake.wang/tags/%E6%A8%A1%E5%9E%8B/"/>
+    <category term="ComfyUI" scheme="https://share.awake.wang/tags/ComfyUI/"/>
+    <category term="Stable Diffusion" scheme="https://share.awake.wang/tags/Stable-Diffusion/"/>
+    <category term="AI绘画" scheme="https://share.awake.wang/tags/AI%E7%BB%98%E7%94%BB/"/>
+    <content>
+      <![CDATA[<h2 id="📚-资源信息"><a href="#📚-资源信息" class="headerlink" title="📚 资源信息"></a>📚 资源信息</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文章标题</td><td>ComfyUI-aki-v3：基于Stable Diffusion的高效工作流模型</td></tr><tr><td>来源</td><td>用户分享</td></tr><tr><td>发布时间</td><td>2026-04-11</td></tr><tr><td>格式</td><td>ComfyUI工作流模型</td></tr><tr><td>访问链接</td><td><a href="https://url60.ctfile.com/f/15365260-8788976131-8585ee">城通网盘下载链接</a></td></tr></tbody></table><h2 id="一、ComfyUI-aki-v3简介"><a href="#一、ComfyUI-aki-v3简介" class="headerlink" title="一、ComfyUI-aki-v3简介"></a>一、ComfyUI-aki-v3简介</h2><p>ComfyUI-aki-v3 是专为 ComfyUI 设计的高效 Stable Diffusion 工作流模型，旨在提升图像生成效率与质量。该模型整合了多项优化技术，包括但不限于：</p><ul><li><strong>节点优化</strong>：精简工作流节点，减少冗余计算</li><li><strong>高质量输出</strong>：支持 1024x1024 分辨率，细节表现优异</li><li><strong>多风格适配</strong>：适用于写实、动漫、插画等多种风格</li></ul><h2 id="二、核心功能"><a href="#二、核心功能" class="headerlink" title="二、核心功能"></a>二、核心功能</h2><ul><li><strong>高效推理</strong>：相比传统工作流，推理速度提升 30%+</li><li><strong>低显存占用</strong>：优化内存使用，适合中端显卡</li><li><strong>自定义参数</strong>：支持调整采样步数、CFG 值等参数</li><li><strong>兼容性</strong>：完美适配 ComfyUI 最新版本</li></ul><h2 id="三、安装与使用指南"><a href="#三、安装与使用指南" class="headerlink" title="三、安装与使用指南"></a>三、安装与使用指南</h2><ol><li><p><strong>下载模型文件</strong>：</p><ul><li>访问 <a href="https://url60.ctfile.com/f/15365260-8788976131-8585ee">城通网盘链接</a></li><li>输入访问密码：<code>168168</code></li><li>下载 <code>ComfyUI-aki-v3.zip</code></li></ul></li><li><p><strong>解压并安装</strong>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip ComfyUI-aki-v3.zip -d ~/.config/ComfyUI/models</span><br></pre></td></tr></table></figure></li><li><p><strong>在 ComfyUI 中加载</strong>：</p><ul><li>启动 ComfyUI</li><li>在工作流中选择 “aki-v3” 节点</li><li>调整参数生成图像</li></ul></li></ol><h2 id="四、注意事项"><a href="#四、注意事项" class="headerlink" title="四、注意事项"></a>四、注意事项</h2><ul><li>请确保 ComfyUI 版本 ≥ 1.0.0</li><li>首次使用建议备份原有工作流</li><li>本模型仅供学习交流使用，请勿用于商业用途</li></ul><hr><h2 id="📥-下载地址"><a href="#📥-下载地址" class="headerlink" title="📥 下载地址"></a>📥 下载地址</h2><p><a href="https://url60.ctfile.com/f/15365260-8788976131-8585ee">ComfyUI-aki-v3 城通网盘链接</a><br><strong>访问密码</strong>：168168  </p><blockquote><p>资源来自网络，仅供学习交流使用，请勿用于商业用途。下载后请及时删除。</p></blockquote>]]>
+    </content>
+    <id>https://share.awake.wang/2026/04/11/2026-04-11-ComfyUI-aki-v3-%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A8%A1%E5%9E%8B/</id>
+    <link href="https://share.awake.wang/2026/04/11/2026-04-11-ComfyUI-aki-v3-%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A8%A1%E5%9E%8B/"/>
+    <published>2026-04-11T01:30:00.000Z</published>
+    <summary>ComfyUI-aki-v3是一个专为ComfyUI设计的高效Stable Diffusion工作流模型，支持高质量图像生成与优化，适用于创意设计与艺术创作。</summary>
+    <title>ComfyUI-aki-v3：基于Stable Diffusion的高效工作流模型</title>
+    <updated>2026-04-11T01:29:17.593Z</updated>
+  </entry>
   <entry>
     <author>
       <name>leon</name>
@@ -355,22 +375,5 @@
     <summary>朱圣祎（Nicole），1994年12月24日出生于上海，毕业于上海戏剧学院，中国内地女演员。代表作《古曼》《爱之初体验》《风月变》等。</summary>
     <title>朱圣祎 - 中国内地女演员</title>
     <updated>2026-04-08T00:48:21.197Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>leon</name>
-    </author>
-    <category term="人物介绍" scheme="https://share.awake.wang/categories/%E4%BA%BA%E7%89%A9%E4%BB%8B%E7%BB%8D/"/>
-    <category term="日本艺人" scheme="https://share.awake.wang/tags/%E6%97%A5%E6%9C%AC%E8%89%BA%E4%BA%BA/"/>
-    <category term="AV女优" scheme="https://share.awake.wang/tags/AV%E5%A5%B3%E4%BC%98/"/>
-    <content>
-      <![CDATA[<h1 id="渡部穗乃"><a href="#渡部穗乃" class="headerlink" title="渡部穗乃"></a>渡部穗乃</h1><h2 id="基本资料"><a href="#基本资料" class="headerlink" title="基本资料"></a>基本资料</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td><strong>日文名</strong></td><td>渡部ほの</td></tr><tr><td><strong>中文名</strong></td><td>渡部穗乃</td></tr><tr><td><strong>出生日期</strong></td><td>2004年10月4日</td></tr><tr><td><strong>星座</strong></td><td>天秤座</td></tr><tr><td><strong>国籍</strong></td><td>日本</td></tr><tr><td><strong>身高</strong></td><td>170cm</td></tr><tr><td><strong>三围</strong></td><td>B102cm (J罩杯) W67cm H92cm</td></tr><tr><td><strong>职业</strong></td><td>演员、艺人</td></tr><tr><td><strong>所属事务所</strong></td><td>S1（2025年起专属）</td></tr></tbody></table><hr><h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>渡部穗乃（渡部ほの），2004年10月4日出生于日本，是一位在2025年出道的新人演员。她拥有170cm的修长身材和突出的身体条件（J罩杯），在出道之前就因其外形条件备受关注。</p><p>作为S1的专属新人，渡部穗乃于2025年3月正式发行首部作品，开启了自己的演艺生涯。她的出道作品《新人NO.1 STYLE 真实20岁的J》（SONE-969）在发布后取得了不错的市场反响。</p><hr><h2 id="职业生涯"><a href="#职业生涯" class="headerlink" title="职业生涯"></a>职业生涯</h2><h3 id="2025年：新人出道"><a href="#2025年：新人出道" class="headerlink" title="2025年：新人出道"></a>2025年：新人出道</h3><ul><li><strong>专属合约</strong>：与日本知名制作公司S1签订专属合约</li><li><strong>出道作品</strong>：2025年3月发行首部专属作品《新人NO.1 STYLE リアルはたちのJ 渡部ほの》（编号：SONE-969）</li><li><strong>市场表现</strong>：出道作在发行后迅速登上销售榜前列，普通版和蓝光版分别占据榜单第3、4位</li></ul><h3 id="2025年9月：热度攀升"><a href="#2025年9月：热度攀升" class="headerlink" title="2025年9月：热度攀升"></a>2025年9月：热度攀升</h3><p>根据FANZA最新热度排行（2025年9月第三周）：</p><ul><li>渡部穗乃位列周榜TOP20，与濑户环奈等一线艺人同榜竞争</li><li>排名一度达到第2位，显示出强劲的人气增长势头</li></ul><hr><h2 id="个人特色"><a href="#个人特色" class="headerlink" title="个人特色"></a>个人特色</h2><h3 id="外形条件"><a href="#外形条件" class="headerlink" title="外形条件"></a>外形条件</h3><ol><li><strong>高挑身材</strong>：170cm的身高在业内属于优势条件</li><li><strong>突出身材比例</strong>：J罩杯的上围配合67cm的腰围，形成鲜明对比</li><li><strong>气质形象</strong>：根据公开的写真照，渡部穗乃被评价为”气质温和文静，亲和力高”</li></ol><h3 id="多才多艺"><a href="#多才多艺" class="headerlink" title="多才多艺"></a>多才多艺</h3><p>根据报道，渡部穗乃被描述为”多才多艺”，可能具备多种技能或才艺，这也是她受到关注的原因之一。</p><hr><h2 id="业界评价"><a href="#业界评价" class="headerlink" title="业界评价"></a>业界评价</h2><ul><li><strong>新人潜力</strong>：作为2025年S1力推的新人，渡部穗乃被定位为”环神的对手”，显示出业界对她的高期望</li><li><strong>销售成绩</strong>：出道作品销售表现符合预期，部分归功于S1的市场推广策略</li><li><strong>热度指数</strong>：在FANZA等主流平台持续保持高热度，说明观众认可度较高</li></ul><hr><h2 id="相关动态"><a href="#相关动态" class="headerlink" title="相关动态"></a>相关动态</h2><h3 id="2025年10月"><a href="#2025年10月" class="headerlink" title="2025年10月"></a>2025年10月</h3><p>有报道提到，Bstar可能是首批获得渡部穗乃作为S1十月专属新人消息的公司，这些时间点的策略被认为是”把时间点卡得恰到好处”。</p><h3 id="社交媒体"><a href="#社交媒体" class="headerlink" title="社交媒体"></a>社交媒体</h3><p>渡部穗乃在抖音、微博等社交平台也有一定知名度，相关内容搜索量较高，表明她在粉丝群体中有一定影响力。</p><hr><h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>作为2025年最受关注的新人之一，渡部穗乃的未来发展值得关注：</p><ul><li><strong>专属合约</strong>：与S1的长期合作关系</li><li><strong>作品持续</strong>：需要保持稳定的作品产出</li><li><strong>人气维持</strong>：在竞争激烈的行业中保持热度</li><li><strong>多元化发展</strong>：有可能向其他演艺领域拓展</li></ul><hr><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>渡部穗乃作为2025年出道的新人演员，凭借优秀的外形条件和S1的强力推广，迅速在业界崭露头角。她的高挑身材、独特魅力和多才多艺的特质，使她在短时间内获得了大量关注。未来能否持续保持竞争力，关键在于作品质量和个人品牌的持续建设。</p><blockquote><p>本文信息基于2025年公开报道整理，数据截至2025年10月。如需最新动态，建议关注官方渠道。</p></blockquote>]]>
-    </content>
-    <id>https://share.awake.wang/2026/04/08/%E6%B8%A1%E9%83%A8%E7%A9%97%E4%B9%83-%E4%BA%BA%E7%89%A9%E4%BB%8B%E7%BB%8D/</id>
-    <link href="https://share.awake.wang/2026/04/08/%E6%B8%A1%E9%83%A8%E7%A9%97%E4%B9%83-%E4%BA%BA%E7%89%A9%E4%BB%8B%E7%BB%8D/"/>
-    <published>2026-04-08T00:10:00.000Z</published>
-    <summary>渡部穗乃（渡部ほの），2004年10月4日出生于日本，S1专属演员，以170cm高挑身材和独特魅力受到关注。</summary>
-    <title>渡部穗乃 - 日本艺人介绍</title>
-    <updated>2026-04-08T00:10:21.677Z</updated>
   </entry>
 </feed>
